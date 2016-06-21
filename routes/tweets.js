@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express = require('express');
 var router = express.Router();
 var Twit = require('twit');
@@ -5,9 +6,9 @@ var Twit = require('twit');
 var T = new Twit({
 	consumer_key: 		process.env.CONSUMER_KEY,
 	consumer_secret:   	process.env.CONSUMER_SECRET,
-  	access_token:       process.env.ACCESS_TOKEN,
-  	access_token_secret:  process.env.ACCESS_TOKEN_SECRET,
-  	timeout_ms:           60*1000,
+  access_token:       process.env.ACCESS_TOKEN,
+  access_token_secret:  process.env.ACCESS_TOKEN_SECRET,
+  timeout_ms:           60*1000
 })
 
 router.route('/:keyword') //defines an api endpoint :(colon) signifies a parameter
@@ -25,6 +26,7 @@ router.route('/:keyword') //defines an api endpoint :(colon) signifies a paramet
   				profile_img: tweet.user.profile_image_url,
   				 }
   		});
+				console.log(myTweetArr);
   			res.json(myTweetArr)
 		})
 	});
