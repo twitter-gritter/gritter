@@ -3,7 +3,6 @@ var app = express();
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var session = require('express-session');
-var flash = require('connect-flash');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/tweets');
 var tweetRouter = require('./routes/tweets');
