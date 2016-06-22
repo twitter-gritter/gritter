@@ -10,7 +10,7 @@ var MyGrid = React.createClass({
   render: function(){
     return(
       <div className ="container">
-        <Grid>
+        <Grid className="testing">
           <Row>
             <Column  width="1/2">
               Left!
@@ -40,17 +40,5 @@ var MyGrid = React.createClass({
     )
   }
 });
-module.exports = MyGrid;
-var React = require('react');
 
-var Grid = React.createClass({
-  render:function(){
-    return(
-      <div>
-        This is the grid
-        {this.props.children}
-      </div>
-    )
-  }
-})
-module.exports = Grid;
+module.exports = MyGrid;
