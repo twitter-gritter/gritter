@@ -1,10 +1,10 @@
-var React = require('react')
-  , Griddle = require('griddle-react')
-  , CellBlock = require('react-cellblock')
-  , Grid = CellBlock.Grid
-  , Row = CellBlock.Row
-  , Column = CellBlock.Column
-  , MyGrid = null;
+var React = require('react'),
+    Griddle = require('griddle-react'),
+    CellBlock = require('react-cellblock'),
+    Grid = CellBlock.Grid,
+    Row = CellBlock.Row,
+    Column = CellBlock.Column,
+    MyGrid = null;
 
 var MyGrid = React.createClass({
   render: function(){
@@ -41,16 +41,3 @@ var MyGrid = React.createClass({
   }
 });
 module.exports = MyGrid;
-var React = require('react');
-
-var Grid = React.createClass({
-  render:function(){
-    return(
-      <div>
-        This is the grid
-        {this.props.children}
-      </div>
-    )
-  }
-})
-module.exports = Grid;
