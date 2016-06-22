@@ -34,6 +34,7 @@
     "eslint-config-airbnb": "^6.2.0",
     "eslint-plugin-react": "^4.2.3",
     "express": "^4.13.4",
+    "griddle-react": "^0.5.1",
     "history": "^1.17.0",
     "mongoose": "^4.4.20",
     "node-sass": "^3.4.2",
