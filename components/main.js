@@ -1,14 +1,3 @@
-var React = require('react');
-
-var Main = React.createClass({
-  render: function(){
-    return(
-      <div>
-        {this.props.children}
-      </div>
-    )
-  }
-});
 var GetTweets = require('./getTweets.js');
 var Main = React.createClass({
   render:function(){
