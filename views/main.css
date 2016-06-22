@@ -6,3 +6,10 @@
 .column1 {
   border: 1px solid black;
 }
+
+.layout {
+  background-color: #555555;
+}
+.layout div {
+  background-color: #999999;
+}
