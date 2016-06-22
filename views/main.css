@@ -7,6 +7,7 @@
   border: 1px solid black;
 }
 
+<<<<<<< HEAD
 .testing {
   border: 2px solid red;
 }
@@ -21,4 +22,11 @@
 
 .gridPractice {
   border: 3px solid red;
+=======
+.layout {
+  background-color: #555555;
+}
+.layout div {
+  background-color: #999999;
+>>>>>>> kyle
 }

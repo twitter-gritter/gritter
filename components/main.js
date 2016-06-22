@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 =======
 var React = require('react');
+<<<<<<< HEAD
 var MyGrid = require('./grid.js');
 
 var Main = React.createClass({
@@ -13,6 +14,8 @@ var Main = React.createClass({
   }
 });
 >>>>>>> mikes
+=======
+>>>>>>> kyle
 var GetTweets = require('./getTweets.js');
 var Main = React.createClass({
   render:function(){
