@@ -3,7 +3,10 @@ var React = require('react');
 var Grid = React.createClass({
   render:function(){
     return(
-      <div></div>
+      <div>
+        This is the grid
+        {this.props.children}
+      </div>
     )
   }
 })
