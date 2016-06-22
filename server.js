@@ -55,5 +55,5 @@ app.get('/', function(req, res){
 });
 
 app.listen(7000, function(){
-	console.log("The magic happens on port 7000");
+	console.log("It's alive on port 7000");
 });
