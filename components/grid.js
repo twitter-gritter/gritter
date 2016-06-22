@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 
-=======
+
 var React = require('react'),
     Griddle = require('griddle-react'),
     CellBlock = require('react-cellblock'),
@@ -44,4 +43,3 @@ var MyGrid = React.createClass({
   }
 });
 module.exports = MyGrid;
->>>>>>> kyle

@@ -11,7 +11,7 @@ var MyFirstGrid = React.createClass({
     ];
     return (
       <ReactGridLayout className="layout" layout={layout} cols={12} rowHeight={30} width={1200}>
-        <div key={'a'}>a</div>
+        <div id="static" key={'a'}>a</div>
         <div key={'b'}>b</div>
         <div key={'c'}>c</div>
       </ReactGridLayout>

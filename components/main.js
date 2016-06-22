@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-=======
+
 var React = require('react');
-<<<<<<< HEAD
 var MyGrid = require('./grid.js');
 
 var Main = React.createClass({
@@ -13,9 +11,6 @@ var Main = React.createClass({
     )
   }
 });
->>>>>>> mikes
-=======
->>>>>>> kyle
 var GetTweets = require('./getTweets.js');
 var Main = React.createClass({
   render:function(){
@@ -23,6 +18,7 @@ var Main = React.createClass({
       <div><h1>You found the main page!</h1>
       {this.props.children}
         <GetTweets />
+        <h1>Hello</h1>
       </div>
     )
   }

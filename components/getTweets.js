@@ -16,7 +16,12 @@ var GetTweets = React.createClass({
   render: function(){
 
     return(
-      <div></div>
+      <div>
+        <ul>
+          <li>
+          </li>
+        </ul>
+      </div>
     )
   }
 })
