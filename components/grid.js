@@ -19,6 +19,22 @@ var MyGrid = React.createClass({
               Right!
             </Column>
           </Row>
+          <Row>
+            <Column  width="1/4">
+              Left!
+            </Column>
+            <Column width ="1/4">
+              Right!
+            </Column>
+          </Row>
+          <Row>
+            <Column  width="1/2">
+              Left!
+            </Column>
+            <Column width ="1/2">
+              Right!
+            </Column>
+          </Row>
         </Grid>
       </div>
     )
