@@ -17,7 +17,6 @@ var Main = React.createClass({
       <div><h1>You found the main page!</h1>
       {this.props.children}
         <GetTweets />
-        <MyGrid />
       </div>
     )
   }

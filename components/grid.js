@@ -6,36 +6,23 @@ var React = require('react')
   , Column = CellBlock.Column
   , MyGrid = null;
 
+
 var MyGrid = React.createClass({
   render: function(){
     return(
       <div className ="container">
-        <Grid className="testing">
-          <Row>
-            <Column  width="1/2">
-              Left!
-            </Column>
-            <Column width ="1/2">
-              Right!
-            </Column>
-          </Row>
-          <Row>
-            <Column  width="1/4">
-              Left!
-            </Column>
-            <Column width ="1/4">
-              Right!
-            </Column>
-          </Row>
-          <Row>
-            <Column  width="1/2">
-              Left!
-            </Column>
-            <Column width ="1/2">
-              Right!
-            </Column>
-          </Row>
-        </Grid>
+          <Grid>
+              <Row>
+                <Column width="1/6">I am one sixth</Column>
+                <Column width="2/6">I am two sixths</Column>
+                <Column width="3/6">I am three sixths</Column>
+              </Row>
+              <Row>
+                <Column width="2/4">I am one half</Column>
+                <Column width="1/4">I am one quarter</Column>
+                <Column width="1/4">I am one quarter</Column>
+              </Row>
+          </Grid>
       </div>
     )
   }
