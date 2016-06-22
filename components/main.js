@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+=======
+var React = require('react');
+var MyGrid = require('./grid.js');
+
+var Main = React.createClass({
+  render: function(){
+    return(
+      <div>
+        {this.props.children}
+      </div>
+    )
+  }
+});
+>>>>>>> mikes
 var GetTweets = require('./getTweets.js');
 var Main = React.createClass({
   render:function(){

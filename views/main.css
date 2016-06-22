@@ -6,3 +6,19 @@
 .column1 {
   border: 1px solid black;
 }
+
+.testing {
+  border: 2px solid red;
+}
+
+.testingRow {
+  border: 2px solid black;
+}
+
+.testingColumn {
+  border: 2px solid blue;
+}
+
+.gridPractice {
+  border: 3px solid red;
+}
