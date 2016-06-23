@@ -25,11 +25,10 @@ var T = new Twit({
 
 app.get('/twitter', function(req, res) {
 
-	T.get('search/tweets', { q: '#Orlando since:2016-05-30', count: 5 }, function(err, data, response) {
+	T.get('search/tweets', { q: '#SFGiants since:2016-05-30', count: 10 }, function(err, data, response) {
 		if (err) {
 			console.log('There was an error retrieving requested data. Msg from: server.js');
 		}
-	  console.log(data)
 	  res.send(data);
 	});
 });
