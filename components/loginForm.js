@@ -5,7 +5,8 @@ var LoginForm = React.createClass({
 
     return (
       <div>
-        <form className="form-group loginForm" action = '/login' method = 'POST'>
+
+        <form  id="login" className="form-group loginForm" action = '/login' method = 'POST'>
         <input type="username" className = "form-control email" id="userName" name="email" placeholder="email/username" />
         <input type="password" className = "form-control password" name="password" id="userPassword" placeholder="password" />
         <button id="loginButton" className="btn btn-success">Login</button>

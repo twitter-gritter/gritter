@@ -1,5 +1,6 @@
 var LocalStrategy = require('passport-local').Strategy;
 var User = require('./../components/models/userModel.js');
+var LoginForm = require('./components/loginForm.js');
 
 module.exports = function(passport){
   passport.serializeUser(function(user,done){
