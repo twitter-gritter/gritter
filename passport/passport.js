@@ -1,0 +1,47 @@
+var LocalStrategy = require('passport-local').Strategy;
+var User = require('./../components/models/userModel.js');
+var LoginForm = require('./components/loginForm.js');
+
+module.exports = function(passport){
+  passport.serializeUser(function(user,done){
+    console.log("USER: ", user);
+    done(null,user.id);
+  });
+
+  passport.deserializeUser(function(id,done){
+    console.log("ID:", id);
+    User.findById(id, function(err,user){
+      done(err,user);
+    });
+  });
+  passport.use('local-signup', new LocalStrategy({
+    usernameField: 'email',
+    passwordField: 'password',
+    passReqToCallback: true
+  }, function(req,email,password, done){
+    process.nextTick(function(){
+    User.findOne({'email': email}, function(err,user){
+      if(err) return done(err);
+      if(user) {
+        if(user.validPassword(password)){
+          console.log("Valid Password!!");
+          return done(null,user);
+        } else {
+          console.log("Invalid Password!!");
+          return done(null,false);
+        }
+      } else {
+        var newUser = new User(req.body);
+        newUser.email = email;
+        newUser.password = newUser.generateHash(password);
+        newUser.save(function(err){
+          if(err) {
+            throw err
+          };
+          return done(null, newUser);
+          });
+        }
+      })
+    })
+  }));
+};
