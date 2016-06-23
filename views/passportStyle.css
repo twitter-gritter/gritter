@@ -1,0 +1,10 @@
+.loginForm {
+  width: 15vw;
+  float: right;
+  margin-top: 2rem;
+  margin-right: 2rem;
+}
+
+#logoutButton {
+  background-color: blue;
+}
