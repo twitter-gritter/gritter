@@ -7,7 +7,9 @@ var React = require('react'),
     hashHistory = ReactRouter.hashHistory;
 
 var Main = require('./../main.js'),
-    Grid = require('./../testGrid.js');
+    Grid = require('./../testGrid.js'),
+    LoginForm = require('./../loginForm.js');
+
 
 
 ReactDom.render(

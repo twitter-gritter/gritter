@@ -4,8 +4,18 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Twit = require('twit');
+var userCtrl = require('./components/controllers/userControl.js');
+var config = require('./components/config/config.js');
+var session = require('express-session');
+var passport = require('passport');
+
+require('./passport/passport.js')(passport);
 
 var app = express();
+// For login use
+app.use(session(config));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -33,9 +43,18 @@ app.get('/twitter', function(req, res) {
 	});
 });
 
+// Login Information
 
+app.post('/login', passport.authenticate('local-signup'), function(req,res){
+  res.redirect('/');
+});
 
+//LogOut
 
+app.get('/logout', function(req,res){
+  req.logout();
+  res.redirect('/');
+})
 
 if (process.env.NODE_ENV === 'production') {
   console.log('Running in production mode');
