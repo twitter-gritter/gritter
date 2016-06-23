@@ -3,4 +3,4 @@ node_modules
 .env
 npm-debug.log
 static
-config/config.js
+components/config/config.js
