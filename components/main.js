@@ -6,6 +6,8 @@ var TwitterCard = require('./twitterCard.js');
 var LoginForm = require('./loginForm.js');
 
 
+
+var React = require('react');
 var GetTweets = require('./getTweets.js');
 var Main = React.createClass({
   render:function(){
@@ -16,6 +18,9 @@ var Main = React.createClass({
         <h1>Gritter</h1>
         {this.props.children}
         <AllTweetsData />
+
+      <div><h1>You found the main page!</h1>
+      {this.props.children}
       </div>
     )
   }
