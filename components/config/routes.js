@@ -1,3 +1,9 @@
+//Router  calls in -->
+//  Main    calls in -->
+//    GetTweets   calls in -->
+//      TwitterCard   calls in -->
+//        Grid
+
 var React = require('react'),
     ReactDom = require('react-dom'),
     ReactRouter = require('react-router'),
@@ -6,14 +12,13 @@ var React = require('react'),
     IndexRoute = ReactRouter.IndexRoute,
     hashHistory = ReactRouter.hashHistory;
 
-var Main = require('./../main.js'),
-    Grid = require('./../testGrid.js');
+var Main = require('./../main.js');
 
 
 ReactDom.render(
   <Router history={hashHistory}>
     <Route path= '/' component={Main}>
-      <IndexRoute component={Grid}/>
+      
     </Route>
   </Router>,
   document.getElementById('app')
