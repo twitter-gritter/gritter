@@ -2,7 +2,7 @@
 
 .react-resizable {
   position: relative;
-  background-color: blue;
+  background-color: #EEE;
 }
 .react-resizable-handle {
   position: absolute;

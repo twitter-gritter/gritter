@@ -27,37 +27,4 @@ var Grid = React.createClass({
     )
   }
 });
-// function Grid(props){
-//   var tweets = props.tweets.map(function(item){
-//     return <Cards tweets={items} />
-//   });
-//
-//   return (
-//     <ReactGridLayout className="layout" layout={layout} cols={12} rowHeight={30} width={1200}>
-//       {tweets}
-//     </ReactGridLayout>
-//   )
-//
-// };
-
-// function AllAnimals(props){
-//   var animals = props.animals.map(function(item){
-//     return <AnimalCard  name ={item.name}
-//                         species = {item.species}
-//                         habitat = {item.habitat}
-//                         diet = {item.diet}
-//                         key={item._id}
-//                         id={item._id}
-//                         deleteAnimalFromServer={props.deleteAnimalFromServer}
-//                         getId={props.getId}/>
-//   });
-//
-//   return(
-//     <div>
-//       {animals}
-//
-//     </div>
-//   )
-// };
-
 module.exports = Grid;
