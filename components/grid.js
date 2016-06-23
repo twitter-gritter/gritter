@@ -5,6 +5,7 @@
 //        Grid
 var React = require('react');
 var ReactGridLayout = require('react-grid-layout');
+
 var Grid = React.createClass({
   render: function() {
     // layout is an array of objects, see the demo for more complete usage
