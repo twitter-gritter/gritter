@@ -27,6 +27,4 @@ var Grid = React.createClass({
     )
   }
 });
-module.exports = MyGrid;
-
 module.exports = Grid;

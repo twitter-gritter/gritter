@@ -34,12 +34,27 @@ var T = new Twit({
 })
 
 app.get('/twitter', function(req, res) {
+var keyword = req.params.keyword;
 
-	T.get('search/tweets', { q: '#SFGiants since:2016-05-30', count: 10 }, function(err, data, response) {
+	T.get('search/tweets', { q: '#Orlando since:2016-05-30', count: 5 }, function(err, data, response) {
 		if (err) {
 			console.log('There was an error retrieving requested data. Msg from: server.js');
-		}
-	  res.send(data);
+		} else {
+
+      var tweetArr = data.statuses.map(function(tweet){
+
+        return {
+          text: tweet.text,
+          screen_name: tweet.user.screen_name,
+          created_at: tweet.created_at,
+          profile_img: tweet.user.profile_image_url
+        }
+
+      });
+      console.log(tweetArr);
+      res.send(tweetArr);
+    }
+
 	});
 });
 
