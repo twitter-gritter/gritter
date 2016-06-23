@@ -7,13 +7,15 @@ var React = require('react'),
     hashHistory = ReactRouter.hashHistory;
 
 var Main = require('./../main.js'),
-    Grid = require('./../testGrid.js');
+    Grid = require('./../grid.js'),
+    Tweets = require('./../getTweets.js');
+
 
 
 ReactDom.render(
   <Router history={hashHistory}>
     <Route path= '/' component={Main}>
-      <IndexRoute component={Grid}/>
+      <IndexRoute component={Tweets}/>
     </Route>
   </Router>,
   document.getElementById('app')

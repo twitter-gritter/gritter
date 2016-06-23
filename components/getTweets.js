@@ -1,13 +1,24 @@
+// GetTweets
+//  Grid
+//    Cards
+
 var React = require('react');
 
+var Grid = require('./grid.js');
 var GetTweets = React.createClass({
+  getInitialState: function(){
+    return {
+      tweets: []
+    }
+  },
   getTweets: function(){
     var self = this;
     $.ajax({
       method: 'GET',
       url: '/twitter'
     }).then(function(data){
-      console.log(data);
+
+      self.setState({tweets:data.statuses});
     })
   },
   componentDidMount: function(){
@@ -16,8 +27,10 @@ var GetTweets = React.createClass({
   render: function(){
 
     return(
-      <div></div>
+      <div>
+        <Grid tweets={this.state.tweets} />
+      </div>
     )
   }
-})
+});
 module.exports = GetTweets;
