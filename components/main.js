@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-=======
 //Router  calls in -->
 //  Main    calls in -->
 //    GetTweets   calls in -->
 //      TwitterCard   calls in -->
 //        Grid
->>>>>>> 4a785b8f768975eab1a2878c8143afd07d2ae6ac
 
 var React = require('react');
 var GetTweets = require('./getTweets.js');

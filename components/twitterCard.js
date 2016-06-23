@@ -5,13 +5,13 @@
 //        Grid
 
 var React = require('react');
-var Grid = require('./testGrid.js');
+var Grid = require('./grid.js');
 
 var TwitterCard = React.createClass({
 	render: function(){
 
 		var tweets = this.props.tweetsArr.map(function(data){
-			return <Grid author={data.screen_name} date={data.created_at} 
+			return <Grid author={data.screen_name} date={data.created_at}
 					text={data.text} profile_img={data.profile_img} />
 		})
 		return (
