@@ -3,7 +3,6 @@
 //    GetTweets   calls in -->
 //      TwitterCard   calls in -->
 //        Grid
-
 var React = require('react');
 var MyGrid = require('./grid.js');
 var AllTweetsData = require('./allTweetsData.js');
@@ -23,8 +22,6 @@ var Main = React.createClass({
       <h1>You found the main page!</h1>
         <h1>Gritter</h1>
         {this.props.children}
-        <AllTweetsData />
-
       <div><h1>You found the main page!</h1>
       {this.props.children}
       </div>
