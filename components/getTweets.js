@@ -25,9 +25,7 @@ var GetTweets = React.createClass({
       method: 'GET',
       url: '/twitter'
     }).done(function(data){
-
       self.setState({tweets: data})
-      console.log(data);
     })
   },
   componentDidMount: function(){
@@ -37,7 +35,6 @@ var GetTweets = React.createClass({
 
     return(
       <div>
-        <h1> This is the get tweets data</h1>
           <TwitterCard tweetsArr={this.state.tweets} />
       </div>
     )

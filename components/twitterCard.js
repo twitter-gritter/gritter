@@ -16,7 +16,6 @@ var TwitterCard = React.createClass({
 		})
 		return (
 			<div>
-			<h1>Hello, this is the twitter card</h1>
 			{ tweets }
 			</div>
 
