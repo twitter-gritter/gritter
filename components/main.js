@@ -3,7 +3,6 @@
 //    GetTweets   calls in -->
 //      TwitterCard   calls in -->
 //        Grid
-//var LoginForm = require('./loginForm.js');
 
 var React = require('react');
 var LoginForm = require('./loginForm.js');

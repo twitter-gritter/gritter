@@ -22,6 +22,7 @@ ReactDom.render(
     <Route path= '/' component={Main}>
       <IndexRoute component={Tweets}/>
     </Route>
+    
   </Router>,
   document.getElementById('app')
 )

@@ -38,6 +38,7 @@
     "express-session": "^1.13.0",
     "griddle-react": "^0.5.1",
     "history": "^1.17.0",
+    "lodash": "^4.13.1",
     "mongoose": "^4.4.20",
     "node-sass": "^3.4.2",
     "passport": "^0.3.2",
