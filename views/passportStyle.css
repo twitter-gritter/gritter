@@ -2,9 +2,14 @@
   width: 15vw;
   float: right;
   margin-right: 2rem;
+  margin-left: 2rem;
 }
 
-h2 {
+hr {
+  border: 2px solid white;
+}
+
+h2, p {
   color: white;
   font-size: 2rem;
   text-align: center;
@@ -13,7 +18,14 @@ h2 {
 #logoutButton {
   background-color: blue;
   margin-left: 2rem;
+  border: none;
 }
+
+#logoutButton:hover {
+  background-color: grey;
+  color: white;
+}
+
 
 .loginDropdown {
   text-align: right;
@@ -37,11 +49,6 @@ h2 {
 
 #logInfo {
   background-color: rgb(41, 24, 26);
-}
-
-
-.loginForm {
-  margin-left: 2rem;
 }
 
 #user {
