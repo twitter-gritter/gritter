@@ -15,14 +15,15 @@ var React = require('react'),
 
 var Main = require('./../main.js'),
     Grid = require('./../grid.js'),
-    Tweets = require('./../getTweets.js');
+    Tweets = require('./../getTweets.js'),
+    AddRemoveGrid = require('./../AddRemoveGrid.js');
 
 ReactDom.render(
   <Router history={hashHistory}>
     <Route path= '/' component={Main}>
-      <IndexRoute component={Tweets}/>
+      <IndexRoute component={AddRemoveGrid}/>
     </Route>
-    
+
   </Router>,
   document.getElementById('app')
 )

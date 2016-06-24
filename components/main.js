@@ -12,8 +12,7 @@ var Main = React.createClass({
   render:function(){
     return (
       <div>
-      <LoginForm />
-      <GetTweets />
+        {this.props.children}
       </div>
     )
   }
