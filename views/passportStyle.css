@@ -8,3 +8,12 @@
 #logoutButton {
   background-color: blue;
 }
+
+.loginDropdown {
+  text-align: right;
+}
+
+.listItems {
+  background-color: black;
+  float: right;
+}
