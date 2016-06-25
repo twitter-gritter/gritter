@@ -1,0 +1,50 @@
+body {
+  background-image: url('http://i.imgur.com/D787ZLL.jpg');
+  background-position: center-right;
+  background-size: cover;
+}
+
+.container {
+  width: 50vw;
+  height: 25vh;
+  margin-top: 20rem;
+}
+
+.keywordInput {
+  border: 1px solid #fff;
+  text-align: center;
+}
+
+
+#inputKeyword {
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+  height: 10vh;
+  width: 20vw;
+  font-size: 3rem;
+  font-weight: lighter;
+  text-align: center;
+  background-color: transparent;
+  color: white;
+  border: .5px solid white;
+}
+
+.searchDiv {
+  margin-top: -6rem;
+  margin-bottom: 4rem;
+}
+
+.searchButton {
+  width: 15vw;
+  font-size: 3rem;
+  font-weight: lighter;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+
+}
+
+.searchButton:hover {
+  border: 1px solid #2C75FF;
+  color: #035096;
+}
