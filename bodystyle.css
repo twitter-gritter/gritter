@@ -2,6 +2,8 @@ body {
   background-image: url('http://i.imgur.com/D787ZLL.jpg');
   background-position: center-right;
   background-size: cover;
+  font-family: 'Julius Sans One', sans-serif;
+  font-weight: lighter;
 }
 
 .container {
@@ -11,7 +13,7 @@ body {
 }
 
 .keywordInput {
-  border: 1px solid #fff;
+  border: 3px solid #fff;
   text-align: center;
 }
 
@@ -22,7 +24,6 @@ body {
   height: 10vh;
   width: 20vw;
   font-size: 3rem;
-  font-weight: lighter;
   text-align: center;
   background-color: transparent;
   color: white;
@@ -37,7 +38,6 @@ body {
 .searchButton {
   width: 15vw;
   font-size: 3rem;
-  font-weight: lighter;
   border: 1px solid white;
   background-color: transparent;
   color: white;
@@ -46,5 +46,29 @@ body {
 
 .searchButton:hover {
   border: 1px solid #2C75FF;
-  color: #035096;
+  color: #0892D0;
+  cursor: crosshair;
+}
+
+.social {
+  text-align: center;
+  margin-right: 4vw;
+}
+
+.social-links {
+  color: white;
+  display: inline-block;
+  list-style: none;
+  margin-top: 4rem;
+}
+
+.github,.twitter,.facebook {
+  display: inline-block;
+  font-size: 4rem;
+  padding-left: 2rem;
+}
+
+.github:hover,.twitter:hover,.facebook:hover {
+  cursor: crosshair;
+  color:#0892D0;
 }
