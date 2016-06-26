@@ -1,0 +1,61 @@
+
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Julius Sans One', sans-serif;
+
+}
+
+.card {
+width: 20vw;
+height: 20vh;
+margin-top: 5rem;
+border: 1px solid white;
+background-color: brown;
+text-shadow: 2px 2px black;
+}
+
+.card {
+  width: 20vw;
+  height: 20vh;
+  margin-top: 5rem;
+  border: 1px solid white;
+  background-color: brown;
+  transform: perspective( 400px ) rotateY( -30deg );
+}
+
+.image {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.image > img {
+  width: 5vw;
+  height: 7vh;
+  margin-top: 1vh;
+  border-radius: 50%;
+  padding-left: 1rem;
+}
+
+h4 {
+  margin-right: .5rem;
+  border-bottom: 1px dotted white;
+}
+
+.text {
+  width: 10rem;
+  height: 7rem;
+  border-right: 1px dotted white;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+h6 {
+  margin-left: 1.5rem;
+  min-width: 15rem;
+  font-size: 1rem;
+
+}
