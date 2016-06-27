@@ -4,7 +4,6 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Twit = require('twit');
-var userCtrl = require('./components/controllers/userControl.js');
 var config = require('./components/config/config.js');
 var tweetRouter = require('./tweetRouter.js');
 var session = require('express-session');
