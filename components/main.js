@@ -8,8 +8,10 @@ var React = require('react');
 var LoginForm = require('./loginForm.js');
 var GetTweets = require('./getTweets.js');
 
+
+
 var Main = React.createClass({
-  render:function(){
+  render: function(){
     return (
       <div>
       <LoginForm />
@@ -17,5 +19,8 @@ var Main = React.createClass({
       </div>
     )
   }
-})
+});
+
+
 module.exports = Main;
+
