@@ -11,7 +11,7 @@
 
 var React = require('react');
 var TwitterCard = require('./twitterCard');
-
+var AddRemoveGrid = require('./addRemoveGrid.js');
 
 var GetTweets = React.createClass({
   getInitialState: function(){
@@ -35,7 +35,8 @@ var GetTweets = React.createClass({
 
     return(
       <div>
-          <TwitterCard tweetsArr={this.state.tweets} />
+          {/*<TwitterCard tweetsArr={this.state.tweets} />*/}
+          <AddRemoveGrid tweets={this.state.tweets} />
       </div>
     )
   }
