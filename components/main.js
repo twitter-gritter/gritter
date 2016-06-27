@@ -7,6 +7,7 @@
 var React = require('react');
 var LoginForm = require('./loginForm.js');
 var GetTweets = require('./getTweets.js');
+var Background = require('./background.js');
 
 
 
@@ -14,8 +15,8 @@ var Main = React.createClass({
   render: function(){
     return (
       <div>
-      <LoginForm />
-      <GetTweets />
+      <Background />
+      {/*<GetTweets />*/}
       </div>
     )
   }
@@ -23,4 +24,3 @@ var Main = React.createClass({
 
 
 module.exports = Main;
-

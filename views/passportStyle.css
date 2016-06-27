@@ -5,13 +5,10 @@
   margin-left: 2rem;
 }
 
-hr {
-  border: 2px solid white;
-}
 
 h2, p {
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
   font-weight: lighter;
 }
@@ -30,6 +27,12 @@ h2, p {
 .loginDropdown {
   text-align: right;
   margin-right: 2rem;
+  margin-top: -7rem;
+  font-weight: bolder;
+}
+
+.loginDropdown:focus {
+  outline: none;
 }
 
 .listItems {
@@ -64,3 +67,245 @@ h2, p {
   background-color: orange;
   color: white;
 }
+
+
+
+/*BACKGROUND STYLES*/
+
+
+body {
+  background-image: url('http://i.imgur.com/D787ZLL.jpg');
+  background-position: top-right;
+  background-size: cover;
+  font-family: 'Julius Sans One', sans-serif;
+  font-weight: lighter;
+}
+
+img {
+  width: 8rem;
+  height: 8rem;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 3px 3px 3px black;
+}
+
+header {
+  text-align: center;
+  font-weight: lighter;
+  font-size: 3rem;
+  color: white;
+}
+#title {
+  margin-top: 2rem;
+}
+
+#break {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), white, rgba(0, 0, 0, 0));
+  text-shadow: 2px 2px black;
+  margin-left: 25vw;
+  margin-right: 25vw;
+}
+
+.searchContainer {
+  width: 50vw;
+  height: 25vh;
+  text-align: center;
+  -webkit-filter: grayscale(0.5) blur(10px);
+  transition-duration: 2s;
+}
+
+.searchContainer:hover {
+  width: 50vw;
+  height: 25vh;
+  text-align: center;
+  -webkit-filter: none;
+  transition-duration: 2s;
+}
+
+.keywordInput {
+  margin-top: 5vh;
+}
+
+#inputKeyword {
+
+  margin-bottom: 15vh;
+  height: 10vh;
+  width: 20vw;
+  font-size: 3rem;
+  text-align: center;
+  background-color: transparent;
+  color: white;
+  border: .5px solid white;
+}
+
+input:focus {
+  outline:none;
+}
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white;
+}
+
+.searchButton {
+  width: 8vw;
+  font-size: 3rem;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  margin-top: -12vh;
+
+}
+
+.searchButton:hover {
+  border: 1px solid #2C75FF;
+  color: #0892D0;
+}
+
+.social {
+  margin-right: 25vw;
+  margin-left: 25vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+}
+
+.social-links {
+  color: white;
+  display: inline-block;
+  list-style: none;
+}
+
+.github,.twitter,.facebook {
+  display: inline-block;
+  font-size: 4rem;
+  margin-right: 4rem;
+}
+
+
+
+/*header {
+  margin-top: 2rem;
+  text-align: center;
+  width: 100vw;
+  font-weight: lighter;
+  font-size: 3rem;
+
+}
+
+
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), white, rgba(0, 0, 0, 0));
+    text-shadow: 2px 2px black;
+    margin-left: 25vw;
+    margin-right: 25vw;
+}
+
+img {
+  width: 8rem;
+  height: 8rem;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 3px 3px 3px black;
+}
+
+#title {
+  text-align: center;
+  color: white;
+  text-shadow: 3px 3px black;
+  letter-spacing: .5rem;
+  opacity: .9;
+
+}
+
+#title:hover {
+  -webkit-transform:rotateY(180deg);
+  -moz-transform:rotateY(180deg);
+  -o-transform:rotateY(180deg);
+  -ms-transform:rotateY(180deg);
+}
+
+.container {
+  width: 30vw;
+  height: 20vh;
+  margin-top: 10rem;
+  -webkit-filter: grayscale(0.5) blur(10px);
+  transition-duration: 2s;
+}
+
+.container:hover {
+  width: 50vw;
+  height: 25vh;
+  margin-top: 10rem;
+  -webkit-filter: none;
+  transition-duration: 2s;
+}
+
+.keywordInput {
+  border: 1px solid #fff;
+  text-align: center;
+}
+
+input:focus {
+  outline:none;
+}
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  /*color: white;
+}
+
+#inputKeyword {
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+  height: 10vh;
+  width: 20vw;
+  font-size: 3rem;
+  text-align: left;
+  padding-left: 3rem;
+  background-color: transparent;
+  color: white;
+  border: .5px solid white;
+}
+
+.searchDiv {
+  margin-top: -6rem;
+  margin-bottom: 4rem;
+}
+
+.searchButton {
+  width: 15vw;
+  font-size: 3rem;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+
+}
+
+.searchButton:hover {
+  border: 1px solid #2C75FF;
+  color: #0892D0;
+}
+
+.social {
+  text-align: center;
+  margin-right: 4vw;
+}
+
+.social-links {
+  color: white;
+  display: inline-block;
+  list-style: none;
+  margin-top: 4rem;
+}
+
+.github,.twitter,.facebook {
+  display: inline-block;
+  font-size: 4rem;
+  padding-left: 2rem;
+}
+
+.github:hover,.twitter:hover,.facebook:hover {
+  color:#0892D0;
+}*/
