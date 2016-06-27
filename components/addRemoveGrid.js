@@ -4,7 +4,7 @@ var AddRemoveLayout = require('./addRemoveLayout.js');
 var AddRemoveGrid = React.createClass({
   render: function(){
     return (
-      <AddRemoveLayout />
+      <AddRemoveLayout tweets={this.props.tweets}/>
     )
   }
 });
