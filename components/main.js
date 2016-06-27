@@ -8,13 +8,18 @@ var React = require('react');
 var LoginForm = require('./loginForm.js');
 var GetTweets = require('./getTweets.js');
 
+
+
 var Main = React.createClass({
-  render:function(){
+  render: function(){
     return (
       <div>
         {this.props.children}
       </div>
     )
   }
-})
+});
+
+
 module.exports = Main;
+

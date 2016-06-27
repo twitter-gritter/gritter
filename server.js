@@ -4,8 +4,8 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Twit = require('twit');
-var userCtrl = require('./components/controllers/userControl.js');
 var config = require('./components/config/config.js');
+var tweetRouter = require('./tweetRouter.js');
 var session = require('express-session');
 var passport = require('passport');
 
@@ -22,41 +22,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(express.static(__dirname + '/views'));
 
-require('dotenv').config();
-
-
-var T = new Twit({
-  consumer_key:         process.env.TWITTER_CONSUMER_KEY,
-  consumer_secret:      process.env.TWITTER_CONSUMER_SECRET,
-  access_token:         process.env.TWITTER_ACCESS_TOKEN,
-  access_token_secret:  process.env.TWITTER_TOKEN_SECRET,
-  timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
-})
-
-app.get('/twitter', function(req, res) {
-var keyword = req.params.keyword;
-
-	T.get('search/tweets', { q: '#Orlando since:2016-05-30', count: 5 }, function(err, data, response) {
-		if (err) {
-			console.log('There was an error retrieving requested data. Msg from: server.js');
-		} else {
-
-      var tweetArr = data.statuses.map(function(tweet){
-
-        return {
-          text: tweet.text,
-          screen_name: tweet.user.screen_name,
-          created_at: tweet.created_at,
-          profile_img: tweet.user.profile_image_url
-        }
-
-      });
-      console.log(tweetArr);
-      res.send(tweetArr);
-    }
-
-	});
+var router = express.Router();
+router.use(function(req, res, next){
+  console.log('Something is happening');
+  next();
 });
+
+app.use('/tweets', tweetRouter);
 
 // Login Information
 

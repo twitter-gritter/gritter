@@ -1,10 +1,66 @@
 .loginForm {
   width: 15vw;
   float: right;
-  margin-top: 2rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+hr {
+  border: 2px solid white;
+}
+
+h2, p {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: lighter;
+}
+#logoutButton {
+  background-color: blue;
+  margin-left: 2rem;
+  border: none;
+}
+
+#logoutButton:hover {
+  background-color: grey;
+  color: white;
+}
+
+
+.loginDropdown {
+  text-align: right;
   margin-right: 2rem;
 }
 
-#logoutButton {
-  background-color: blue;
+.listItems {
+  background-color: black;
+  float: right;
+}
+
+#dropdown-button {
+  background-color: black;
+  margin: 2rem;
+}
+
+#dropdown-button:hover {
+  background-color: orange;
+  color: white;
+}
+
+#logInfo {
+  background-color: rgb(41, 24, 26);
+}
+
+#user {
+  margin-top: 1rem;
+}
+
+.loginButton {
+  background-color: white;
+  color: black;
+}
+
+.loginButton:hover {
+  background-color: orange;
+  color: white;
 }
