@@ -6,28 +6,46 @@ body {
   font-weight: lighter;
 }
 
-.header {
-  margin-top: 10rem;
+header {
+  margin-top: 2rem;
   text-align: center;
   width: 100vw;
   font-weight: lighter;
-  font-size: 4rem;
+  font-size: 3rem;
+
+}
+
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), white, rgba(0, 0, 0, 0));
+    text-shadow: 2px 2px black;
+    margin-left: 25vw;
+    margin-right: 25vw;
+}
+
+img {
+  width: 8rem;
+  height: 8rem;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 3px 3px 3px black;
 }
 
 #title {
   text-align: center;
   color: white;
-  text-decoration: underline;
-  text-shadow: 2px 2px black;
+  text-shadow: 3px 3px black;
   letter-spacing: .5rem;
-  opacity: .6;
+  opacity: .9;
 
 }
 
 .container {
   width: 30vw;
   height: 20vh;
-  margin-top: 15rem;
+  margin-top: 10rem;
   -webkit-filter: grayscale(0.5) blur(10px);
   transition-duration: 2s;
 }
@@ -35,7 +53,7 @@ body {
 .container:hover {
   width: 50vw;
   height: 25vh;
-  margin-top: 15rem;
+  margin-top: 10rem;
   -webkit-filter: none;
   transition-duration: 2s;
 
