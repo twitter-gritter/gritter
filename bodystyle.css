@@ -7,10 +7,11 @@ body {
 }
 
 .header {
+  margin-top: 10rem;
   text-align: center;
   width: 100vw;
   font-weight: lighter;
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 #title {
@@ -81,7 +82,6 @@ input:focus {
 .searchButton:hover {
   border: 1px solid #2C75FF;
   color: #0892D0;
-  cursor: crosshair;
 }
 
 .social {
@@ -103,6 +103,5 @@ input:focus {
 }
 
 .github:hover,.twitter:hover,.facebook:hover {
-  cursor: crosshair;
   color:#0892D0;
 }
