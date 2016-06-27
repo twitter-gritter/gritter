@@ -13,16 +13,14 @@ var React = require('react'),
     hashHistory = ReactRouter.hashHistory;
 
 
-var Main = require('./../main.js'),
-    Grid = require('./../grid.js'),
-    Tweets = require('./../getTweets.js');
+var Main = require('./../main.js');
+    
 
 ReactDom.render(
   <Router history={hashHistory}>
     <Route path= '/' component={Main}>
-      <IndexRoute component={Tweets}/>
     </Route>
     
   </Router>,
-  document.getElementById('app')
+  document.getElementById('header')
 )
