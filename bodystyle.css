@@ -6,16 +6,50 @@ body {
   font-weight: lighter;
 }
 
+.header {
+  text-align: center;
+  width: 100vw;
+  font-weight: lighter;
+  font-size: 3rem;
+}
+
+#title {
+  text-align: center;
+  color: white;
+  text-decoration: underline;
+  text-shadow: 2px 2px black;
+  letter-spacing: .5rem;
+  opacity: .6;
+
+}
+
 .container {
+  width: 30vw;
+  height: 20vh;
+  margin-top: 15rem;
+  -webkit-filter: grayscale(0.5) blur(10px);
+  transition-duration: 2s;
+}
+
+.container:hover {
   width: 50vw;
   height: 25vh;
-  margin-top: 20rem;
+  margin-top: 15rem;
+  -webkit-filter: none;
+  transition-duration: 2s;
+
+
 }
 
 .keywordInput {
-  border: 3px solid #fff;
+  border: 1px solid #fff;
   text-align: center;
 }
+
+input:focus {
+  outline:none;
+}
+
 
 
 #inputKeyword {
