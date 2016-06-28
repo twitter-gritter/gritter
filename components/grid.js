@@ -18,12 +18,12 @@ var Grid = React.createClass({
       verticalCompact:false
     }
   },
-  createElement(el,){
-    console.log(el);
+  createElement(el){
     return(
-      <div key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5}} >
-        <img src={el.profile_img}/><h3>{el.screen_name}:</h3>
-        <h4>"{el.text}..."</h4>
+      <div id="gridCardArea" key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5}} >
+      <div>  <img src={el.profile_img}/><h3>{el.screen_name}:</h3> </div>
+        <div className="remove" onClick={this.props.removeTweet.bind(null, el.id)}>X </div>
+        <p>"{el.text}..."</p>
       </div>
     )
   },
@@ -34,6 +34,7 @@ var Grid = React.createClass({
       {i: '2', x: 1, y: 0, w: 3, h: 2, minW: 2, minH: 2},
       {i: '3', x: 4, y: 0, w: 1, h: 2}
     ];
+
     return (
     <ReactGridLayout  layout={layout} cols={12} rowHeight={30} width={1200}>
         {_.map(this.props.tweets, this.createElement)}

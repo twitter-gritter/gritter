@@ -152,6 +152,10 @@ header {
   transition-duration: 2s;
 }*/
 
+.container {
+  width: 75vw;
+}
+
 .keywordInput {
   margin-top: 5vh;
   text-align: center;
@@ -219,13 +223,10 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   cursor: pointer;
 }
 
-.break2 {
-  margin-top: 15vh;
-}
 
-.twitterGrid {
-  margin-top: 10vh;
-  width: 50vw;
+
+.tweetGrid {
+  width: 75vw;
   height: auto;
 }
 
