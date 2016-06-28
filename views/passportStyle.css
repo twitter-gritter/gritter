@@ -176,11 +176,13 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 
 .searchButton {
   width: 8vw;
-  font-size: 3rem;
+  font-size: 2rem;
+  font-weight: lighter;
   border: 1px solid white;
   background-color: transparent;
   color: white;
-  margin-top: -12vh;
+  margin-top: -15vh;
+
 
 }
 
