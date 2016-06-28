@@ -1,5 +1,7 @@
 var React = require('react');
 var LoginForm = require('./loginForm.js');
+var SearchBar = require('./searchBar.js');
+
 
 var Background = React.createClass({
   render: function(){
@@ -20,16 +22,11 @@ var Background = React.createClass({
           </div>
         </header>
         <hr id="break"></hr>
-        <div className="row">
           <div className="container searchContainer">
             <div className="keywordInput">
-              <input type="text" id="inputKeyword" placeholder="search"/>
-              <div className = "searchDiv">
-                <button className = "btn searchButton"><span class="glyphicon glyphicon-search" aria-hidden="true">></span></button>
-              </div>
+              <SearchBar />
             </div>
           </div>
-        </div>
         <div>
 
         </div>

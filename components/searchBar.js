@@ -21,10 +21,12 @@ var SearchBar = React.createClass({
 		return (
 			<div>
 				<form onSubmit = {this.handleFormSubmit}>
-					<input onChange={this.handleKeywordChange} 
-					 value={this.state.keyword} type="text" placeholder="Search" />
-					<button> Enter </button>
-				</form>	
+					<input onChange={this.handleKeywordChange}
+					 value={this.state.keyword} type="text" placeholder="Search" id="inputKeyword" />
+					 <div>
+					<button className="btn searchButton">></button>
+					</div>
+				</form>
 			</div>
 			)
 	}
