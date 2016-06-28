@@ -218,13 +218,11 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   cursor: pointer;
 }
 
-.break2 {
-  margin-top: 15vh;
-}
+
 
 .twitterGrid {
-  margin-top: 10vh;
-  width: 50vw;
+
+  width:75vw;
   height: auto;
 }
 

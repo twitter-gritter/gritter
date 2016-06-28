@@ -74,10 +74,10 @@ input:focus {
   outline:none;
 }
 input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: white;
-}
+  /*color: white;
+}*/
 
-#inputKeyword {
+/*#inputKeyword {
   margin-top: 15vh;
   margin-bottom: 15vh;
   height: 10vh;
