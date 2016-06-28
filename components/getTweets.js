@@ -50,10 +50,15 @@ var GetTweets = React.createClass({
   render: function () {
     this.addId();
   return (
-    <div>
-      <p> Search by keyword: {this.state.keyword}</p>
-      <SearchBar onKeywordSubmit={this.onKeywordSubmit}/>
-      <Grid tweets={this.state.tweets} />
+    <div className = "container searchContainer">
+      <div className="keywordInput">
+        <p> Search by keyword: {decodeURIComponent(this.state.keyword)}</p>
+        <SearchBar onKeywordSubmit={this.onKeywordSubmit}/>
+        <div className="twitterGrid">
+
+          <Grid tweets={this.state.tweets} />
+        </div>
+      </div>
     </div>
     )
   }

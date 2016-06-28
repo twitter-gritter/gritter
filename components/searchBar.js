@@ -1,4 +1,7 @@
 var React = require('react');
+var GetTweets = require('./getTweets.js');
+var FaArrowRight = require('react-icons/lib/fa/arrow-right.js');
+
 
 
 var SearchBar = React.createClass({
@@ -9,11 +12,14 @@ var SearchBar = React.createClass({
 		this.setState({
 			newKeyword: event.target.value
 		})
+		
 	},
 	handleFormSubmit: function(event){
 		event.preventDefault();
-
+	
 		var newKeyword = this.state.newKeyword.trim();
+		newKeyword = encodeURIComponent(newKeyword);
+		
 		//onKeywordSubmit is defined in getTweets.js
 		this.props.onKeywordSubmit(newKeyword);
 	},
@@ -21,10 +27,12 @@ var SearchBar = React.createClass({
 		return (
 			<div>
 				<form onSubmit = {this.handleFormSubmit}>
-					<input onChange={this.handleKeywordChange} 
-					 value={this.state.keyword} type="text" placeholder="Search" />
-					<button> Enter </button>
-				</form>	
+					<input onChange={this.handleKeywordChange}
+					 value={this.state.keyword} type="text" placeholder="..." id="inputKeyword" />
+					 <div>
+					<button className="btn searchButton"><FaArrowRight /></button>
+					</div>
+				</form>
 			</div>
 			)
 	}
