@@ -14,9 +14,9 @@ var T = new Twit({
 router.route('/:keyword') //defines an api endpoint :(colon) signifies a parameter
   .get(function(req, res){
     var keyword = req.params.keyword;
-/*    var endpoint = 'search/tweets'; 
+/*    var endpoint = 'search/tweets';
 
-    req.params.endpoint;  Endpoints: [ 'statuses/retweets_of_me', 
+    req.params.endpoint;  Endpoints: [ 'statuses/retweets_of_me',
     'statuses/user_timeline', 'statuses/home_timeline', 'search/tweets']*/
     //search/tweets = twitters api endpoint
     T.get('search/tweets', { q: keyword + ' since:2016-01-30', count: 5 }, function(err, data, response) {
@@ -26,9 +26,9 @@ router.route('/:keyword') //defines an api endpoint :(colon) signifies a paramet
 
         return {
           key: tweet.id,
-          text: tweet.text, 
-          screen_name: tweet.user.screen_name, 
-          created_at: tweet.created_at, 
+          text: tweet.text,
+          screen_name: tweet.user.screen_name,
+          created_at: tweet.created_at,
           profile_img: tweet.user.profile_image_url,
           }
       });

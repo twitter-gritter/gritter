@@ -110,8 +110,8 @@ img {
 
 header {
   background-image: url('http://i.imgur.com/D787ZLL.jpg');
-  background-position: bottom;
-  background-size: cover;
+  background-position: center;
+  background-size:cover;
   text-align: center;
   padding-bottom: 2rem;
   font-weight: lighter;
