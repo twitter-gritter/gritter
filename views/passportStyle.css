@@ -226,17 +226,8 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 
 
 
-.tweetGrid {
-  width: 75vw;
-  height: auto;
-}
 
-.tweetsContainer {
-  color: #000;
-  font-size: .5rem;
-  background-color: white;
-  box-shadow: 4px 4px #000;
-}
+
 
 
 
