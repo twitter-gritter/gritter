@@ -21,7 +21,7 @@ var Grid = React.createClass({
   createElement(el,){
     console.log(el);
     return(
-      <div key={el.id} >
+      <div key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5}} >
         <img src={el.profile_img}/><h3>{el.screen_name}:</h3>
         <h4>"{el.text}..."</h4>
       </div>
@@ -30,7 +30,7 @@ var Grid = React.createClass({
   render: function() {
     // layout is an array of objects, see the demo for more complete usage
     var layout = [
-      {i: '1', x: 0, y: 0, w: 1, h: 2, static: true},
+      {i: "1", x: 0, y: 0, w: 1, h: 2, static: true},
       {i: '2', x: 1, y: 0, w: 3, h: 2, minW: 2, minH: 2},
       {i: '3', x: 4, y: 0, w: 1, h: 2}
     ];
