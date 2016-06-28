@@ -220,10 +220,8 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 
 
 
-.twitterGrid {
-
-  width:75vw;
-  height: auto;
+#gridCardArea {
+  width: 50vw;
 }
 
 .tweetsContainer {
