@@ -82,13 +82,14 @@ h2, p {
 
 
 body {
-  background-image: url('http://i.imgur.com/DKw02Ke.jpg');
+  /*background-image: url('http://i.imgur.com/DKw02Ke.jpg');
   background-position: top-right;
-  background-size: cover;
-  /*background-color: rgb(78, 23, 14);*/
+  background-size: cover;*/
+  background-color: rgb(31,31,55);
   overflow: scroll;
   font-family: 'Julius Sans One', sans-serif;
   font-weight: lighter;
+
 }
 
 img {
@@ -108,20 +109,25 @@ img {
 }
 
 header {
+  background-image: url('http://i.imgur.com/D787ZLL.jpg');
+  background-position: bottom;
+  background-size: cover;
   text-align: center;
+  padding-bottom: 2rem;
   font-weight: lighter;
   font-size: 3rem;
   color: white;
 }
 #title {
-  margin-top: 2rem;
+  padding-top: 2rem;
+  margin-top: 0rem;
   letter-spacing: 1rem;
   opacity: .7;
 }
 
 #break {
   border: 0;
-  height: 1px;
+  height: 2px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), white, rgba(0, 0, 0, 0));
   text-shadow: 2px 2px black;
   margin-left: 25vw;

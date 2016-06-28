@@ -23,7 +23,6 @@ var Background = React.createClass({
               <li className="facebook"><i><FaFacebookSquare /></i></li>
               </ul>
             </div>
-            <hr id="break"></hr>
           </div>
         </header>
       </div>
