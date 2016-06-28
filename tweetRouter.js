@@ -17,9 +17,9 @@ router.route('/:keyword') //defines an api endpoint :(colon) signifies a paramet
 /*    var endpoint = 'search/tweets';
 
     req.params.endpoint;  Endpoints: [ 'statuses/retweets_of_me',
-    'statuses/user_timeline', 'statuses/home_timeline', 'search/tweets']*/
+    'statuses/user_timeline', 'statuses/home_timeline', 'search/tweets', followers/ids]*/
     //search/tweets = twitters api endpoint
-    T.get('search/tweets', { q: keyword + ' since:2016-01-30', count: 5 }, function(err, data, response) {
+    T.get('search/tweets', { q: keyword + ' since:2016-01-30', count: 15 }, function(err, data, response) {
 
 
       var tweetArr = data.statuses.map(function(tweet){

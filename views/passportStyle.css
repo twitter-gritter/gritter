@@ -154,6 +154,7 @@ header {
 
 .keywordInput {
   margin-top: 5vh;
+  text-align: center;
 }
 
 #inputKeyword {
