@@ -11,7 +11,7 @@ var TwitterCard = require('./twitterCard.js');
 var Grid = React.createClass({
   getInitialState: function(){
     return {
-      tweets:[]
+      tweets:this.props.tweets
     }
   },
   getDefaultProps(){
@@ -23,10 +23,10 @@ var Grid = React.createClass({
       verticalCompact:false
     }
   },
-  createElement(el,){
+  createElement(el){
     console.log(el);
     return(
-      <div key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5}} >
+      <div id="gridCardArea" key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5}} >
       <div>  <img src={el.profile_img}/><h3>{el.screen_name}:</h3> </div>
         <div className="remove" onClick={this.removeItem.bind(this, el.id)}>X </div>
         <p>"{el.text}..."</p>
@@ -34,7 +34,7 @@ var Grid = React.createClass({
     )
   },
   removeItem(id){
-    console.log("Deleting: " + id)
+    console.log("Deleting: " + id);
     this.setState({tweets: _.reject(this.props.tweets, {id: id})});
   },
   render: function() {
