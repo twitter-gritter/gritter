@@ -50,7 +50,7 @@ var GetTweets = React.createClass({
   render: function () {
     this.addId();
   return (
-    <div className = "container searchContainer">
+    <div className = "container">
       <div className="keywordInput">
         <p> Search by keyword: {decodeURIComponent(this.state.keyword)}</p>
         <SearchBar onKeywordSubmit={this.onKeywordSubmit}/>

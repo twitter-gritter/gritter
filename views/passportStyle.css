@@ -152,8 +152,13 @@ header {
   transition-duration: 2s;
 }*/
 
+.container {
+  width: 75vw;
+}
+
 .keywordInput {
   margin-top: 5vh;
+  text-align: center;
 }
 
 #inputKeyword {
