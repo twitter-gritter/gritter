@@ -9,25 +9,25 @@
 //        Grid
 var React = require('react');
 var ReactDOM = require('react-dom');
-var TwitterCard = require('./twitterCard');
+var Grid = require('./grid.js');
 var SearchBar = require('./searchBar.js');
 
 
 var GetTweets = React.createClass({
-  
+
 
   getInitialState: function(){
     return{
       tweets: [],
       keyword: 'Reactjs'
-    } 
+    }
   },
 
   onKeywordSubmit: function(newKeyword){
     this.setState({keyword: newKeyword});
     this.loadTweetsFromServer(newKeyword);
   },
-  
+
   loadTweetsFromServer: function(keyword){
     var self = this;
     $.ajax({
@@ -38,15 +38,22 @@ var GetTweets = React.createClass({
     })
 
   },
+  addId: function(){
+    for(var i = 0; i <  this.state.tweets.length; i++){
+      this.state.tweets[i].id=i;
+    }
+  },
   componentDidMount: function(){
     this.loadTweetsFromServer(this.state.keyword);
+
   },
   render: function () {
+    this.addId();
   return (
     <div>
       <p> Search by keyword: {this.state.keyword}</p>
       <SearchBar onKeywordSubmit={this.onKeywordSubmit}/>
-      <TwitterCard tweetsArr={this.state.tweets} />
+      <Grid tweets={this.state.tweets} />
     </div>
     )
   }
@@ -83,7 +90,7 @@ var GetTweets = React.createClass({
 
     return(
       <div>
-          {/*<TwitterCard tweetsArr={this.state.tweets} />*/}
+          {/*<TwitterCard tweetsArr={this.state.tweets} />}
           <AddRemoveGrid tweets={this.state.tweets} />
       </div>
     )
