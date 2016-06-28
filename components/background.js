@@ -1,6 +1,9 @@
 var React = require('react');
 var LoginForm = require('./loginForm.js');
 var SearchBar = require('./searchBar.js');
+var FaFacebookSquare = require('react-icons/lib/fa/facebook-square.js');
+var FaTwitterSquare = require('react-icons/lib/fa/twitter-square.js');
+var FaGithubSquare = require('react-icons/lib/fa/github-square.js');
 
 
 var Background = React.createClass({
@@ -14,9 +17,9 @@ var Background = React.createClass({
             <img src="./images/bulldog.jpg" />
             <div className = "social">
               <ul className = "social-links">
-              <li className="github"><i className="fa fa-github-square" aria-hidden="true"></i></li>
-              <li className="twitter"><i className="fa fa-twitter-square" aria-hidden="true"></i></li>
-              <li className="facebook"><i className="fa fa-facebook-official" aria-hidden="true"></i></li>
+              <li className="github"><i><FaGithubSquare /></i></li>
+              <li className="twitter"><i><FaTwitterSquare /></i></li>
+              <li className="facebook"><i><FaFacebookSquare /></i></li>
               </ul>
             </div>
           </div>
