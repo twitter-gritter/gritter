@@ -117,6 +117,7 @@ header {
   font-weight: lighter;
   font-size: 3rem;
   color: white;
+  border-bottom: 2px solid white;
 }
 #title {
   padding-top: 2rem;
