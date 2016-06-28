@@ -23,17 +23,9 @@ var Background = React.createClass({
               <li className="facebook"><i><FaFacebookSquare /></i></li>
               </ul>
             </div>
+            <hr id="break"></hr>
           </div>
         </header>
-        <hr id="break"></hr>
-          <div className="container searchContainer">
-            <div className="keywordInput">
-            </div>
-          </div>
-        <div>
-        <hr id="break" className ="break2"></hr>
-
-        </div>
       </div>
     )
   }

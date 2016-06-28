@@ -122,18 +122,19 @@ header {
 .searchContainer {
   width: 50vw;
   height: 25vh;
+  margin-top: -2.5vh;
   text-align: center;
-  -webkit-filter: grayscale(0.5) blur(10px);
+  /*-webkit-filter: grayscale(0.5) blur(10px);*/
   transition-duration: 2s;
 }
 
-.searchContainer:hover {
+/*.searchContainer:hover {
   width: 50vw;
   height: 25vh;
   text-align: center;
   -webkit-filter: none;
   transition-duration: 2s;
-}
+}*/
 
 .keywordInput {
   margin-top: 5vh;
@@ -201,6 +202,12 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 
 .break2 {
   margin-top: 15vh;
+}
+
+.twitterGrid {
+  margin-top: 10vh;
+  width: 50vw;
+  height: auto;
 }
 
 

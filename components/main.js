@@ -17,6 +17,7 @@ var Main = React.createClass({
       <div>
       <Background />
       <GetTweets />
+      <hr id="break" className ="break2"></hr>
       </div>
     )
   }

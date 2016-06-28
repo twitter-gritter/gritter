@@ -23,7 +23,6 @@ var SearchBar = React.createClass({
 	render: function(){
 		return (
 			<div>
-			<p> Search by keyword: {this.state.keyword}</p>
 				<form onSubmit = {this.handleFormSubmit}>
 					<input onChange={this.handleKeywordChange}
 					 value={this.state.keyword} type="text" placeholder="..." id="inputKeyword" />
