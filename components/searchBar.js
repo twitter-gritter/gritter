@@ -17,6 +17,7 @@ var SearchBar = React.createClass({
 		event.preventDefault();
 
 		var newKeyword = this.state.newKeyword.trim();
+		newKeyword = encodeURIComponent(newKeyword);
 		//onKeywordSubmit is defined in getTweets.js
 		this.props.onKeywordSubmit(newKeyword);
 	},
