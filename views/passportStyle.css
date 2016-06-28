@@ -23,7 +23,6 @@ h2, p {
   color: white;
 }
 
-
 .loginDropdown {
   text-align: right;
   margin-right: 2rem;
@@ -102,6 +101,12 @@ img {
 /*TWITTER CARD STUFF */
 
 #tweetImage {
+  width: 6rem;
+  height: 6rem;
+  box-shadow: 2px 2px black;
+}
+
+#tweetImage:hover {
   width: 7rem;
   height: 7rem;
 }
@@ -109,6 +114,12 @@ img {
 #screenName {
   font-family: 'Lato', sans-serif;
   text-decoration: underline;
+}
+
+#screenName:hover {
+  font-family: 'Lato', sans-serif;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 #tweetFont {
@@ -119,7 +130,9 @@ img {
 #twitCardHolder {
   text-align: left;
   padding-left: 2rem;
+  padding-right: 2rem;
 }
+
 
 
 /*END OF TWITTER CARD STUFF*/
