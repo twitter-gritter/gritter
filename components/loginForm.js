@@ -1,16 +1,18 @@
 var React = require('react');
+var FaSignIn = require('react-icons/lib/fa/sign-in.js');
+
 
 var LoginForm = React.createClass({
   render: function(){
     return(
       <div>
         <div id="dropdown" className = "dropdown loginDropdown">
-        <button className ="btn btn-success dropdown-toggle" id="dropdown-button" type="button" data-toggle="dropdown">Sign Up/Login<span className="caret"></span></button>
+        <button id="dropdown-button" type="button" data-toggle="dropdown"><FaSignIn /></button>
         <ul className="dropdown-menu dropdown-menu-right" id="logInfo">
         <h2>Login or Sign Up Below</h2>
         <hr></hr>
         <h2>New Users </h2>
-            <form onSubmit = { this.onSumbit } id="login" className="form-group loginForm" action = '/login' method = 'POST'>
+            <form onSubmit = { this.onSubmit } id="login" className="form-group loginForm" action = '/login' method = 'POST'>
               <li><input type="text" className = "form-control" id="user" name="firstName" placeholder="First Name" /></li>
               <li><input type="text" className = "form-control" id="user" name="lastName" placeholder="Last Name" /></li>
               <li><input type="username" className = "form-control" id="user" name="email" placeholder="Email" /></li>

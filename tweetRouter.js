@@ -11,7 +11,7 @@ var T = new Twit({
   timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
 })
 
-router.route('/:keyword') //defines an api endpoint :(colon) signifies a parameter 
+router.route('/:keyword') //defines an api endpoint :(colon) signifies a parameter
   .get(function(req, res){
     var keyword = req.params.keyword;
 /*    var endpoint = 'search/tweets'; 
@@ -20,22 +20,22 @@ router.route('/:keyword') //defines an api endpoint :(colon) signifies a paramet
     'statuses/user_timeline', 'statuses/home_timeline', 'search/tweets']*/
     //search/tweets = twitters api endpoint
     T.get('search/tweets', { q: keyword + ' since:2016-01-30', count: 5 }, function(err, data, response) {
-      
+
+
       var tweetArr = data.statuses.map(function(tweet){
-        
+
         return {
           key: tweet.id,
           text: tweet.text, 
           screen_name: tweet.user.screen_name, 
           created_at: tweet.created_at, 
           profile_img: tweet.user.profile_image_url,
-          
           }
       });
         res.json(tweetArr);
         console.log(tweetArr);
     })
-  }); 
+  });
 
 
 module.exports = router;
