@@ -21,9 +21,9 @@ var Grid = React.createClass({
   createElement(el,){
     console.log(el);
     return(
-      <div id="gridCardArea" key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5}} >
-        <img src={el.profile_img}/><h3>{el.screen_name}:</h3>
-        <h4>"{el.text}..."</h4>
+      <div id="twitCardHolder" key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5}} >
+        <img id="tweetImage" src={el.profile_img}/><h4 id="screenName">{el.screen_name}:</h4>
+        <h5 id="tweetFont">"{el.text}..."</h5>
       </div>
     )
   },

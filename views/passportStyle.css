@@ -99,6 +99,31 @@ img {
   margin-top: 1rem;
 }
 
+/*TWITTER CARD STUFF */
+
+#tweetImage {
+  width: 7rem;
+  height: 7rem;
+}
+
+#screenName {
+  font-family: 'Lato', sans-serif;
+  text-decoration: underline;
+}
+
+#tweetFont {
+  font-family: 'Lato', sans-serif;
+
+}
+
+#twitCardHolder {
+  text-align: left;
+  padding-left: 2rem;
+}
+
+
+/*END OF TWITTER CARD STUFF*/
+
 #bulldog {
   width: 8rem;
   height: 8rem;
@@ -236,6 +261,7 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   background-color: white;
   box-shadow: 4px 4px #000;
 }
+
 
 
 
