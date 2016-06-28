@@ -7,7 +7,7 @@ var LoginForm = React.createClass({
     return(
       <div>
         <div id="dropdown" className = "dropdown loginDropdown">
-        <button id="dropdown-button" type="button" data-toggle="dropdown"><FaSignIn /></button>
+        <button id="dropdown-button" type="button" data-toggle="dropdown">Login</button>
         <ul className="dropdown-menu dropdown-menu-right" id="logInfo">
         <h2>Login or Sign Up Below</h2>
         <hr></hr>

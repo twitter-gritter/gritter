@@ -12,14 +12,14 @@ var SearchBar = React.createClass({
 		this.setState({
 			newKeyword: event.target.value
 		})
-		
+
 	},
 	handleFormSubmit: function(event){
 		event.preventDefault();
-	
+
 		var newKeyword = this.state.newKeyword.trim();
 		newKeyword = encodeURIComponent(newKeyword);
-		
+
 		//onKeywordSubmit is defined in getTweets.js
 		this.props.onKeywordSubmit(newKeyword);
 	},
@@ -28,7 +28,7 @@ var SearchBar = React.createClass({
 			<div>
 				<form onSubmit = {this.handleFormSubmit}>
 					<input onChange={this.handleKeywordChange}
-					 value={this.state.keyword} type="text" placeholder="..." id="inputKeyword" />
+					 value={this.state.keyword} type="text" autoComplete="off" id="inputKeyword" />
 					 <div>
 					<button className="btn searchButton"><FaArrowRight /></button>
 					</div>
