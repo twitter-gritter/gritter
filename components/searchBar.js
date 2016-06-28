@@ -1,6 +1,6 @@
 var React = require('react');
+var GetTweets = require('./getTweets.js');
 var FaArrowRight = require('react-icons/lib/fa/arrow-right.js');
-var FaSearch = require('react-icons/lib/fa/search.js');
 
 
 

@@ -16,7 +16,7 @@ var Main = React.createClass({
     return (
       <div>
       <Background />
-      {/*<GetTweets />*/}
+      <GetTweets />
       </div>
     )
   }

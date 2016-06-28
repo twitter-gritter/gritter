@@ -1,10 +1,10 @@
 var React = require('react');
 var LoginForm = require('./loginForm.js');
 var SearchBar = require('./searchBar.js');
+var GetTweets = require('./getTweets.js');
 var FaFacebookSquare = require('react-icons/lib/fa/facebook-square.js');
 var FaTwitterSquare = require('react-icons/lib/fa/twitter-square.js');
 var FaGithubSquare = require('react-icons/lib/fa/github-square.js');
-var GetTweets = require('./getTweets.js');
 
 
 var Background = React.createClass({
@@ -28,7 +28,6 @@ var Background = React.createClass({
         <hr id="break"></hr>
           <div className="container searchContainer">
             <div className="keywordInput">
-            <SearchBar />
             </div>
           </div>
         <div>

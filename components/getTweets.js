@@ -45,7 +45,7 @@ var GetTweets = React.createClass({
   return (
     <div>
       <p> Search by keyword: {this.state.keyword}</p>
-      <SearchBar onKeywordSubmit={this.state.onKeywordSubmit}/>
+      <SearchBar onKeywordSubmit={this.onKeywordSubmit}/>
       <TwitterCard tweetsArr={this.state.tweets} />
     </div>
     )
