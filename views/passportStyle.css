@@ -36,19 +36,27 @@ h2, p {
 }
 
 .listItems {
-  background-color: black;
+  background-color: transparent;
   float: right;
 }
 
 #dropdown-button {
-  background-color: black;
+  background-color: transparent;
   margin: 2rem;
+  border: none;
+  font-size: 2rem;
+}
+
+#dropdown-button:focus {
+  outline: none;
 }
 
 #dropdown-button:hover {
-  background-color: orange;
-  color: white;
+  background-color: white;
+  color: black;
 }
+
+
 
 #logInfo {
   background-color: rgb(41, 24, 26);
@@ -87,6 +95,7 @@ img {
   text-align: center;
   border-radius: 50%;
   box-shadow: 3px 3px 3px black;
+  opacity: .8;
 }
 
 header {
@@ -97,6 +106,8 @@ header {
 }
 #title {
   margin-top: 2rem;
+  letter-spacing: 1rem;
+  opacity: .7;
 }
 
 #break {
@@ -171,6 +182,7 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 }
 
 .social-links {
+  margin-top: 4vh;
   color: white;
   display: inline-block;
   list-style: none;
@@ -181,6 +193,17 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   font-size: 4rem;
   margin-right: 4rem;
 }
+
+.github:hover,.twitter:hover,.facebook:hover {
+  color:#0892D0;
+  cursor: pointer;
+}
+
+.break2 {
+  margin-top: 15vh;
+}
+
+
 
 
 

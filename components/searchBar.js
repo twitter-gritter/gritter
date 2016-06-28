@@ -1,5 +1,6 @@
 var React = require('react');
 var FaArrowRight = require('react-icons/lib/fa/arrow-right.js');
+var FaSearch = require('react-icons/lib/fa/search.js');
 
 
 
@@ -22,9 +23,10 @@ var SearchBar = React.createClass({
 	render: function(){
 		return (
 			<div>
+			<p> Search by keyword: {this.state.keyword}</p>
 				<form onSubmit = {this.handleFormSubmit}>
 					<input onChange={this.handleKeywordChange}
-					 value={this.state.keyword} type="text" placeholder="Search" id="inputKeyword" />
+					 value={this.state.keyword} type="text" placeholder="..." id="inputKeyword" />
 					 <div>
 					<button className="btn searchButton"><FaArrowRight /></button>
 					</div>

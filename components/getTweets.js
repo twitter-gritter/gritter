@@ -14,20 +14,20 @@ var SearchBar = require('./searchBar.js');
 
 
 var GetTweets = React.createClass({
-  
+
 
   getInitialState: function(){
     return{
       tweets: [],
       keyword: 'Reactjs'
-    } 
+    }
   },
 
   onKeywordSubmit: function(newKeyword){
     this.setState({keyword: newKeyword});
     this.loadTweetsFromServer(newKeyword);
   },
-  
+
   loadTweetsFromServer: function(keyword){
     var self = this;
     $.ajax({
@@ -45,7 +45,7 @@ var GetTweets = React.createClass({
   return (
     <div>
       <p> Search by keyword: {this.state.keyword}</p>
-      <SearchBar onKeywordSubmit={this.onKeywordSubmit}/>
+      <SearchBar onKeywordSubmit={this.state.onKeywordSubmit}/>
       <TwitterCard tweetsArr={this.state.tweets} />
     </div>
     )
