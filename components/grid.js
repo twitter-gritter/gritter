@@ -9,6 +9,11 @@ var _ = require('lodash');
 var TwitterCard = require('./twitterCard.js');
 
 var Grid = React.createClass({
+  getInitialState: function(){
+    return {
+      tweets:[]
+    }
+  },
   getDefaultProps(){
     return{
       className: "layout",
@@ -22,10 +27,15 @@ var Grid = React.createClass({
     console.log(el);
     return(
       <div key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5}} >
-        <img src={el.profile_img}/><h3>{el.screen_name}:</h3>
-        <h4>"{el.text}..."</h4>
+      <div>  <img src={el.profile_img}/><h3>{el.screen_name}:</h3> </div>
+        <div className="remove" onClick={this.removeItem.bind(this, el.id)}>X </div>
+        <p>"{el.text}..."</p>
       </div>
     )
+  },
+  removeItem(id){
+    console.log("Deleting: " + id)
+    this.setState({tweets: _.reject(this.props.tweets, {id: id})});
   },
   render: function() {
     // layout is an array of objects, see the demo for more complete usage
@@ -34,6 +44,7 @@ var Grid = React.createClass({
       {i: '2', x: 1, y: 0, w: 3, h: 2, minW: 2, minH: 2},
       {i: '3', x: 4, y: 0, w: 1, h: 2}
     ];
+
     return (
     <ReactGridLayout  layout={layout} cols={12} rowHeight={30} width={1200}>
         {_.map(this.props.tweets, this.createElement)}
