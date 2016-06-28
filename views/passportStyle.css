@@ -173,14 +173,14 @@ header {
   margin-right: 25vw;
 }
 
-.searchContainer {
+/*.searchContainer {
   width: 50vw;
   height: 25vh;
   margin-top: -2.5vh;
   text-align: center;
   /*-webkit-filter: grayscale(0.5) blur(10px);*/
   transition-duration: 2s;
-}
+}*/
 
 /*.searchContainer:hover {
   width: 50vw;
@@ -201,7 +201,7 @@ header {
 
 #inputKeyword {
 
-  margin-bottom: 15vh;
+  margin-bottom: 5vh;
   height: 10vh;
   width: 20vw;
   font-size: 3rem;
