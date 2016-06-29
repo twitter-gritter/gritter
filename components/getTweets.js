@@ -15,28 +15,40 @@ var Grid = require('./grid.js');
 var SearchBar = require('./searchBar.js');
 
 
+
 var GetTweets = React.createClass({
 
 
   getInitialState: function(){
     return{
       tweets: [],
-      keyword: 'Reactjs'
+      keyword: 'Reactjs',
+      number: 4
     }
   },
-
-  onKeywordSubmit: function(newKeyword){
+/*  onNumberSubmit: function(newNumber){
+    this.setState({number: newNumber})
+  },*/
+  onKeywordSubmit: function(newKeyword, newNumber){
+    console.log("handling keyword submit");
     this.setState({keyword: newKeyword});
-    this.loadTweetsFromServer(newKeyword);
+    this.setState({number: newNumber});
+    this.loadTweetsFromServer(newKeyword, newNumber);
   },
-
-  loadTweetsFromServer: function(keyword){
+  loadTweetsFromServer: function(keyword, number){
+    console.log('before ajax' + keyword + number);
     var self = this;
+    number = String(number);
+
+    var queryString = keyword + ' since:2016-01-30, count: ' + number;
+    console.log(queryString);
     $.ajax({
-      url: "/tweets/" + keyword,
-      method: 'GET',
-    }).done(function(data){
-      self.setState({tweets: self.state.tweets.concat(data)})
+      url: "/tweets/" + queryString, 
+      method: 'GET'
+    }).done(function(results){
+      console.log("after ajax " + results);
+      console.log(results.length);
+      self.setState({tweets: self.state.tweets.concat(results)})
     })
 
   },
@@ -49,8 +61,7 @@ var GetTweets = React.createClass({
     }
   },
   componentDidMount: function(){
-    this.loadTweetsFromServer(this.state.keyword);
-
+    this.loadTweetsFromServer(this.state.keyword, this.state.number);
   },
   render: function () {
     this.addId();
@@ -59,6 +70,7 @@ var GetTweets = React.createClass({
       <div className="keywordInput">
         <p> Search by keyword: {decodeURIComponent(this.state.keyword)}</p>
         <SearchBar onKeywordSubmit={this.onKeywordSubmit}/>
+        <p> Number of Tweets: {this.state.number}</p>
         <div className="tweetGrid">
           <Grid tweets={this.state.tweets} removeTweet={this.removeTweet}/>
         </div>
@@ -70,40 +82,3 @@ var GetTweets = React.createClass({
 
 module.exports = GetTweets;
 
-/*ReactDOM.render(<TwitterApp url = "/tweets/"/>,
-  document.getElementById ('app'));*/
-
-/*var React = require('react');
-var TwitterCard = require('./twitterCard');
-var AddRemoveGrid = require('./addRemoveGrid.js');
-
-var GetTweets = React.createClass({
-  getInitialState: function(){
-    return {
-      tweets: []
-    }
-  },
-  getTweets: function(){
-    var self = this;
-    $.ajax({
-      method: 'GET',
-      url: '/twitter'
-    }).done(function(data){
-      self.setState({tweets: data})
-    })
-  },
-  componentDidMount: function(){
-    this.getTweets();
-  },
-  render: function(){
-
-    return(
-      <div>
-          {/*<TwitterCard tweetsArr={this.state.tweets} />}
-          <AddRemoveGrid tweets={this.state.tweets} />
-      </div>
-    )
-  }
-});
-module.exports = GetTweets;
-*/

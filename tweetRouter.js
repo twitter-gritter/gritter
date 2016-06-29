@@ -11,16 +11,33 @@ var T = new Twit({
   timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
 })
 
-router.route('/:keyword') //defines an api endpoint :(colon) signifies a parameter
+router.route('/:queryStr') //defines an api endpoint :(colon) signifies a parameter
   .get(function(req, res){
-    var keyword = req.params.keyword;
-/*    var endpoint = 'search/tweets';
+
+    console.log('PARAMETERS: ' + req.params);
+    console.log(req.params);
+
+    var str = req.params.queryStr;
+    console.log('THIS IS THE STRING: ' + str);
+
+    var pos = str.indexOf("count");
+
+    var query = Number(str.slice(0, (pos - 2)));
+    console.log('QUERY: ' + query);
+
+    var num = str.slice((pos + 7), str.length);
+    console.log('THIS IS THE NUMBER:' + num);
+
+/*
+  var endpoint = 'search/tweets';
 
     req.params.endpoint;  Endpoints: [ 'statuses/retweets_of_me',
-    'statuses/user_timeline', 'statuses/home_timeline', 'search/tweets', followers/ids]*/
+    'statuses/user_timeline', 'statuses/home_timeline', 'search/tweets'*/
     //search/tweets = twitters api endpoint
-    T.get('search/tweets', { q: keyword + ' since:2016-01-30', count: 15 }, function(err, data, response) {
-
+    T.get('search/tweets', { q: query, count: num }, function(err, data, response) {
+/*      if(err){
+        response.send
+      }*/
 
       var tweetArr = data.statuses.map(function(tweet){
 
