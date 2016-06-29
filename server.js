@@ -28,10 +28,13 @@ router.use(function(req, res, next){
   next();
 });
 
+// Define Express Routes
 app.use('/tweets', tweetRouter);
+/*app.use('/timeline', userTimelineRouter);
+app.use('/funny', funnyTweetRouter);
+app.use('/trending', trendingTweetRouter);*/
 
 // Login Information
-
 app.post('/login', passport.authenticate('local-signup'), function(req,res){
   res.redirect('/');
 });
