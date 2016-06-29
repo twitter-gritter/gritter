@@ -1,3 +1,5 @@
+/*login information*/
+
 .loginForm {
   width: 15vw;
   float: right;
@@ -75,15 +77,12 @@ h2, p {
   color: white;
 }
 
-
+/*end of login*/
 
 /*BACKGROUND STYLES*/
 
 
 body {
-  /*background-image: url('http://i.imgur.com/DKw02Ke.jpg');
-  background-position: top-right;
-  background-size: cover;*/
   background-color: rgb(225, 222, 227);
   overflow: scroll;
   font-family: 'Julius Sans One', sans-serif;
@@ -105,6 +104,7 @@ img {
   color: #000;
   background-color: rgb(225, 222, 227);
   font-family: 'Lato', sans-serif;
+  font-size: 2rem;
   /*box-shadow: 5px 5px black;*/
   -webkit-filter: drop-shadow(5px 5px 2px black);
 
@@ -112,11 +112,15 @@ img {
 
 #clear:hover {
   background-color: white;
+  -webkit-filter: drop-shadow(8px 8px 2px black);
 }
 
 #clear:focus {
   outline: none;
-  -webkit-filter: none;
+}
+
+#clear:active {
+  -webkit-filter: drop-shadow(5px 5px 2px black);
 }
 /*TWITTER CARD STUFF */
 
@@ -170,13 +174,13 @@ twitCardHolder:focus {
 
 /*END OF TWITTER CARD STUFF*/
 
+
+
 #bulldog {
   width: 9rem;
   height: 9rem;
   text-align: center;
   border-radius: 50%;
-  box-shadow: 3px 3px 3px black;
-  opacity: .8;
 }
 
 header {
@@ -194,7 +198,6 @@ header {
   padding-top: 2rem;
   margin-top: 0rem;
   letter-spacing: 1rem;
-  opacity: .7;
 }
 
 #break {
@@ -218,14 +221,20 @@ span {
 
 }
 
+#keywordGet {
+  font-family: sans-serif;
+  font-size: 1.70rem;
+  text-transform: uppercase;
+}
+
 .keywordInput {
   margin-top: 5vh;
   text-align: center;
 }
 
 #inputKeyword {
-  margin-bottom: 5vh;
-  height: 10vh;
+  margin-bottom: 3vh;
+  height: 5vh;
   width: 20vw;
   font-size: 3rem;
   text-align: center;
