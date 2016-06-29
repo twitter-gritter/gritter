@@ -153,7 +153,7 @@ img {
 
 
 #twitCardHolder {
-  background-color: rgb(225, 222, 227);
+  background-color: white;
   text-align: left;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -181,10 +181,11 @@ twitCardHolder:active {
   height: 9rem;
   text-align: center;
   border-radius: 50%;
+  background-color: white;
 }
 
 header {
-  background-color: black;
+  background-color: white;
   background-position: center;
   background-size:cover;
   text-align: center;
@@ -198,6 +199,7 @@ header {
   padding-top: 2rem;
   margin-top: 0rem;
   letter-spacing: 1rem;
+  color: #000;
 }
 
 #break {
@@ -263,9 +265,11 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 
 .social-links {
   margin-top: 4vh;
-  color: white;
+  color: #000;
   display: inline-block;
   list-style: none;
+  background-color: white;
+
 }
 
 .github,.twitter,.facebook {
