@@ -98,6 +98,24 @@ img {
   margin-top: 1rem;
 }
 
+/*clear button stuff*/
+
+#clear {
+  border: none;
+  color: #000;
+  background-color: rgb(225, 222, 227);
+  font-family: 'Lato', sans-serif;
+  box-shadow: 1px 1px grey;
+
+}
+
+#clear:hover {
+  background-color: white;
+}
+
+#clear:focus {
+  outline: none;
+}
 /*TWITTER CARD STUFF */
 
 #tweetImage {
