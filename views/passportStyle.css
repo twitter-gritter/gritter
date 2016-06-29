@@ -1,3 +1,5 @@
+/*login information*/
+
 .loginForm {
   width: 15vw;
   float: right;
@@ -75,16 +77,13 @@ h2, p {
   color: white;
 }
 
-
+/*end of login*/
 
 /*BACKGROUND STYLES*/
 
 
 body {
-  /*background-image: url('http://i.imgur.com/DKw02Ke.jpg');
-  background-position: top-right;
-  background-size: cover;*/
-  background-color: rgb(31,31,55);
+  background-color: rgb(225, 222, 227);
   overflow: scroll;
   font-family: 'Julius Sans One', sans-serif;
   font-weight: lighter;
@@ -98,17 +97,42 @@ img {
   margin-top: 1rem;
 }
 
+/*clear button stuff*/
+
+#clear {
+  border: none;
+  color: #000;
+  background-color: rgb(225, 222, 227);
+  font-family: 'Lato', sans-serif;
+  font-size: 2rem;
+  /*box-shadow: 5px 5px black;*/
+  -webkit-filter: drop-shadow(5px 5px 2px black);
+
+}
+
+#clear:hover {
+  background-color: white;
+  -webkit-filter: drop-shadow(8px 8px 2px black);
+}
+
+#clear:focus {
+  outline: none;
+}
+
+#clear:active {
+  -webkit-filter: drop-shadow(5px 5px 2px black);
+}
 /*TWITTER CARD STUFF */
 
 #tweetImage {
-  width: 6rem;
-  height: 6rem;
-  box-shadow: 2px 2px black;
+  margin-top: -2rem;
+  width: 6.5rem;
+  height: 6.5rem;
+  box-shadow: 4px 4px 4px black;
 }
 
 #tweetImage:hover {
-  width: 7rem;
-  height: 7rem;
+  box-shadow: 10px 10px 10px black;
 }
 
 #screenName {
@@ -124,30 +148,43 @@ img {
 
 #tweetFont {
   font-family: 'Lato', sans-serif;
-
 }
 
+
+
 #twitCardHolder {
+  background-color: rgb(225, 222, 227);
   text-align: left;
   padding-left: 2rem;
   padding-right: 2rem;
+  -webkit-filter: drop-shadow(6px 6px 6px black);
+}
+
+twitCardHolder:active {
+  -webkit-filter: drop-shadow(10px 10px 10px black);
+}
+
+
+#twitCardHolder > #twitterLogo {
+  text-align: right;
+  font-size: 3rem;
 }
 
 
 
 /*END OF TWITTER CARD STUFF*/
 
+
+
 #bulldog {
-  width: 8rem;
-  height: 8rem;
+  width: 9rem;
+  height: 9rem;
   text-align: center;
   border-radius: 50%;
-  box-shadow: 3px 3px 3px black;
-  opacity: .8;
 }
 
 header {
-  background-image: url('http://i.imgur.com/D787ZLL.jpg');
+  background-color: black;
   background-position: center;
   background-size:cover;
   text-align: center;
@@ -155,13 +192,12 @@ header {
   font-weight: lighter;
   font-size: 3rem;
   color: white;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid black;
 }
 #title {
   padding-top: 2rem;
   margin-top: 0rem;
   letter-spacing: 1rem;
-  opacity: .7;
 }
 
 #break {
@@ -173,25 +209,22 @@ header {
   margin-right: 25vw;
 }
 
-/*.searchContainer {
-  width: 50vw;
-  height: 25vh;
-  margin-top: -2.5vh;
-  text-align: center;
-  /*-webkit-filter: grayscale(0.5) blur(10px);*/
-  transition-duration: 2s;
-}*/
+span {
+  color: black;
+  font-weight: bolder;
+}
 
-/*.searchContainer:hover {
-  width: 50vw;
-  height: 25vh;
-  text-align: center;
-  -webkit-filter: none;
-  transition-duration: 2s;
-}*/
+
 
 .container {
   width: 75vw;
+
+}
+
+#keywordGet {
+  font-family: sans-serif;
+  font-size: 1.70rem;
+  text-transform: uppercase;
 }
 
 .keywordInput {
@@ -200,15 +233,14 @@ header {
 }
 
 #inputKeyword {
-
-  margin-bottom: 5vh;
-  height: 10vh;
+  margin-bottom: 3vh;
+  height: 5vh;
   width: 20vw;
   font-size: 3rem;
   text-align: center;
   background-color: transparent;
-  color: white;
-  border: .5px solid white;
+  color: black;
+  border: .5px solid black;
 }
 
 input:focus {
@@ -217,24 +249,6 @@ input:focus {
 input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: white;
 }
-
-.searchButton {
-  width: 8vw;
-  font-size: 2rem;
-  font-weight: lighter;
-  border: 1px solid white;
-  background-color: transparent;
-  color: white;
-  margin-top: -15vh;
-
-
-}
-
-.searchButton:hover {
-  border: 1px solid #2C75FF;
-  color: #0892D0;
-}
-
 .social {
   margin-right: 25vw;
   margin-left: 25vw;
@@ -274,134 +288,3 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   background-color: white;
   box-shadow: 4px 4px #000;
 }
-
-
-
-
-
-
-/*header {
-  margin-top: 2rem;
-  text-align: center;
-  width: 100vw;
-  font-weight: lighter;
-  font-size: 3rem;
-
-}
-
-
-
-hr {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), white, rgba(0, 0, 0, 0));
-    text-shadow: 2px 2px black;
-    margin-left: 25vw;
-    margin-right: 25vw;
-}
-
-img {
-  width: 8rem;
-  height: 8rem;
-  text-align: center;
-  border-radius: 50%;
-  box-shadow: 3px 3px 3px black;
-}
-
-#title {
-  text-align: center;
-  color: white;
-  text-shadow: 3px 3px black;
-  letter-spacing: .5rem;
-  opacity: .9;
-
-}
-
-#title:hover {
-  -webkit-transform:rotateY(180deg);
-  -moz-transform:rotateY(180deg);
-  -o-transform:rotateY(180deg);
-  -ms-transform:rotateY(180deg);
-}
-
-.container {
-  width: 30vw;
-  height: 20vh;
-  margin-top: 10rem;
-  -webkit-filter: grayscale(0.5) blur(10px);
-  transition-duration: 2s;
-}
-
-.container:hover {
-  width: 50vw;
-  height: 25vh;
-  margin-top: 10rem;
-  -webkit-filter: none;
-  transition-duration: 2s;
-}
-
-.keywordInput {
-  border: 1px solid #fff;
-  text-align: center;
-}
-
-input:focus {
-  outline:none;
-}
-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  /*color: white;
-}
-
-#inputKeyword {
-  margin-top: 15vh;
-  margin-bottom: 15vh;
-  height: 10vh;
-  width: 20vw;
-  font-size: 3rem;
-  text-align: left;
-  padding-left: 3rem;
-  background-color: transparent;
-  color: white;
-  border: .5px solid white;
-}
-
-.searchDiv {
-  margin-top: -6rem;
-  margin-bottom: 4rem;
-}
-
-.searchButton {
-  width: 15vw;
-  font-size: 3rem;
-  border: 1px solid white;
-  background-color: transparent;
-  color: white;
-
-}
-
-.searchButton:hover {
-  border: 1px solid #2C75FF;
-  color: #0892D0;
-}
-
-.social {
-  text-align: center;
-  margin-right: 4vw;
-}
-
-.social-links {
-  color: white;
-  display: inline-block;
-  list-style: none;
-  margin-top: 4rem;
-}
-
-.github,.twitter,.facebook {
-  display: inline-block;
-  font-size: 4rem;
-  padding-left: 2rem;
-}
-
-.github:hover,.twitter:hover,.facebook:hover {
-  color:#0892D0;
-}*/

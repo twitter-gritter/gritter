@@ -44,7 +44,7 @@ var GetTweets = React.createClass({
     console.log(queryString);
 
     $.ajax({
-      url: "/tweets/" + queryString, 
+      url: "/tweets/" + queryString,
       method: 'GET'
     }).done(function(results){
       console.log("after ajax " + results);
@@ -71,21 +71,19 @@ var GetTweets = React.createClass({
     this.addId();
 
       return (
-    <div className = "container">
-      <div className="keywordInput">
-        <p> Search by keyword: {decodeURIComponent(this.state.keyword)}</p>
-        <SearchBar onKeywordSubmit={this.onKeywordSubmit}/>
-        <p> Number of Tweets: {this.state.number} </p>
-        <ClearButton id="clear" clearTweets={this.clearTweets}/>
-        <div className="tweetGrid">
-        <Grid tweets={this.state.tweets} removeTweet={this.removeTweet}/>
+        <div className = "container">
+          <div className="keywordInput">
+            <p id="keywordGet"> Search by keyword: {decodeURIComponent(this.state.keyword)}</p>
+            <SearchBar onKeywordSubmit={this.onKeywordSubmit}/>
+            <ClearButton clearTweets={this.clearTweets}/>
+            <div className="tweetGrid">
+              <Grid tweets={this.state.tweets} removeTweet={this.removeTweet}/>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
     )
   }
 });
 
 
 module.exports = GetTweets;
-
