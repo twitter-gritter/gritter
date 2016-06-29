@@ -13,7 +13,7 @@ var _ = require('lodash');
 
 var Grid = require('./grid.js');
 var SearchBar = require('./searchBar.js');
-
+var ClearButton = require('./clearButton.js');
 
 var GetTweets = React.createClass({
 
@@ -22,7 +22,7 @@ var GetTweets = React.createClass({
     return{
       tweets: [],
       keyword: 'Reactjs',
-      numOfTweets: 2
+      number: 4
     }
   },
 
@@ -44,6 +44,9 @@ var GetTweets = React.createClass({
   removeTweet: function(id){
     this.setState({tweets: _.reject(this.state.tweets, {id: id})});
   },
+  clearTweets: function(){
+    this.setState({tweets: []});
+  },
   addId: function(){
     for(var i = 0; i <  this.state.tweets.length; i++){
       this.state.tweets[i].id=i;
@@ -55,56 +58,19 @@ var GetTweets = React.createClass({
   },
   render: function () {
     this.addId();
-  return (
-    <div className = "container">
-      <div className="keywordInput">
-        <p> Search by keyword: {decodeURIComponent(this.state.keyword)}</p>
-        <SearchBar onKeywordSubmit={this.onKeywordSubmit}/>
-        <div className="tweetGrid">
-          <Grid tweets={this.state.tweets} removeTweet={this.removeTweet}/>
+      return (
+        <div className = "container">
+          <div className="keywordInput">
+            <p> Search by keyword: {decodeURIComponent(this.state.keyword)}</p>
+            <SearchBar onKeywordSubmit={this.onKeywordSubmit}/>
+            <ClearButton clearTweets={this.clearTweets}/>
+            <div className="tweetGrid">
+              <Grid tweets={this.state.tweets} removeTweet={this.removeTweet}/>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    )
-  }
+        )
+      }
 });
 
 module.exports = GetTweets;
-
-/*ReactDOM.render(<TwitterApp url = "/tweets/"/>,
-  document.getElementById ('app'));*/
-
-/*var React = require('react');
-var TwitterCard = require('./twitterCard');
-var AddRemoveGrid = require('./addRemoveGrid.js');
-
-var GetTweets = React.createClass({
-  getInitialState: function(){
-    return {
-      tweets: []
-    }
-  },
-  getTweets: function(){
-    var self = this;
-    $.ajax({
-      method: 'GET',
-      url: '/twitter'
-    }).done(function(data){
-      self.setState({tweets: data})
-    })
-  },
-  componentDidMount: function(){
-    this.getTweets();
-  },
-  render: function(){
-
-    return(
-      <div>
-          {/*<TwitterCard tweetsArr={this.state.tweets} />}
-          <AddRemoveGrid tweets={this.state.tweets} />
-      </div>
-    )
-  }
-});
-module.exports = GetTweets;
-*/

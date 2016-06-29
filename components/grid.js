@@ -5,12 +5,14 @@
 var React = require('react');
 var ReactGridLayout = require('react-grid-layout');
 var _ = require('lodash');
+var CircleEx = require('react-icons/lib/fa/times-circle.js');
+
 
 var TwitterCard = require('./twitterCard.js');
 
 var Grid = React.createClass({
   getDefaultProps(){
-    return{
+    return {
       className: "layout",
       items: 10,
       cols: 12,
@@ -18,12 +20,21 @@ var Grid = React.createClass({
       verticalCompact:false
     }
   },
+  makeLayout(){
+    
+  },
+  onLayoutChange: function(layout){
+    this.setState({layout: layout});
+  },
   createElement(el){
+
     return(
-      <div id="gridCardArea" key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5}} >
-      <div>  <img src={el.profile_img}/><h3>{el.screen_name}:</h3> </div>
-        <div className="remove" onClick={this.props.removeTweet.bind(null, el.id)}>X </div>
-        <p>"{el.text}..."</p>
+      <div id="twitCardHolder" key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5}} >
+        <img id="tweetImage" src={el.profile_img}/><h4 id="screenName">{el.screen_name}:</h4>
+        <h5 id="tweetFont">"{el.text}..."</h5>
+        <div onClick= {this.props.removeTweet.bind(null, el.id)}>
+          <CircleEx />
+        </div>
       </div>
     )
   },
@@ -36,9 +47,9 @@ var Grid = React.createClass({
     ];
 
     return (
-    <ReactGridLayout  layout={layout} cols={12} rowHeight={30} width={1200}>
-        {_.map(this.props.tweets, this.createElement)}
-    </ReactGridLayout>
+      <ReactGridLayout  layout={layout} cols={12} rowHeight={30} width={1200}>
+          {_.map(this.props.tweets, this.createElement)}
+      </ReactGridLayout>
     )
   }
 });
