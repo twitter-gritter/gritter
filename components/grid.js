@@ -22,7 +22,7 @@ var Grid = React.createClass({
     }
   },
   makeLayout(){
-    
+
   },
   onLayoutChange: function(layout){
     this.setState({layout: layout});
@@ -35,7 +35,9 @@ var Grid = React.createClass({
         <img id="tweetImage" src={el.profile_img}/>
         <h4 id="screenName">{el.screen_name}:</h4>
         <h5 id="tweetFont">"{el.text}..."</h5>
-
+        <div onClick= {this.props.removeTweet.bind(null, el.id)}>
+          <CircleEx />
+        </div>
 
 
 
