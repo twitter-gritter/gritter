@@ -249,10 +249,6 @@ input:focus {
 input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: white;
 }
-
-
-
-
 .social {
   margin-right: 25vw;
   margin-left: 25vw;
