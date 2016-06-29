@@ -28,9 +28,10 @@ var Grid = React.createClass({
         <img id="tweetImage" src={el.profile_img}/>
         <h4 id="screenName">{el.screen_name}:</h4>
         <h5 id="tweetFont">"{el.text}..."</h5>
-        {/*<div>
-          <CircleEx />
-        </div>*/}
+
+
+
+
       </div>
     )
   },
