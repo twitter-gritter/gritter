@@ -43,6 +43,7 @@ var GetTweets = React.createClass({
     var queryString = keyword + ' since:2016-01-30, count: ' + number;
     console.log(queryString);
     $.ajax({
+
       url: "/tweets/" + queryString, 
       method: 'GET'
     }).done(function(results){
@@ -72,7 +73,7 @@ var GetTweets = React.createClass({
         <SearchBar onKeywordSubmit={this.onKeywordSubmit}/>
         <p> Number of Tweets: {this.state.number}</p>
         <div className="tweetGrid">
-          <Grid tweets={this.state.tweets} removeTweet={this.removeTweet}/>
+        <Grid tweets={this.state.tweets} removeTweet={this.removeTweet}/>
         </div>
       </div>
     </div>

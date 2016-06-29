@@ -22,22 +22,15 @@ router.route('/:queryStr') //defines an api endpoint :(colon) signifies a parame
 
     var pos = str.indexOf("count");
 
-    var query = Number(str.slice(0, (pos - 2)));
+    var query = str.slice(0, (pos - 2));
     console.log('QUERY: ' + query);
 
-    var num = str.slice((pos + 7), str.length);
+    var num = Number(str.slice((pos + 7), str.length));
     console.log('THIS IS THE NUMBER:' + num);
 
-/*
-  var endpoint = 'search/tweets';
 
-    req.params.endpoint;  Endpoints: [ 'statuses/retweets_of_me',
-    'statuses/user_timeline', 'statuses/home_timeline', 'search/tweets'*/
-    //search/tweets = twitters api endpoint
     T.get('search/tweets', { q: query, count: num }, function(err, data, response) {
-/*      if(err){
-        response.send
-      }*/
+
 
       var tweetArr = data.statuses.map(function(tweet){
 

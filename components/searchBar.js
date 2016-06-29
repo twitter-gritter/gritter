@@ -43,7 +43,7 @@ var SearchBar = React.createClass({
 					 value={this.state.keyword} type="text" autoComplete="off" id="inputKeyword" />
 
 					 <input onChange={this.handleNumberChange}
-					 value={this.state.number} type= "number" min="1" id="inputNumber" />
+					 value={this.state.number} type= "number" min="1" max="50" id="inputNumber" />
 
 					 <div>
 					<button className="btn searchButton"><FaArrowRight /></button>
