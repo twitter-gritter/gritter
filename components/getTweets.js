@@ -13,7 +13,7 @@ var _ = require('lodash');
 
 var Grid = require('./grid.js');
 var SearchBar = require('./searchBar.js');
-
+var ClearButton = require('./clearButton.js');
 
 var GetTweets = React.createClass({
 
@@ -62,6 +62,7 @@ var GetTweets = React.createClass({
           <div className="keywordInput">
             <p> Search by keyword: {decodeURIComponent(this.state.keyword)}</p>
             <SearchBar onKeywordSubmit={this.onKeywordSubmit}/>
+            <ClearButton clearTweets={this.clearTweets}/>
             <div className="tweetGrid">
               <Grid tweets={this.state.tweets} removeTweet={this.removeTweet}/>
             </div>
