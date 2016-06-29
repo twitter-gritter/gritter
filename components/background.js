@@ -15,7 +15,7 @@ var Background = React.createClass({
           <h1 id="title">Gritter</h1>
           <div className = "logo">
           <LoginForm />
-            <img id ="bulldog" src="./images/bulldog.jpg" />
+            <img id ="bulldog" src="./images/LilDoggo.png" />
             <div className = "social">
               <ul className = "social-links">
               <li className="github"><i><FaGithubSquare /></i></li>
