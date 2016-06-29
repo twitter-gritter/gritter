@@ -243,6 +243,10 @@ span {
   border: .5px solid black;
 }
 
+.searchButton {
+  display: none;
+}
+
 input:focus {
   outline:none;
 }

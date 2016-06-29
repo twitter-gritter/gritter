@@ -16,7 +16,7 @@ var SearchBar = React.createClass({
 			newKeyword: event.target.value
 		})
 	},
-	handleNumberChange: function(event){	
+	handleNumberChange: function(event){
 		this.setState({
 			newNumber: event.target.value
 		})
