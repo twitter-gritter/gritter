@@ -30,7 +30,7 @@ var SearchBar = React.createClass({
 					<input onChange={this.handleKeywordChange}
 					 value={this.state.keyword} type="text" autoComplete="off" id="inputKeyword" />
 					 <div>
-					<button className="btn searchButton"><FaArrowRight /></button>
+					{/*<button className="btn searchButton"><FaArrowRight /></button>*/}
 					</div>
 				</form>
 			</div>

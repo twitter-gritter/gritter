@@ -23,7 +23,6 @@ h2, p {
   color: white;
 }
 
-
 .loginDropdown {
   text-align: right;
   margin-right: 2rem;
@@ -99,6 +98,45 @@ img {
   margin-top: 1rem;
 }
 
+/*TWITTER CARD STUFF */
+
+#tweetImage {
+  width: 6rem;
+  height: 6rem;
+  box-shadow: 2px 2px black;
+}
+
+#tweetImage:hover {
+  width: 7rem;
+  height: 7rem;
+}
+
+#screenName {
+  font-family: 'Lato', sans-serif;
+  text-decoration: underline;
+}
+
+#screenName:hover {
+  font-family: 'Lato', sans-serif;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#tweetFont {
+  font-family: 'Lato', sans-serif;
+
+}
+
+#twitCardHolder {
+  text-align: left;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+
+
+/*END OF TWITTER CARD STUFF*/
+
 #bulldog {
   width: 8rem;
   height: 8rem;
@@ -135,14 +173,14 @@ header {
   margin-right: 25vw;
 }
 
-.searchContainer {
+/*.searchContainer {
   width: 50vw;
   height: 25vh;
   margin-top: -2.5vh;
   text-align: center;
   /*-webkit-filter: grayscale(0.5) blur(10px);*/
   transition-duration: 2s;
-}
+}*/
 
 /*.searchContainer:hover {
   width: 50vw;
@@ -163,7 +201,7 @@ header {
 
 #inputKeyword {
 
-  margin-bottom: 15vh;
+  margin-bottom: 5vh;
   height: 10vh;
   width: 20vw;
   font-size: 3rem;
@@ -236,6 +274,7 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   background-color: white;
   box-shadow: 4px 4px #000;
 }
+
 
 
 

@@ -5,6 +5,8 @@
 var React = require('react');
 var ReactGridLayout = require('react-grid-layout');
 var _ = require('lodash');
+var CircleEx = require('react-icons/lib/fa/times-circle.js');
+
 
 var TwitterCard = require('./twitterCard.js');
 
@@ -20,10 +22,12 @@ var Grid = React.createClass({
   },
   createElement(el){
     return(
-      <div id="gridCardArea" key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5}} >
-      <div>  <img src={el.profile_img}/><h3>{el.screen_name}:</h3> </div>
-        <div className="remove" onClick={this.props.removeTweet.bind(null, el.id)}>X </div>
-        <p>"{el.text}..."</p>
+      <div id="twitCardHolder" key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5}} >
+        <img id="tweetImage" src={el.profile_img}/><h4 id="screenName">{el.screen_name}:</h4>
+        <h5 id="tweetFont">"{el.text}..."</h5>
+        <div>
+          <CircleEx />
+        </div>
       </div>
     )
   },
