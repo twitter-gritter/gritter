@@ -21,7 +21,8 @@ var GetTweets = React.createClass({
   getInitialState: function(){
     return{
       tweets: [],
-      keyword: 'Reactjs'
+      keyword: 'Reactjs',
+      numOfTweets: 2
     }
   },
 
