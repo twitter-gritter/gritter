@@ -101,9 +101,10 @@ img {
 /*TWITTER CARD STUFF */
 
 #tweetImage {
-  width: 6rem;
-  height: 6rem;
-  box-shadow: 2px 2px black;
+  margin-top: -3rem;
+  width: 6.5rem;
+  height: 6.5rem;
+  box-shadow: 4px 4px 4px black;
 }
 
 #tweetImage:hover {
@@ -127,10 +128,19 @@ img {
 
 }
 
+
+
 #twitCardHolder {
+  background-color: rgb(225, 222, 227);
   text-align: left;
   padding-left: 2rem;
   padding-right: 2rem;
+  box-shadow: 5px 5px grey;
+}
+
+#twitCardHolder > #twitterLogo {
+  text-align: right;
+  font-size: 3rem;
 }
 
 
