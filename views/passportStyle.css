@@ -193,7 +193,7 @@ header {
   font-weight: lighter;
   font-size: 3rem;
   color: white;
-  border-bottom: 2px solid black;
+  border-bottom: 5px solid black;
 }
 #title {
   padding-top: 2rem;
@@ -219,7 +219,7 @@ span {
 
 
 .container {
-  width: 75vw;
+  max-width: 75vw;
 
 }
 
