@@ -160,7 +160,7 @@ img {
   -webkit-filter: drop-shadow(6px 6px 6px black);
 }
 
-twitCardHolder:focus {
+twitCardHolder:active {
   -webkit-filter: drop-shadow(10px 10px 10px black);
 }
 
