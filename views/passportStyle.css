@@ -125,11 +125,17 @@ img {
 /*TWITTER CARD STUFF */
 
 #tweetImage {
-  margin-top: -2rem;
-  width: 6.5rem;
-  height: 6.5rem;
+  margin-top: .5rem;
+  width: 6rem;
+  height: 6rem;
   box-shadow: 4px 4px 4px black;
 }
+
+#twitCardHolder > #twitterLogo {
+  font-size: 1.5rem;
+  margin-top: -5rem;
+}
+
 
 #tweetImage:hover {
   box-shadow: 10px 10px 10px black;
@@ -150,9 +156,6 @@ img {
   font-family: 'Lato', sans-serif;
 }
 
-#deleteButton {
-  margin-top: -1rem;
-}
 
 
 #twitCardHolder {
@@ -168,9 +171,17 @@ twitCardHolder:active {
 }
 
 
-#twitCardHolder > #twitterLogo {
+
+#deleteButton {
+  color: black;
   text-align: right;
-  font-size: 3rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#lock {
+  text-align: right;
+  font-size: 2rem;
 }
 
 
@@ -221,8 +232,9 @@ span {
 
 
 
-.container {
-  max-width: 75vw;
+.counterDiv {
+  display: flex;
+  justify-content: center;
 }
 
 #keywordGet {
@@ -247,16 +259,13 @@ span {
   border: .5px solid black;
 }
 
-.counterDiv {
-  display: flex;
-  justify-content: center;
-}
-
 #inputNumber {
-  width: 5rem;
-  margin-top: -2rem;
-  font-size: 2rem;
-  font-family: sans-serif;
+  width: 6rem;
+  height: 4rem;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+
 }
 
 .searchButton {
