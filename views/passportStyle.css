@@ -150,6 +150,9 @@ img {
   font-family: 'Lato', sans-serif;
 }
 
+#deleteButton {
+  margin-top: -1rem;
+}
 
 
 #twitCardHolder {
@@ -244,6 +247,18 @@ span {
   border: .5px solid black;
 }
 
+.counterDiv {
+  display: flex;
+  justify-content: center;
+}
+
+#inputNumber {
+  width: 5rem;
+  margin-top: -2rem;
+  font-size: 2rem;
+  font-family: sans-serif;
+}
+
 .searchButton {
   display: none;
 }
@@ -264,7 +279,7 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 
 .social-links {
   margin-top: 4vh;
-  color: #000;
+  color: rgb(68, 67, 73);
   display: inline-block;
   list-style: none;
   background-color: white;
