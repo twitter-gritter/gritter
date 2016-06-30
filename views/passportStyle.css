@@ -253,7 +253,7 @@ span {
   margin-bottom: 3vh;
   height: 5vh;
   width: 20vw;
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
   background-color: transparent;
   color: black;
@@ -309,14 +309,25 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 
 
 
-.tweetGrid {
-  width: 75vw;
-  height: auto;
-}
 
 .tweetsContainer {
   color: #000;
   font-size: .5rem;
   background-color: white;
   box-shadow: 4px 4px #000;
+}
+
+@media only screen and (max-width: 1300px) {
+  .container {
+    width: 100vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .github,.twitter,.facebook {
+    font-size: 2rem;
+  }
+  #inputKeyword {
+    width: 30vw;
+  }
 }
