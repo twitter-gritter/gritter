@@ -273,11 +273,13 @@ span {
 }
 
 #inputNumber {
-  width: 6rem;
+  width: 8rem;
   height: 4rem;
   font-size: 3rem;
+  font-family: sans-serif;
   text-align: center;
   margin-bottom: 2rem;
+
 }
 
 .searchButton {
