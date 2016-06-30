@@ -29,7 +29,6 @@ var Grid = React.createClass({
     this.setState({layout: layout});
   },
   createElement(el){
-
     return(
       <div id="twitCardHolder" key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5}} >
         <div id="deleteButton" onClick= {this.props.removeTweet.bind(null, el.id)}><CircleEx /></div>
