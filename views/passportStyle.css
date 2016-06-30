@@ -9,7 +9,7 @@
 
 
 h2, p {
-  color: black;
+  color: white;
   font-size: 1.5rem;
   text-align: center;
   font-weight: lighter;
@@ -21,8 +21,8 @@ h2, p {
 }
 
 #logoutButton:hover {
-  background-color: grey;
-  color: white;
+  background-color: white;
+  color: #000;
 }
 
 .loginDropdown {
@@ -30,6 +30,7 @@ h2, p {
   margin-right: 2rem;
   margin-top: -7rem;
   font-weight: bolder;
+  color: black;
 }
 
 .loginDropdown:focus {
@@ -53,8 +54,7 @@ h2, p {
 }
 
 #dropdown-button:hover {
-  background-color: white;
-  color: black;
+  color: red;
 }
 
 
@@ -125,19 +125,28 @@ img {
 /*TWITTER CARD STUFF */
 
 #tweetImage {
-  margin-top: -2rem;
-  width: 6.5rem;
-  height: 6.5rem;
+  margin-top: -4rem;
+  width: 6rem;
+  height: 6rem;
   box-shadow: 4px 4px 4px black;
+  padding-bottom: .5rem;
 }
 
 #tweetImage:hover {
   box-shadow: 10px 10px 10px black;
 }
 
+#twitCardHolder > #twitterLogo {
+  font-size: 5rem;
+  margin-top: -6rem;
+  text-align: center;
+  margin-left: 3rem;
+}
+
 #screenName {
   font-family: 'Lato', sans-serif;
   text-decoration: underline;
+  margin-top: -1rem;
 }
 
 #screenName:hover {
@@ -165,9 +174,26 @@ twitCardHolder:active {
 }
 
 
-#twitCardHolder > #twitterLogo {
+
+#deleteButton {
+  color: black;
   text-align: right;
-  font-size: 3rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#deleteButton:hover {
+  color: red;
+}
+
+#lock {
+  text-align: right;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#lock:hover {
+  color: red;
 }
 
 
@@ -218,8 +244,9 @@ span {
 
 
 
-.container {
-  max-width: 75vw;
+.counterDiv {
+  display: flex;
+  justify-content: center;
 }
 
 #keywordGet {
@@ -237,11 +264,19 @@ span {
   margin-bottom: 3vh;
   height: 5vh;
   width: 20vw;
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
   background-color: transparent;
   color: black;
-  border: .5px solid black;
+  border: 2px solid black;
+}
+
+#inputNumber {
+  width: 6rem;
+  height: 4rem;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .searchButton {
@@ -264,7 +299,7 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 
 .social-links {
   margin-top: 4vh;
-  color: #000;
+  color: rgb(68, 67, 73);
   display: inline-block;
   list-style: none;
   background-color: white;
@@ -284,14 +319,25 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 
 
 
-.tweetGrid {
-  width: 75vw;
-  height: auto;
-}
 
 .tweetsContainer {
   color: #000;
   font-size: .5rem;
   background-color: white;
   box-shadow: 4px 4px #000;
+}
+
+@media only screen and (max-width: 1300px) {
+  .container {
+    width: 100vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .github,.twitter,.facebook {
+    font-size: 2rem;
+  }
+  #inputKeyword {
+    width: 30vw;
+  }
 }
