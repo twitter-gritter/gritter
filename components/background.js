@@ -18,7 +18,7 @@ var Background = React.createClass({
             <img id ="bulldog" src="./images/LilDoggo.png" />
             <div className = "social">
               <ul className = "social-links">
-              <li a href="github.com" className="github"><i><FaGithubSquare /></i></li>
+              <li className="github"><i><FaGithubSquare /></i></li>
               <li className="twitter"><i><FaTwitterSquare /></i></li>
               <li className="facebook"><i><FaFacebookSquare /></i></li>
               </ul>
