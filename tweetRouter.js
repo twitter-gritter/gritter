@@ -28,11 +28,11 @@ router.route('/:queryStr') //defines an api endpoint :(colon) signifies a parame
     var num = Number(str.slice((pos + 7), str.length));
     console.log('THIS IS THE NUMBER:' + num);
 
-
+    var tweetArr = [];
     T.get('search/tweets', { q: query, count: num }, function(err, data, response) {
 
 
-      var tweetArr = data.statuses.map(function(tweet){
+      tweetArr = data.statuses.map(function(tweet){
 
         return {
           key: tweet.id,
