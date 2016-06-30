@@ -1,4 +1,4 @@
-
+ 
 // GetTweets
 //  Grid
 //    Cards
@@ -14,14 +14,14 @@ var SearchBar = require('./searchBar.js');
 
 
 var GetTweets = React.createClass({
-  
+
 
   getInitialState: function(){
     return{
       tweets: [],
       keyword: 'Reactjs'
       endpoint: 'search/tweets'
-    } 
+    }
   },
   onEndpointSubmit: function(newEndpoint){
     this.setState({endpoint: newEndpoint});
