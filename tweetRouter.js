@@ -35,7 +35,7 @@ router.route('/:queryStr') //defines an api endpoint :(colon) signifies a parame
       tweetArr = data.statuses.map(function(tweet){
 
         return {
-          key: tweet.id,
+          key: tweet.id_str,
           text: tweet.text,
           screen_name: tweet.user.screen_name,
           created_at: tweet.created_at,

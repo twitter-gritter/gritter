@@ -13,13 +13,13 @@ require('./passport/passport.js')(passport);
 
 var app = express();
 // For login use
-app.use(session(config));
+app.use(session({ secret: 'gritter tamer', cookie: { maxAge: 60000 }, resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/views'));
 
 var router = express.Router();
