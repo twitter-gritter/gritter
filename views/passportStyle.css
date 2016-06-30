@@ -21,8 +21,8 @@ h2, p {
 }
 
 #logoutButton:hover {
-  background-color: grey;
-  color: white;
+  background-color: white;
+  color: #000;
 }
 
 .loginDropdown {
@@ -179,10 +179,18 @@ twitCardHolder:active {
   cursor: pointer;
 }
 
+#deleteButton:hover {
+  color: red;
+}
+
 #lock {
   text-align: right;
   font-size: 2rem;
   cursor: pointer;
+}
+
+#lock:hover {
+  color: red;
 }
 
 
@@ -257,7 +265,7 @@ span {
   text-align: center;
   background-color: transparent;
   color: black;
-  border: .5px solid black;
+  border: 2px solid black;
 }
 
 #inputNumber {
@@ -266,7 +274,6 @@ span {
   font-size: 3rem;
   text-align: center;
   margin-bottom: 2rem;
-
 }
 
 .searchButton {
