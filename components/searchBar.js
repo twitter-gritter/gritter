@@ -16,14 +16,14 @@ var SearchBar = React.createClass({
 			newKeyword: event.target.value
 		})
 	},
-	handleNumberChange: function(event){	
+	handleNumberChange: function(event){
 		var input = new RegExp('^([0-9]|[0-9][0-9])$');
 		if (event.target.value > 25) {
 			alert('Too many tweets! Please enter a number between 1 and 25.');
 		} else if (event.target.value < 1 || input.test(event.target.value) === false) {
 			alert('Invalid input. Please enter a number between 1 and 25.');
-		} 
-			 
+		}
+
 
 		this.setState({
 				newNumber: event.target.value
@@ -45,19 +45,17 @@ var SearchBar = React.createClass({
 		return (
 			<div>
 				<form onSubmit = {this.handleFormSubmit}>
-
 					<input onChange={this.handleKeywordChange}
 					 value={this.state.keyword} type="text" autoComplete="off" id="inputKeyword" />
-
+					 <div className="counterDiv">
 					 <input onChange={this.handleNumberChange}
-					 value={this.state.number}  type= "text" min="1" max="25" id="inputNumber" />
-
+					 value={this.state.number}  type= "text" autoComplete="off" min="" max="25" id="inputNumber" />
 					 <div>
-					<button className="btn searchButton"><FaArrowRight /></button>
+						<button className="btn searchButton"><FaArrowRight /></button>
 					</div>
-
+				 </div>
 				</form>
-			</div>
+		</div>
 			)
 	}
 });
