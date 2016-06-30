@@ -125,25 +125,28 @@ img {
 /*TWITTER CARD STUFF */
 
 #tweetImage {
-  margin-top: .5rem;
+  margin-top: -4rem;
   width: 6rem;
   height: 6rem;
   box-shadow: 4px 4px 4px black;
+  padding-bottom: .5rem;
 }
-
-#twitCardHolder > #twitterLogo {
-  font-size: 1.5rem;
-  margin-top: -5rem;
-}
-
 
 #tweetImage:hover {
   box-shadow: 10px 10px 10px black;
 }
 
+#twitCardHolder > #twitterLogo {
+  font-size: 5rem;
+  margin-top: -6rem;
+  text-align: center;
+  margin-left: 3rem;
+}
+
 #screenName {
   font-family: 'Lato', sans-serif;
   text-decoration: underline;
+  margin-top: -1rem;
 }
 
 #screenName:hover {
