@@ -24,11 +24,6 @@ var Grid = React.createClass({
       rowHeight: 30
     }
   },
-  getInitialState(){
-    return {
-      layout: this.state.tweets;
-    }
-  },
   makeLayout(){
     var p = this.props;
     return _.map(p.tweets, function(tweet, i){
