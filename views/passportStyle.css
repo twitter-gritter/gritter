@@ -87,8 +87,8 @@ body {
   overflow: scroll;
   font-family: 'Julius Sans One', sans-serif;
   font-weight: lighter;
-
 }
+
 
 img {
   width: 5rem;
@@ -99,20 +99,29 @@ img {
 
 /*clear button stuff*/
 
+#clearDiv {
+  margin-top: 2rem;
+  width: 90vw;
+  display: flex;
+  justify-content: flex-end;
+
+
+}
+
 #clear {
   border: none;
   color: #000;
-  background-color: rgb(225, 222, 227);
+  background-color: transparent;
   font-family: 'Lato', sans-serif;
-  font-size: 2rem;
+  font-size: 3rem;
+  margin-right: 5rem;
   /*box-shadow: 5px 5px black;*/
-  -webkit-filter: drop-shadow(5px 5px 2px black);
 
 }
 
 #clear:hover {
-  background-color: white;
-  -webkit-filter: drop-shadow(8px 8px 2px black);
+  background-color: transparent;
+  color: red;
 }
 
 #clear:focus {
@@ -125,7 +134,7 @@ img {
 /*TWITTER CARD STUFF */
 
 #tweetImage {
-  margin-top: -4rem;
+  margin-top: .5rem;
   width: 6rem;
   height: 6rem;
   box-shadow: 4px 4px 4px black;
@@ -136,18 +145,12 @@ img {
   box-shadow: 10px 10px 10px black;
 }
 
-#twitCardHolder > #twitterLogo {
-  font-size: 5rem;
-  margin-top: -6rem;
-  text-align: center;
-  margin-left: 3rem;
-  color: #0892D0;
-}
+
 
 #screenName {
   font-family: 'Lato', sans-serif;
   text-decoration: underline;
-  margin-top: -1rem;
+  margin-top: -4rem;
 }
 
 #screenName:hover {
@@ -159,8 +162,6 @@ img {
 #tweetFont {
   font-family: 'Lato', sans-serif;
 }
-
-
 
 #twitCardHolder {
   background-color: white;
@@ -174,28 +175,43 @@ twitCardHolder:active {
   -webkit-filter: drop-shadow(10px 10px 10px black);
 }
 
-
+#iconDiv {
+  display: flex;
+  align-content: flex-end;
+  flex-direction: column-reverse;
+  width: auto;
+  font-size: 2rem;
+  float: right;
+  margin-right: -1rem;
+}
 
 #deleteButton {
-  color: black;
-  text-align: right;
-  font-size: 2rem;
   cursor: pointer;
+  width: 1rem;
 }
 
 #deleteButton:hover {
-  color: red;
+  color:red;
 }
 
 #lock {
-  text-align: right;
-  font-size: 2rem;
   cursor: pointer;
+  margin-right: 1rem;
 }
 
 #lock:hover {
-  color: red;
+  color:green;
 }
+
+#twitterLogo {
+  text-align: center;
+  font-size: 4rem;
+  color: #0892D0;
+  margin-top: -1rem;
+  margin-left: 2rem;
+  opacity: .3;
+}
+
 
 
 
@@ -210,7 +226,14 @@ twitCardHolder:active {
   border-radius: 50%;
   background-color: white;
 }
-
+#bulldog2 {
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  border-radius: 50%;
+  background-color: white;
+  margin-top: -3px;
+}
 header {
   background-color: white;
   background-position: center;
@@ -229,27 +252,6 @@ header {
   color: #000;
 }
 
-#break {
-  border: 0;
-  height: 2px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), white, rgba(0, 0, 0, 0));
-  text-shadow: 2px 2px black;
-  margin-left: 25vw;
-  margin-right: 25vw;
-}
-
-span {
-  color: black;
-  font-weight: bolder;
-}
-
-
-
-.counterDiv {
-  display: flex;
-  justify-content: center;
-}
-
 #keywordGet {
   font-family: sans-serif;
   font-size: 1.70rem;
@@ -257,7 +259,7 @@ span {
 }
 
 .keywordInput {
-  margin-top: 5vh;
+  margin-top: 0vh;
   text-align: center;
 }
 
@@ -318,25 +320,4 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 .github:hover,.twitter:hover,.facebook:hover {
   color:#0892D0;
   cursor: pointer;
-}
-.tweetsContainer {
-  color: #000;
-  font-size: .5rem;
-  background-color: white;
-  box-shadow: 4px 4px #000;
-}
-
-@media only screen and (max-width: 1300px) {
-  .container {
-    width: 100vw;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .github,.twitter,.facebook {
-    font-size: 2rem;
-  }
-  #inputKeyword {
-    width: 30vw;
-  }
 }
