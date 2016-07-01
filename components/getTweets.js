@@ -26,6 +26,7 @@ var GetTweets = React.createClass({
       number: 4
     }
   },
+  
 /*  onNumberSubmit: function(newNumber){
     this.setState({number: newNumber})
   },*/
@@ -40,16 +41,29 @@ var GetTweets = React.createClass({
     var self = this;
     number = String(number);
 
-    var queryString = keyword + ' since:2016-01-30, count: ' + number;
+    var queryString = keyword + ' since:2015-01-30, count: ' + number;
     console.log(queryString);
 
     $.ajax({
       url: "/tweets/" + queryString,
       method: 'GET'
-    }).done(function(results){
-      console.log("after ajax " + results);
-      console.log(results.length);
-      self.setState({tweets: self.state.tweets.concat(results)})
+    }).done(function(tweets){
+      console.log("after ajax " + tweets);
+      _.map(tweets, function(tweet, i){
+        tweet.id = i;
+        tweet.x = i * 2 % 12;
+        tweet.y=Math.floor(i/4);
+        tweet.w=4;
+        tweet.h=5;
+        tweet.static = false;
+      })
+
+      self.setState({tweets: self.state.tweets.concat(tweets)})
+
+      // _.map(p.tweets, function(tweet, i){
+      //   return {
+      //     x: i * 2 % 12, y: Math.floor(i / 6), w:4, h:5, i:tweet.id.toString()
+      //   };
     })
 
   },
@@ -59,16 +73,34 @@ var GetTweets = React.createClass({
   clearTweets: function(){
     this.setState({tweets: []});
   },
-  addId: function(){
-    for(var i = 0; i <  this.state.tweets.length; i++){
-      this.state.tweets[i].id=i;
-    }
+  addProps: function(){
+    // for(var i = 0; i <  this.state.tweets.length; i++){
+    //   this.state.tweets[i].id=i;
+    // }
+    _.map(this.state.tweets, function(tweet, i){
+      tweet.id = i;
+      tweet.x = i * 2 % 12;
+      tweet.y=Math.floor(i/4);
+      tweet.w=4;
+      tweet.h=5;
+      tweet.static = false;
+    })
+  },
+  toggleStatic: function(i){
+    // i = _.findIndex(this.state.tweets, function(i){
+    //   return
+    // })
+    this.state.tweets[i].static = true;
+    //console.log(this.state.tweets[i].static);
+    this.setState({tweets: this.state.tweets});
+  //  this.state.tweets[i].static = !this.state.tweets[i].static;
+  //  this.setState({tweets: this.state.tweets[i].h = 12});
   },
   componentDidMount: function(){
     this.loadTweetsFromServer(this.state.keyword, this.state.number);
   },
   render: function () {
-    this.addId();
+
 
       return (
         <div className = "container">
@@ -77,7 +109,7 @@ var GetTweets = React.createClass({
             <SearchBar onKeywordSubmit={this.onKeywordSubmit}/>
             <ClearButton clearTweets={this.clearTweets}/>
             <div className="tweetGrid">
-              <Grid tweets={this.state.tweets} removeTweet={this.removeTweet}/>
+              <Grid tweets={this.state.tweets} toggleStatic={this.toggleStatic} removeTweet={this.removeTweet}/>
             </div>
           </div>
         </div>
