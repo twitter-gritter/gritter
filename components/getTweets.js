@@ -72,8 +72,9 @@ var GetTweets = React.createClass({
 
       return (
         <div className = "container">
+          <p id="keywordGet"><img id ="bulldog2" src="./images/LilDoggo.png"/>
+            Gritter fetched {this.state.number} Tweets with keyword "{decodeURIComponent(this.state.keyword)}"</p>
           <div className="keywordInput">
-            <p id="keywordGet"> Search by keyword: {decodeURIComponent(this.state.keyword)}</p>
             <SearchBar onKeywordSubmit={this.onKeywordSubmit}/>
             <ClearButton clearTweets={this.clearTweets}/>
             <div className="tweetGrid">
