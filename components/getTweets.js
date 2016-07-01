@@ -72,10 +72,10 @@ var GetTweets = React.createClass({
 
       return (
         <div className = "container">
+          <div id="clearDiv"><ClearButton clearTweets={this.clearTweets}/></div>
           <div className="keywordInput">
             <p id="keywordGet"> Search by keyword: {decodeURIComponent(this.state.keyword)}</p>
             <SearchBar onKeywordSubmit={this.onKeywordSubmit}/>
-            <ClearButton clearTweets={this.clearTweets}/>
             <div className="tweetGrid">
               <Grid tweets={this.state.tweets} removeTweet={this.removeTweet}/>
             </div>
