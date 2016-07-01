@@ -208,7 +208,14 @@ twitCardHolder:active {
   border-radius: 50%;
   background-color: white;
 }
-
+#bulldog2 {
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  border-radius: 50%;
+  background-color: white;
+  margin-top: -3px;
+}
 header {
   background-color: white;
   background-position: center;
