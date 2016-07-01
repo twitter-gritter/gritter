@@ -38,7 +38,7 @@ var SearchBar = React.createClass({
 		var newKeyword = this.state.newKeyword.trim();
 		newKeyword = encodeURIComponent(newKeyword);
 
-		var newNumber = this.state.newNumber.trim();
+		var newNumber = this.state.newNumber ? this.state.newNumber.trim() : 15;
 
 		//onKeywordSubmit is defined in getTweets.js
 		this.props.onKeywordSubmit(newKeyword, newNumber);
@@ -52,7 +52,7 @@ var SearchBar = React.createClass({
 				<form onSubmit = {this.handleFormSubmit}>
 					<input onChange={this.handleKeywordChange}
 					 placeholder="Search Keyword" type="text" autoComplete="off"
-					 value={this.state.keyword} id="inputKeyword" 
+					 value={this.state.keyword} id="inputKeyword"
 					 data-toggle="tooltip" data-placement="left"/>
 					 <div className="counterDiv">
 					 <div>
