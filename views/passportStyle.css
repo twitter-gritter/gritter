@@ -114,6 +114,7 @@ img {
   background-color: transparent;
   font-family: 'Lato', sans-serif;
   font-size: 3rem;
+  margin-right: 5rem;
   /*box-shadow: 5px 5px black;*/
 
 }
@@ -210,13 +211,9 @@ twitCardHolder:active {
   color: #0892D0;
   margin-top: -1rem;
   margin-left: 2rem;
+  opacity: .3;
 }
 
-#twitterLogo:hover {
-  text-align: center;
-  color: #0892D0;
-  cursor: pointer;
-}
 
 
 
@@ -292,6 +289,10 @@ span {
   color: black;
   border: 2px solid black;
 }
+
+
+
+
 
 #inputNumber {
   width: 8rem;

@@ -48,7 +48,7 @@ var SearchBar = React.createClass({
 			value={this.state.number} type= "text" autoComplete="off" min="" max="25" id="inputNumber" />
 				<form onSubmit = {this.handleFormSubmit}>
 					<input onChange={this.handleKeywordChange}
-					 value={this.state.keyword} type="text" autoComplete="off" id="inputKeyword" />
+					 value={this.state.keyword}  placeholder="Search Keyword" type="text" autoComplete="off" id="inputKeyword" />
 					 <div className="counterDiv">
 					 <div>
 						<button className="btn searchButton"><FaArrowRight /></button>
