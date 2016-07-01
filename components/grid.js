@@ -33,14 +33,14 @@ var Grid = React.createClass({
     var a = moment(el.created_at).format('D MMMM YYYY h:m a');
     return(
       <div id="twitCardHolder" key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5}} >
-        <div id="iconDiv" onClick= {this.props.removeTweet.bind(null, el.id)}>
+        <div id="iconDiv" >
           <div id="twitterLogo"><TwitterLogo /></div>
           <div id="lock"><Lock /></div>
-          <div id="deleteButton"><CircleEx /></div>
+          <div id="deleteButton" onClick= {this.props.removeTweet.bind(null, el.id)}><CircleEx /></div>
         </div>
         <img id="tweetImage" src={el.profile_img}/>
         <h4 id="screenName">{el.screen_name}:</h4>
-        <h5>{a}</h5>
+        <h5> { a } </h5>
         <h5 id="tweetFont">"{el.text}..."</h5>
       </div>
     )

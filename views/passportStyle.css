@@ -149,7 +149,6 @@ img {
 #screenName {
   font-family: 'Lato', sans-serif;
   text-decoration: underline;
-  margin-top:.5rem;
 }
 
 #screenName:hover {
@@ -179,9 +178,9 @@ twitCardHolder:active {
 #iconDiv {
   display: flex;
   justify-content: flex-end;
-  width: 25vw;
-  float: right;
+  width: auto;
   font-size: 3rem;
+  position: sticky;
 }
 
 #deleteButton {
