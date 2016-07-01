@@ -40,7 +40,7 @@ var GetTweets = React.createClass({
     var self = this;
     number = String(number);
 
-    var queryString = keyword + ' since:2016-01-30, count: ' + number;
+    var queryString = keyword + ' since:2015-01-30, count: ' + number;
     console.log(queryString);
 
     $.ajax({
