@@ -30,28 +30,21 @@ var GetTweets = React.createClass({
     this.setState({number: newNumber})
   },*/
   onKeywordSubmit: function(newKeyword, newNumber){
-    console.log("handling keyword submit");
     this.setState({keyword: newKeyword});
     this.setState({number: newNumber});
     this.loadTweetsFromServer(newKeyword, newNumber);
   },
   loadTweetsFromServer: function(keyword, number){
-    console.log('before ajax' + keyword + number);
+
     var self = this;
-    number = String(number);
-
-    var queryString = keyword + ' since:2015-01-30, count: ' + number;
-    console.log(queryString);
-
+    var queryString = encodeURIComponent(JSON.stringify({search: keyword, count: number}));
+    
     $.ajax({
       url: "/tweets/" + queryString,
       method: 'GET'
     }).done(function(results){
-      console.log("after ajax " + results);
-      console.log(results.length);
       self.setState({tweets: self.state.tweets.concat(results)})
     })
-
   },
   removeTweet: function(id){
     this.setState({tweets: _.reject(this.state.tweets, {id: id})});
@@ -72,11 +65,11 @@ var GetTweets = React.createClass({
 
       return (
         <div className = "container">
-          <div id="clearDiv"><ClearButton clearTweets={this.clearTweets}/></div>
-          <p id="keywordGet"><img id ="bulldog2" src="./images/LilDoggo.png"/>
-            Gritter fetched {this.state.number} Tweets with keyword "{decodeURIComponent(this.state.keyword)}"</p>
           <div className="keywordInput">
             <SearchBar onKeywordSubmit={this.onKeywordSubmit}/>
+            <p id="keywordGet"><img id ="bulldog2" src="./images/LilDoggo.png"/>
+            Gritter fetched {this.state.number} Tweets with keyword "{decodeURIComponent(this.state.keyword)}"</p>
+            <ClearButton clearTweets={this.clearTweets}/>
             <div className="tweetGrid">
               <Grid tweets={this.state.tweets} removeTweet={this.removeTweet}/>
             </div>

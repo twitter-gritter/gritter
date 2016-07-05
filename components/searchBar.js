@@ -31,7 +31,6 @@ var SearchBar = React.createClass({
 	},
 	handleFormSubmit: function(event){
 		event.preventDefault();
-		console.log("handling form submit");
 
 		var newKeyword = this.state.newKeyword.trim();
 		newKeyword = encodeURIComponent(newKeyword);
