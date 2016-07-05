@@ -13,7 +13,7 @@ require('./passport/passport.js')(passport);
 
 var app = express();
 // For login use
-app.use(session({ secret: 'gritter tamer', cookie: { maxAge: 60000 }, resave: true, saveUninitialized: true }));
+//app.use(session({ secret: 'gritter tamer', cookie: { maxAge: 60000 }, resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -78,9 +78,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 mongoose.connect(
-  
-  config.mongo_uri
-//  "mongodb://localhost:27017/gritter"
+
+  //config.mongo_uri
+  "mongodb://localhost:27017/gritter"
 );
 mongoose.connection.once('open', function(){
 	console.log("Connected to your database.");
