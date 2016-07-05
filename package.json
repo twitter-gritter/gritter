@@ -4,6 +4,7 @@
   "description": "## The responsive interactive grid layout for tweets",
   "main": "server.js",
   "scripts": {
+    "postinstall": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "clean": "rimraf static",
