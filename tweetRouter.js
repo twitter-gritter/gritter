@@ -11,28 +11,22 @@ var T = new Twit({
   timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
 })
 
-router.route('/:queryStr') //defines an api endpoint :(colon) signifies a parameter
-  .get(function(req, res){
+ // forward slash defines an api endpoint, :(colon) signifies a parameter
+  router.get('/:queryStr', function(req, res){
+    //parse the JSON string into a regular object
+    var parsed = JSON.parse(req.params.queryStr);
 
-    console.log('PARAMETERS: ' + req.params);
-    console.log(req.params);
+    var query = parsed.search;
+    var num = parsed.count;
 
-    var str = req.params.queryStr;
-    console.log('THIS IS THE STRING: ' + str);
-
-    var pos = str.indexOf("count");
-
-    var query = str.slice(0, (pos - 2));
-    console.log('QUERY: ' + query);
-
-    var num = Number(str.slice((pos + 7), str.length));
-    console.log('THIS IS THE NUMBER:' + num);
-
-    var tweetArr = [];
-
-    T.get('search/tweets', { q: query, count: num, lang: 'en'}, function(err, data, response) {
-
-      tweetArr = data.statuses.map(function(tweet){
+    T.get('search/tweets', { q: query + ' since:2011-07-11', count: num, lang: 'en'}, function(err, data, response) {
+      if (err){
+        console.log("Error retrieving data");
+      } else if (data === undefined){
+        console.log("Error: data is undefined");
+      } else {
+      
+        var tweetArr = data.statuses.map(function(tweet){
 
         return {
           key: tweet.id_str,
@@ -41,9 +35,10 @@ router.route('/:queryStr') //defines an api endpoint :(colon) signifies a parame
           created_at: tweet.created_at,
           profile_img: tweet.user.profile_image_url,
           }
-      });
-        res.json(tweetArr);
+        });
         console.log(tweetArr);
+        res.json(tweetArr);
+      }  
     })
   });
 
