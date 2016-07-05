@@ -18,10 +18,12 @@ var SearchBar = React.createClass({
 	},
 	handleNumberChange: function(event){
 		var input = new RegExp('^([0-9]|[0-9][0-9])$');
-		if (event.target.value > 25) {
-			alert('Too many tweets! Please enter a number between 1 and 25.');
-		} else if (event.target.value < 1 || input.test(event.target.value) === false) {
-			alert('Invalid input. Please enter a number between 1 and 25.');
+		if (event.target.value.length > 0){
+			if (event.target.value > 25) {
+				alert('Too many tweets! Please enter a number between 1 and 25.');
+			} else if (event.target.value < 1 || input.test(event.target.value) === false) {
+				alert('Invalid input. Please enter a number between 1 and 25.');
+			}
 		}
 
 
@@ -31,12 +33,11 @@ var SearchBar = React.createClass({
 	},
 	handleFormSubmit: function(event){
 		event.preventDefault();
-		console.log("handling form submit");
 
 		var newKeyword = this.state.newKeyword.trim();
 		newKeyword = encodeURIComponent(newKeyword);
 
-		var newNumber = this.state.newNumber.trim();
+		var newNumber = this.state.newNumber ? this.state.newNumber.trim() : 15;
 
 		//onKeywordSubmit is defined in getTweets.js
 		this.props.onKeywordSubmit(newKeyword, newNumber);

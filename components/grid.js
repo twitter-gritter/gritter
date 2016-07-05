@@ -7,8 +7,11 @@ var ReactGridLayout = require('react-grid-layout');
 var _ = require('lodash');
 var CircleEx = require('react-icons/lib/fa/times-circle.js');
 var TwitterLogo = require('react-icons/lib/fa/twitter.js');
+var WidthProvider = require('react-grid-layout').WidthProvider;
+    ReactGridLayout = WidthProvider(ReactGridLayout);
 var Lock = require('react-icons/lib/fa/lock.js');
 var moment = require('moment');
+
 
 
 var TwitterCard = require('./twitterCard.js');
@@ -17,14 +20,17 @@ var Grid = React.createClass({
   getDefaultProps(){
     return {
       className: "layout",
-      items: 10,
+      items: 50,
       cols: 12,
       rowHeight: 30,
-      verticalCompact:false
+      layout: []
     }
   },
-  makeLayout(){
-
+  onBreakpointChange(breakpoint, cols){
+    this.setState({
+      breakpoint: breakpoint,
+      cols: cols
+    })
   },
   onLayoutChange: function(layout){
     this.setState({layout: layout});
@@ -46,15 +52,8 @@ var Grid = React.createClass({
     )
   },
   render: function() {
-    // layout is an array of objects, see the demo for more complete usage
-    var layout = [
-      {i: "1", x: 0, y: 0, w: 1, h: 2, static: true},
-      {i: '2', x: 1, y: 0, w: 3, h: 2, minW: 2, minH: 2},
-      {i: '3', x: 4, y: 0, w: 1, h: 2}
-    ];
-
     return (
-      <ReactGridLayout  layout={layout} cols={12} rowHeight={30} width={1200}>
+      <ReactGridLayout  onLayoutChange={this.onLayoutChange} onBreakpointChange={this.onBreakpointChange} {...this.props} >
           {_.map(this.props.tweets, this.createElement)}
       </ReactGridLayout>
     )
