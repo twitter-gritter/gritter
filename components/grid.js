@@ -13,7 +13,6 @@ var WidthProvider = require('react-grid-layout').WidthProvider;
 var moment = require('moment');
 
 
-
 var TwitterCard = require('./twitterCard.js');
 
 var Grid = React.createClass({
@@ -37,7 +36,7 @@ var Grid = React.createClass({
   },
   removeLinks: function(text){
     var urlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-    return text.replace(urlRegex, ''); 
+    return text.replace(urlRegex, '');
   },
   findUrls: function(array){
     if(array[0] !== null && array[0] !== undefined){
@@ -45,19 +44,26 @@ var Grid = React.createClass({
         url: array[0].expanded_url,
         display_url: array[0].display_url
       }
-    } 
-      
+    }
+
       return {
         url: '',
         display_url: ''
       }
+  },
+  displayLinks: function(links){
+    if(links.url.length > 0){
+      return(
+        <a id="links" target="_blank" href={links.url}><LinkIcon /> {links.display_url}</a>
+      )
+    }
   },
   createElement(el){
     var date = moment(el.created_at).format('D MMMM YYYY h:m a');
     var profileLink = "https://twitter.com/" + el.screen_name;
     var body = this.removeLinks(el.text);
     var links = this.findUrls(el.urls);
-    
+
     return(
       <div id="twitCardHolder" key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5}} >
         <div id="iconDiv" >
@@ -67,7 +73,7 @@ var Grid = React.createClass({
         <div id="twitterLogo"><TwitterLogo /></div>
         <h4 id="screenName"><a target="_blank" href={profileLink}>{el.screen_name}</a>:</h4>
         <h5 id="date"> {date} </h5>
-        <h5 id="tweetFont">"{body}"</h5><a id="links" target="_blank" href={links.url}><LinkIcon /> {links.display_url}</a>
+        <h5 id="tweetFont">"{body}"</h5>{this.displayLinks(links)}
       </div>
     )
   },
