@@ -22,7 +22,7 @@ var GetTweets = React.createClass({
   getInitialState: function(){
     return{
       tweets: [],
-      keyword: 'Reactjs',
+      keyword: 'ReactJS',
       number: 4
     }
   },
@@ -38,7 +38,7 @@ var GetTweets = React.createClass({
 
     var self = this;
     var queryString = encodeURIComponent(JSON.stringify({search: keyword, count: number}));
-    
+
     $.ajax({
       url: "/tweets/" + queryString,
       method: 'GET'
