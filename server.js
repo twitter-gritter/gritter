@@ -8,6 +8,8 @@ var config = require('./components/config/config.js');
 var tweetRouter = require('./tweetRouter.js');
 var session = require('express-session');
 var passport = require('passport');
+var TwitterStrategy = require('passport-twitter').Strategy;
+var TwitterTokenStrategy = require('passport-twitter-token');
 
 require('./passport/passport.js')(passport);
 
@@ -28,16 +30,49 @@ router.use(function(req, res, next){
   next();
 });
 
+passport.use(new TwitterStrategy({
+   consumerKey: process.env.TWITTER_CONSUMER_KEY,
+   consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
+   callbackURL:'http://localhost:7000/auth/twitter/callback'
+ }, function(token, tokenSecret, profile, done) {
+   User.findOrCreate({ twitterId: profile.id }, function (error, user) {
+     console.log("token", token);
+     console.log("profile",profile);
+     return done(null, profile);
+   });
+ }
+));
+
 // Define Express Routes
 app.use('/tweets', tweetRouter);
 /*app.use('/timeline', userTimelineRouter);
 app.use('/funny', funnyTweetRouter);
 app.use('/trending', trendingTweetRouter);*/
 
-// Login Information
-app.post('/login', passport.authenticate('local-signup'), function(req,res){
-  res.redirect('/');
+
+//Requiring auth
+
+//Twitter Auth
+
+app.get('/auth/twitter', passport.authenticate('twitter'));
+app.get('/auth/twitter/callback'), passport.authenticate('twitter', {
+  successRedirect: '/me',
+  failureRedirect: '/auth/twitter'
+}), function(req,res){
+      console.log(req.session);
+    };
+
+passport.serializeUser(function(user,done){
+  done(null,user);
 });
+
+passport.deserializeUser(function(obj,done){
+  done(null,obj);
+});
+
+app.get('/me', function(req,res){
+  res.send(req.user);
+})
 
 //LogOut
 

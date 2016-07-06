@@ -7,6 +7,10 @@
   margin-left: 2rem;
 }
 
+input {
+  color: black;
+}
+
 
 h2, p {
   color: white;
