@@ -29,6 +29,9 @@ var T = new Twit({
         var tweetArr = data.statuses.map(function(tweet){
 
         return {
+          obj: tweet,
+          url: tweet.entities.urls[0].expanded_url,
+          display_url: tweet.entities.urls[0].display_url,
           key: tweet.id_str,
           text: tweet.text,
           screen_name: tweet.user.screen_name,
