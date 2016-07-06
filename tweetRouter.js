@@ -28,14 +28,17 @@ var T = new Twit({
       
         var tweetArr = data.statuses.map(function(tweet){
 
-        return {
-          key: tweet.id_str,
-          text: tweet.text,
-          screen_name: tweet.user.screen_name,
-          created_at: tweet.created_at,
-          profile_img: tweet.user.profile_image_url,
-          }
+          return {
+            
+            key: tweet.id_str,
+            text: tweet.text,
+            screen_name: tweet.user.screen_name,
+            created_at: tweet.created_at,
+            profile_img: tweet.user.profile_image_url,
+            urls: tweet.entities.urls
+            }
         });
+
         console.log(tweetArr);
         res.json(tweetArr);
       }  

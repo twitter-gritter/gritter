@@ -26,9 +26,6 @@ var GetTweets = React.createClass({
       number: 4
     }
   },
-/*  onNumberSubmit: function(newNumber){
-    this.setState({number: newNumber})
-  },*/
   onKeywordSubmit: function(newKeyword, newNumber){
     this.setState({keyword: newKeyword});
     this.setState({number: newNumber});
