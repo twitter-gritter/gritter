@@ -61,6 +61,9 @@ li {
   color: white;
 }
 
+.login {
+  color: black;
+}
 
 #logInfo {
   background-color: rgb(41, 24, 26);

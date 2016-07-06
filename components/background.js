@@ -1,7 +1,7 @@
 var React = require('react');
-var LoginForm = require('./loginForm.js');
 var SearchBar = require('./searchBar.js');
 var GetTweets = require('./getTweets.js');
+var Login = require('./login.js');
 var FaFacebookSquare = require('react-icons/lib/fa/facebook-square.js');
 var FaTwitterSquare = require('react-icons/lib/fa/twitter-square.js');
 var FaGithubSquare = require('react-icons/lib/fa/github-square.js');
@@ -14,8 +14,8 @@ var Background = React.createClass({
         <header>
           <h1 id="title">Gritter</h1>
           <div className = "logo">
-          <LoginForm />
             <img id ="bulldog" src="./images/LilDoggo.png" />
+            <Login />
             <div className = "social">
               <ul className = "social-links">
               <li className="github"><i><FaGithubSquare /></i></li>
