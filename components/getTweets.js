@@ -40,6 +40,7 @@ var GetTweets = React.createClass({
       url: "/tweets/" + queryString,
       method: 'GET'
     }).done(function(results){
+      console.log(results);
       self.setState({tweets: self.state.tweets.concat(results)})
     })
   },

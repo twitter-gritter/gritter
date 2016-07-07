@@ -37,16 +37,22 @@ var Grid = React.createClass({
   },
   removeLinks: function(text){
     var urlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    //remove strings of text from body of tweet that are urls, i.e. match the RegEx
     return text.replace(urlRegex, ''); 
   },
+  replaceInternalLinks: function(text){
+
+  },
   findUrls: function(array){
+    //if tweet.entities.urls (which is an array) is not empty, i.e. there ARE links
     if(array[0] !== null && array[0] !== undefined){
+      //return object with values for full url and a truncated url
       return {
         url: array[0].expanded_url,
         display_url: array[0].display_url
       }
     } 
-      
+      //else return values as empty strings; will not be displayed
       return {
         url: '',
         display_url: ''
@@ -59,7 +65,7 @@ var Grid = React.createClass({
     var links = this.findUrls(el.urls);
     
     return(
-      <div id="twitCardHolder" key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5}} >
+      <div id="twitCardHolder" key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5,minW:2}} >
         <div id="iconDiv" >
           <div id="deleteButton" onClick= {this.props.removeTweet.bind(null, el.id)}><CircleEx /></div>
         </div>
@@ -67,7 +73,8 @@ var Grid = React.createClass({
         <div id="twitterLogo"><TwitterLogo /></div>
         <h4 id="screenName"><a target="_blank" href={profileLink}>{el.screen_name}</a>:</h4>
         <h5 id="date"> {date} </h5>
-        <h5 id="tweetFont">"{body}"</h5><a id="links" target="_blank" href={links.url}><LinkIcon /> {links.display_url}</a>
+        <h5 id="tweetFont">"{body}"</h5>
+        <a id="links" target="_blank" href={links.url}><LinkIcon /> {links.display_url}</a>
       </div>
     )
   },
