@@ -16,7 +16,7 @@ require('./passport/passport.js')(passport);
 var app = express();
 // For login use
 
-app.use(session({ secret:process.env.secret, cookie: { maxAge: 60000 }, resave: true, saveUninitialized: true }));
+app.use(session({ secret:process.env.SECRET, cookie: { maxAge: 60000 }, resave: true, saveUninitialized: true }));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -32,7 +32,7 @@ app.use(express.static(__dirname + '/views'));
 passport.use(new TwitterStrategy({
    consumerKey: process.env.TWITTER_CONSUMER_KEY,
    consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
-   callbackURL:'http://localhost:7000/auth/twitter/callback'
+   callbackURL:process.env.CALLBACK_URL
  },
  function(token, tokenSecret, profile, done) {
      console.log("this is profile " + profile.id);
