@@ -21,15 +21,15 @@ var T = new Twit({
 
     T.get('search/tweets', { q: query + ' since:2011-07-11', count: num, lang: 'en'}, function(err, data, response) {
       if (err){
-        console.log("Error retrieving data");
+        // console.log("Error retrieving data");
       } else if (data === undefined){
-        console.log("Error: data is undefined");
+        // console.log("Error: data is undefined");
       } else {
-      
+
         var tweetArr = data.statuses.map(function(tweet){
 
           return {
-            
+
             key: tweet.id_str,
             text: tweet.text,
             screen_name: tweet.user.screen_name,
@@ -39,10 +39,12 @@ var T = new Twit({
             /*obj: tweet*/
             }
         });
+        // console.log(tweetArr);
+
 
         console.log(tweetArr);
         res.json(tweetArr);
-      }  
+      }
     })
   });
 

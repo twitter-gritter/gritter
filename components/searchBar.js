@@ -35,7 +35,7 @@ var SearchBar = React.createClass({
 		event.preventDefault();
 
 		var newKeyword = this.state.newKeyword.trim();
-		newKeyword = encodeURIComponent(newKeyword);
+	//	newKeyword = encodeURIComponent(newKeyword);
 
 		var newNumber = this.state.newNumber ? this.state.newNumber.trim() : 15;
 

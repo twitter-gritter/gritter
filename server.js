@@ -8,12 +8,16 @@ var config = require('./config.js');
 var tweetRouter = require('./tweetRouter.js');
 var session = require('express-session');
 var passport = require('passport');
+var TwitterStrategy = require('passport-twitter').Strategy;
+var User = require('./components/models/userModel.js');
 
 require('./passport/passport.js')(passport);
 
 var app = express();
 // For login use
-//app.use(session({ secret: 'gritter tamer', cookie: { maxAge: 60000 }, resave: true, saveUninitialized: true }));
+
+app.use(session({ secret:process.env.SECRET, cookie: { maxAge: 60000 }, resave: true, saveUninitialized: true }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -22,11 +26,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/views'));
 
-var router = express.Router();
-router.use(function(req, res, next){
-  console.log('Something is happening');
-  next();
-});
+//Twitter Auth ====================================================
+
+
+passport.use(new TwitterStrategy({
+   consumerKey: process.env.TWITTER_CONSUMER_KEY,
+   consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
+   callbackURL:process.env.CALLBACK_URL
+ },
+ function(token, tokenSecret, profile, done) {
+     console.log("this is profile " + profile.id);
+     return done("Welcome " + profile.displayName);
+   }));
 
 // Define Express Routes
 app.use('/tweets', tweetRouter);
@@ -34,16 +45,34 @@ app.use('/tweets', tweetRouter);
 app.use('/funny', funnyTweetRouter);
 app.use('/trending', trendingTweetRouter);*/
 
-// Login Information
-app.post('/login', passport.authenticate('local-signup'), function(req,res){
-  res.redirect('/');
+
+//Requiring auth
+
+
+app.get('/auth/twitter', passport.authenticate('twitter'));
+
+
+app.get('/auth/twitter/callback', passport.authenticate('twitter', {
+  successRedirect: '/',
+  failureRedirect: '/login'}));
+
+passport.serializeUser(function(user,done){
+  done(null,user);
 });
+
+passport.deserializeUser(function(obj,done){
+  done(null,obj);
+});
+
+app.get('/', function(req,res){
+  res.send(req.user);
+})
 
 //LogOut
 
 app.get('/logout', function(req,res){
   req.logout();
-  res.redirect('/');
+  res.redirect('/login');
 })
 
 if (process.env.NODE_ENV === 'production') {
