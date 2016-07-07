@@ -34,7 +34,11 @@ passport.use(new TwitterStrategy({
    callbackURL:process.env.CALLBACK_URL
  },
  function(token, tokenSecret, profile, done) {
-       return done(null,profile);
+   // point of data return
+    app.get('/profile', function(req,res){
+      res.send(profile);
+    })
+    return done(null,profile);
    }));
 
 // Define Express Routes
@@ -64,10 +68,6 @@ passport.deserializeUser(function(obj,done){
 app.get('/', function(req,res){
   res.send(req.user);
 })
-
-//is Auth?
-
-
 
 //LogOut
 
