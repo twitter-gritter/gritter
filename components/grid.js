@@ -59,11 +59,11 @@ var Grid = React.createClass({
     }
   },
   createElement(el){
+
     var date = moment(el.created_at).format('D MMMM YYYY h:m a');
     var profileLink = "https://twitter.com/" + el.screen_name;
     var body = this.removeLinks(el.text);
     var links = this.findUrls(el.urls);
-
     return(
       <div id="twitCardHolder" key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5}} >
         <div id="iconDiv" >

@@ -5,7 +5,6 @@
 //        Grid
 
 var React = require('react');
-var LoginForm = require('./loginForm.js');
 var GetTweets = require('./getTweets.js');
 var Background = require('./background.js');
 
