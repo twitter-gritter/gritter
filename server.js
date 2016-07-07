@@ -9,13 +9,13 @@ var tweetRouter = require('./tweetRouter.js');
 var session = require('express-session');
 var passport = require('passport');
 var TwitterStrategy = require('passport-twitter').Strategy;
-var TwitterTokenStrategy = require('passport-twitter-token');
+var User = require('./components/models/userModel.js');
 
 require('./passport/passport.js')(passport);
 
 var app = express();
 // For login use
-app.use(session({ secret: 'gritter tamer', cookie: { maxAge: 60000 }, resave: true, saveUninitialized: true }));
+app.use(session({ secret:process.env.secret, cookie: { maxAge: 60000 }, resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -24,24 +24,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/views'));
 
-var router = express.Router();
-router.use(function(req, res, next){
-  console.log('Something is happening');
-  next();
-});
+//Twitter Auth ====================================================
+
 
 passport.use(new TwitterStrategy({
    consumerKey: process.env.TWITTER_CONSUMER_KEY,
    consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
    callbackURL:'http://localhost:7000/auth/twitter/callback'
- }, function(token, tokenSecret, profile, done) {
-   User.findOrCreate({ twitterId: profile.id }, function (error, user) {
-     console.log("token", token);
-     console.log("profile",profile);
-     return done(null, profile);
-   });
- }
-));
+ },
+ function(token, tokenSecret, profile, done) {
+     console.log("this is profile " + profile.id);
+     return done("Welcome " + profile.displayName);
+   }));
 
 // Define Express Routes
 app.use('/tweets', tweetRouter);
@@ -52,15 +46,13 @@ app.use('/trending', trendingTweetRouter);*/
 
 //Requiring auth
 
-//Twitter Auth
 
 app.get('/auth/twitter', passport.authenticate('twitter'));
-app.get('/auth/twitter/callback'), passport.authenticate('twitter', {
-  successRedirect: '/me',
-  failureRedirect: '/auth/twitter'
-}), function(req,res){
-      console.log(req.session);
-    };
+
+
+app.get('/auth/twitter/callback', passport.authenticate('twitter', {
+  successRedirect: '/',
+  failureRedirect: '/login'}));
 
 passport.serializeUser(function(user,done){
   done(null,user);
@@ -70,7 +62,7 @@ passport.deserializeUser(function(obj,done){
   done(null,obj);
 });
 
-app.get('/me', function(req,res){
+app.get('/', function(req,res){
   res.send(req.user);
 })
 
@@ -78,7 +70,7 @@ app.get('/me', function(req,res){
 
 app.get('/logout', function(req,res){
   req.logout();
-  res.redirect('/');
+  res.redirect('/login');
 })
 
 if (process.env.NODE_ENV === 'production') {

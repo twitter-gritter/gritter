@@ -21,11 +21,11 @@ var T = new Twit({
 
     T.get('search/tweets', { q: query + ' since:2011-07-11', count: num, lang: 'en'}, function(err, data, response) {
       if (err){
-        console.log("Error retrieving data");
+        // console.log("Error retrieving data");
       } else if (data === undefined){
-        console.log("Error: data is undefined");
+        // console.log("Error: data is undefined");
       } else {
-      
+
         var tweetArr = data.statuses.map(function(tweet){
 
         return {
@@ -36,9 +36,9 @@ var T = new Twit({
           profile_img: tweet.user.profile_image_url,
           }
         });
-        console.log(tweetArr);
+        // console.log(tweetArr);
         res.json(tweetArr);
-      }  
+      }
     })
   });
 
