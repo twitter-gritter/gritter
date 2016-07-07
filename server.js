@@ -1,10 +1,10 @@
 
 var express = require('express');
-var cors = require('cors');
+//var cors = require('cors');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Twit = require('twit');
-var config = require('./components/config/config.js');
+var config = require('./config.js');
 var tweetRouter = require('./tweetRouter.js');
 var session = require('express-session');
 var passport = require('passport');
@@ -15,11 +15,13 @@ require('./passport/passport.js')(passport);
 
 var app = express();
 // For login use
+
 app.use(session({ secret:process.env.secret, cookie: { maxAge: 60000 }, resave: true, saveUninitialized: true }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(cors());
+//app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/views'));
@@ -104,7 +106,10 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-mongoose.connect("mongodb://localhost:27017/gritter");
+mongoose.connect(
+  //config.mongo_uri
+  "mongodb://localhost:27017/gritter"
+);
 mongoose.connection.once('open', function(){
 	console.log("Connected to your database.");
 });
@@ -113,6 +118,6 @@ app.get('/', function(req, res){
 	res.render('index');
 });
 
-app.listen(7000, function(){
-	console.log("It's alive on port 7000");
+app.listen(config.port, function(){
+	console.log("It's alive on port " + config.port);
 });

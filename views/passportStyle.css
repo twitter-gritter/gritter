@@ -11,7 +11,6 @@ input {
   color: black;
 }
 
-
 h2, p {
   color: white;
   font-size: 1.5rem;
@@ -143,34 +142,45 @@ img {
 }
 /*TWITTER CARD STUFF */
 
-#tweetImage {
+#profileImage {
+  z-index: 2;
   margin-top: .5rem;
   width: 6rem;
   height: 6rem;
-  box-shadow: 4px 4px 4px black;
+  border: .25px solid #ccc;
+  box-shadow: 4px 4px 4px #333;
   padding-bottom: .5rem;
 }
 
-#tweetImage:hover {
-  box-shadow: 10px 10px 10px black;
+#profileImage:hover {
+  box-shadow: 10px 10px 20px #333;
+  transform: scale(1.1,1.1);
 }
-
-
 
 #screenName {
+  position: relative;
+  top:0;
+  left: 24%;
   font-family: 'Lato', sans-serif;
-  text-decoration: underline;
+  text-decoration: none;
   margin-top: -4rem;
+  width: max-content;
 }
 
-#screenName:hover {
+#screenName a:hover {
   font-family: 'Lato', sans-serif;
   text-decoration: underline;
   cursor: pointer;
+  color: green;
+}
+#date {
+  position: relative;
+  top: 0;
 }
 
 #tweetFont {
   font-family: 'Lato', sans-serif;
+  font-size: 1em;
 }
 
 #twitCardHolder {
@@ -198,27 +208,29 @@ twitCardHolder:active {
 #deleteButton {
   cursor: pointer;
   width: 1rem;
+  margin: 10px;
 }
 
 #deleteButton:hover {
   color:red;
 }
 
-#lock {
-  cursor: pointer;
-  margin-right: 1rem;
+#links {
+  font-family: sans-serif;
 }
-
-#lock:hover {
-  color:green;
+#links:hover {
+  color: green;
 }
 
 #twitterLogo {
+  position: absolute;
+  z-index: 1;
   text-align: center;
   font-size: 4rem;
   color: #0892D0;
-  margin-top: -1rem;
-  margin-left: 2rem;
+  margin: 0 auto;
+/*  margin-top: -1rem;
+  margin-left: 2rem;*/
   opacity: .3;
 }
 
