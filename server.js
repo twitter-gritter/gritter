@@ -9,9 +9,9 @@ var tweetRouter = require('./tweetRouter.js');
 var session = require('express-session');
 var passport = require('passport');
 var TwitterStrategy = require('passport-twitter').Strategy;
+var findOrCreate = require('mongoose-findorcreate');
 var User = require('./components/models/userModel.js');
 
-require('./passport/passport.js')(passport);
 
 var app = express();
 // For login use
@@ -35,8 +35,7 @@ passport.use(new TwitterStrategy({
    callbackURL:process.env.CALLBACK_URL
  },
  function(token, tokenSecret, profile, done) {
-     console.log("this is profile " + profile.id);
-     return done("Welcome " + profile.displayName);
+       return done(null,profile);
    }));
 
 // Define Express Routes
@@ -45,16 +44,15 @@ app.use('/tweets', tweetRouter);
 app.use('/funny', funnyTweetRouter);
 app.use('/trending', trendingTweetRouter);*/
 
-
-//Requiring auth
-
-
 app.get('/auth/twitter', passport.authenticate('twitter'));
 
 
-app.get('/auth/twitter/callback', passport.authenticate('twitter', {
-  successRedirect: '/',
-  failureRedirect: '/login'}));
+app.get('/auth/twitter/callback',
+  passport.authenticate('twitter', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
 
 passport.serializeUser(function(user,done){
   done(null,user);
@@ -67,6 +65,10 @@ passport.deserializeUser(function(obj,done){
 app.get('/', function(req,res){
   res.send(req.user);
 })
+
+//is Auth?
+
+
 
 //LogOut
 
