@@ -4,7 +4,7 @@ var LoginData = React.createClass({
   render: function(){
     return(
       <div>
-        <a href="/auth/twitter">Sign in with Twitter</a>
+        <a href="/auth/twitter">Login with Twitter</a>
       </div>
     )
   }
