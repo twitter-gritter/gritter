@@ -9,7 +9,6 @@ var tweetRouter = require('./tweetRouter.js');
 var session = require('express-session');
 var passport = require('passport');
 var TwitterStrategy = require('passport-twitter').Strategy;
-var findOrCreate = require('mongoose-findorcreate');
 var User = require('./components/models/userModel.js');
 
 
