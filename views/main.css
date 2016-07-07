@@ -28,7 +28,9 @@
 .layout div {
   background-color: #999999;
 }
-
+header {
+  background-color: #100000;
+}
 
 
 /*added css for background...please do not move*/

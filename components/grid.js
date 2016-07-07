@@ -11,6 +11,7 @@ var TwitterLogo = require('react-icons/lib/fa/twitter.js');
 var WidthProvider = require('react-grid-layout').WidthProvider;
     ReactGridLayout = WidthProvider(ReactGridLayout);
 var moment = require('moment');
+var ReactFitText = require('react-fittext');
 
 
 var TwitterCard = require('./twitterCard.js');
@@ -31,8 +32,13 @@ var Grid = React.createClass({
       cols: cols
     })
   },
+  makeStatic:function(){
+    this.state.layout[0].static = true;
+  },
   onLayoutChange: function(layout){
+
     this.setState({layout: layout});
+    if(this.state)console.log(this.state.layout);
   },
   removeLinks: function(text){
     var urlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
@@ -51,6 +57,7 @@ var Grid = React.createClass({
         display_url: ''
       }
   },
+
   displayLinks: function(links){
     if(links.url.length > 0){
       return(
@@ -72,8 +79,10 @@ var Grid = React.createClass({
         <a target="_blank" href={profileLink}><img id="profileImage" src={el.profile_img}/></a>
         <div id="twitterLogo"><TwitterLogo /></div>
         <h4 id="screenName"><a target="_blank" href={profileLink}>{el.screen_name}</a>:</h4>
-        <h5 id="date"> {date} </h5>
-        <h5 id="tweetFont">"{body}"</h5>{this.displayLinks(links)}
+        <h5 id="date" onClick={this.makeStatic}> {date} </h5>
+
+        <ReactFitText compressor={3.5}><h5 id="tweetFont">"{body}"</h5></ReactFitText>{this.displayLinks(links)}
+
       </div>
     )
   },

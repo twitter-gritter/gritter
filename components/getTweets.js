@@ -49,16 +49,21 @@ var GetTweets = React.createClass({
   clearTweets: function(){
     this.setState({tweets: []});
   },
-  addId: function(){
-    for(var i = 0; i <  this.state.tweets.length; i++){
-      this.state.tweets[i].id=i;
-    }
+  addProps: function(){
+    _.map(this.state.tweets, function(tweet, i){
+      tweet.id = i;
+      tweet.x = i * 2 % 12;
+      tweet.y = Math.floor(i/4);
+      tweet.w=4;
+      tweet.h=5;
+      tweet.static=false;
+    })
   },
   componentDidMount: function(){
     this.loadTweetsFromServer(this.state.keyword, this.state.number);
   },
   render: function () {
-    this.addId();
+    this.addProps();
 
       return (
         <div className = "container">
