@@ -12,7 +12,7 @@ var WidthProvider = require('react-grid-layout').WidthProvider;
 var Lock = require('react-icons/lib/fa/lock.js');
     ReactGridLayout = WidthProvider(ReactGridLayout);
 var moment = require('moment');
-var ReactFitText = require('react-fittext');
+//var ReactFitText = require('react-fittext');
 
 
 var TwitterCard = require('./twitterCard.js');
@@ -91,7 +91,7 @@ var Grid = React.createClass({
         <h4 id="screenName"><a target="_blank" href={profileLink}>{el.screen_name}</a>:</h4>
         <h5 id="date" onClick={this.makeStatic}> {date} </h5>
 
-        <ReactFitText compressor={3.5}><h5 id="tweetFont">"{body}"</h5></ReactFitText>{this.displayLinks(links)}
+        <h5 id="tweetFont">"{body}"</h5>{this.displayLinks(links)}
         <div id="twitterLogo"><a target="_blank" href="https://twitter.com/"><TwitterLogo /></a> </div>
 
       </div>
