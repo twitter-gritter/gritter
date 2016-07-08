@@ -39,7 +39,7 @@ var Grid = React.createClass({
     var urlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
 
     //remove strings of text from body of tweet that are urls, i.e. match the RegEx
-    return text.replace(urlRegex, ''); 
+    return text.replace(urlRegex, '');
   },
   findUrls: function(array){
     //if tweet.entities.urls (which is an array) is not empty, i.e. there ARE links...
@@ -50,7 +50,7 @@ var Grid = React.createClass({
         display_url: array[0].display_url
       }
 
-    } 
+    }
       //else return values as empty strings; will not be displayed
       return {
         url: '',
