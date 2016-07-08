@@ -11,7 +11,6 @@ var passport = require('passport');
 var TwitterStrategy = require('passport-twitter').Strategy;
 var User = require('./components/models/userModel.js');
 
-require('./passport/passport.js')(passport);
 
 var app = express();
 // For login use
@@ -32,11 +31,14 @@ app.use(express.static(__dirname + '/views'));
 passport.use(new TwitterStrategy({
    consumerKey: process.env.TWITTER_CONSUMER_KEY,
    consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
-   callbackURL:process.env.CALLBACK_URL
+   callbackURL:'https:fathomless-gritter.herokuapp.com/auth/twitter/callback'
  },
  function(token, tokenSecret, profile, done) {
-     console.log("this is profile " + profile.id);
-     return done("Welcome " + profile.displayName);
+   // point of data return
+    app.get('/profile', function(req,res){
+      res.send(profile);
+    })
+    return done(null,profile);
    }));
 
 // Define Express Routes
@@ -45,16 +47,15 @@ app.use('/tweets', tweetRouter);
 app.use('/funny', funnyTweetRouter);
 app.use('/trending', trendingTweetRouter);*/
 
-
-//Requiring auth
-
-
 app.get('/auth/twitter', passport.authenticate('twitter'));
 
 
-app.get('/auth/twitter/callback', passport.authenticate('twitter', {
-  successRedirect: '/',
-  failureRedirect: '/login'}));
+app.get('/auth/twitter/callback',
+  passport.authenticate('twitter', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
 
 passport.serializeUser(function(user,done){
   done(null,user);
@@ -72,7 +73,7 @@ app.get('/', function(req,res){
 
 app.get('/logout', function(req,res){
   req.logout();
-  res.redirect('/login');
+  res.redirect('/');
 })
 
 if (process.env.NODE_ENV === 'production') {
