@@ -12,9 +12,8 @@ var WidthProvider = require('react-grid-layout').WidthProvider;
 var Lock = require('react-icons/lib/fa/lock.js');
     ReactGridLayout = WidthProvider(ReactGridLayout);
 var moment = require('moment');
+//var ReactFitText = require('react-fittext');
 
-
-var TwitterCard = require('./twitterCard.js');
 
 var Grid = React.createClass({
   getDefaultProps(){
@@ -32,8 +31,13 @@ var Grid = React.createClass({
       cols: cols
     })
   },
+  makeStatic:function(id){
+    if(this.state.layout.length > 0)this.state.layout[id].static = !this.state.layout[id].static;
+  //  this.setState({layout:this.state.layout})
+  },
   onLayoutChange: function(layout){
     this.setState({layout: layout});
+    if(this.state)console.log(this.state.layout);
   },
   removeLinks: function(text){
     var urlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
@@ -57,6 +61,7 @@ var Grid = React.createClass({
         display_url: ''
       }
   },
+
   displayLinks: function(links){
     //only display link icon if links exist
     if(links.url.length > 0){
@@ -72,17 +77,20 @@ var Grid = React.createClass({
     var body = this.removeLinks(el.text);
     var links = this.findUrls(el.urls);
     return(
-      <div id="twitCardHolder" key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5,minW:2}} >
+      <div id="twitCardHolder" key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5,minW:2,static:false}} >
         <h5 id="date"> {date} </h5>
         <div id="iconDiv" >
-          <div id="lock"><Lock /></div>
+          <div id="lock" onClick={this.makeStatic.bind(this, el.id)}><Lock /></div>
           <div id="deleteButton" onClick= {this.props.removeTweet.bind(null, el.id)}><CircleEx /></div>
         </div>
         <a target="_blank" href={profileLink}><img id="profileImage" src={el.profile_img}/></a>
-        <h4 id="screenName"><a target="_blank" href={profileLink}>{el.screen_name}:</a></h4>
-        <div id="tweetBody"><h5 id="tweetText">"{body}"</h5></div>
-        {this.displayLinks(links)}
-        <div id="twitterLogo"><a target="_blank" href="https://twitter.com/"><TwitterLogo /></a></div>
+
+        <div id="twitterLogo"><TwitterLogo /></div>
+        <h4 id="screenName"><a target="_blank" href={profileLink}>{el.screen_name}</a>:</h4>
+
+        <h5 id="tweetFont">"{body}"</h5>{this.displayLinks(links)}
+        <div id="twitterLogo"><a target="_blank" href="https://twitter.com/"><TwitterLogo /></a> </div>
+
       </div>
     )
   },
