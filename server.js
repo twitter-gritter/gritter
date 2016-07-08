@@ -31,7 +31,7 @@ app.use(express.static(__dirname + '/views'));
 passport.use(new TwitterStrategy({
    consumerKey: process.env.TWITTER_CONSUMER_KEY,
    consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
-   callbackURL:process.env.CALLBACK_URL
+   callbackURL:'https:fathomless-gritter.herokuapp.com/auth/twitter/callback'
  },
  function(token, tokenSecret, profile, done) {
    // point of data return
