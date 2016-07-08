@@ -73,7 +73,7 @@ app.get('/', function(req,res){
 
 app.get('/logout', function(req,res){
   req.logout();
-  res.redirect('/login');
+  res.redirect('/');
 })
 
 if (process.env.NODE_ENV === 'production') {

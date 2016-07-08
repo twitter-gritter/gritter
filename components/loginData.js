@@ -3,10 +3,13 @@ var React = require('react');
 var LoginData = React.createClass({
   getInitialState: function(){
     return {
-      title: 'Login with Twitter'
+      title: null,
+      login: 'Login w/ Twitter',
+      logout: null
     }
   },
   _LoadUserFromServer: function(){
+    // var logout = location.reload();
     var self = this;
     $.ajax({
       method:"GET",
@@ -14,25 +17,28 @@ var LoginData = React.createClass({
       url:"/profile"
     }).done(function(data){
       console.log(data);
-      self.setState({ title: "Welcome " + data.displayName });
-      self.setState({ user: data })
+      self.setState({ title: "Welcome to Gritter  @" + data.username });
+      self.setState({ logout: "logout" });
+      self.setState({ login: null });
+
     });
     //this._DisplayingUserData()
   },
-  // _DisplayingUserData: function(user){
-  //   this.setState({
-  //     title: "welcome "
-  //   });
-  // },
   componentDidMount: function(){
       this._LoadUserFromServer();
+  },
+  _ReloadPage: function(){
+    var reload = location.reload(forceGet);
+    this.setState({
+      logout: reload
+    })
   },
   render: function(){
     return(
       <div>
-        <a href="/auth/twitter">{this.state.title}</a>
-        <button onClick={this._LoadUserFromServer}>Login</button>
-
+        <a href="/auth/twitter">{this.state.login}</a>
+        <h2 id="logout"><a href="/logout">{this.state.logout}</a></h2>
+        <h1 id="welcome">{this.state.title}</h1>
       </div>
     )
   }
