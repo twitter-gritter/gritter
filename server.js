@@ -110,6 +110,7 @@ if (process.env.NODE_ENV === 'production') {
 mongoose.connect(
   // config.mongo_uri
  "mongodb://localhost:27017/gritter"
+
 );
 mongoose.connection.once('open', function(){
 	console.log("Connected to your database.");
