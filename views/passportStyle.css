@@ -5,10 +5,12 @@
 /*end of login*/
 
 /*BACKGROUND STYLES*/
-
+element.style {
+  color: green;
+}
 
 body {
-  background-color: rgb(225, 222, 227);
+  background-color: red;
   overflow: scroll;
   font-family: 'Julius Sans One', sans-serif;
   font-weight: lighter;
