@@ -2,6 +2,47 @@
 
 #welcome {
   color: black;
+}
+
+h2, p {
+  color: gray;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: lighter;
+}
+#logoutButton {
+  background-color: blue;
+  margin-left: 2rem;
+  border: none;
+}
+
+#logoutButton:hover {
+  background-color: white;
+  color: #000;
+}
+
+.loginDropdown {
+  text-align: right;
+  margin-right: 2rem;
+  margin-top: -7rem;
+  font-weight: bolder;
+  color: black;
+}
+
+.loginDropdown:focus {
+  outline: none;
+}
+
+.listItems {
+  background-color: transparent;
+  float: right;
+}
+
+#dropdown-button {
+  background-color: transparent;
+  margin: 2rem;
+  border: none;
+>>>>>>> master
   font-size: 2rem;
 }
 
@@ -47,7 +88,6 @@ img {
   font-family: 'Lato', sans-serif;
   font-size: 3rem;
   margin-right: 5rem;
-  /*box-shadow: 5px 5px black;*/
 
 }
 
@@ -66,10 +106,12 @@ img {
 /*TWITTER CARD STUFF */
 
 #profileImage {
-  z-index: 2;
-  margin-top: .5rem;
-  width: 6rem;
-  height: 6rem;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  z-index: 1;
+  width: 55px;
+  height: 55px;
   border: .25px solid #ccc;
   box-shadow: 4px 4px 4px #333;
   padding-bottom: .5rem;
@@ -80,10 +122,11 @@ img {
   transform: scale(1.1,1.1);
 }
 
-#screenName {
+#screenName a {
   position: relative;
-  top:0;
-  left: 24%;
+  clear: both;
+  margin: 0 auto;
+  left: 22%;
   font-family: 'Lato', sans-serif;
   text-decoration: none;
   margin-top: -4rem;
@@ -91,19 +134,35 @@ img {
 }
 
 #screenName a:hover {
-  font-family: 'Lato', sans-serif;
   text-decoration: underline;
-  cursor: pointer;
-  color: green;
-}
-#date {
-  position: relative;
-  top: 0;
+  color: rgb(29,161,242);
+  font-family: 'Lato', sans-serif;
 }
 
-#tweetFont {
+#date {
+  width: max-content;
+  position: relative;
+  z-index: 2;
+  top: 5px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 10px;
+  color: black;
+  font-size: 1.5rem;
+
+}
+
+#tweetBody {
+  position: absolute;
+  top: 40%;
+  width: 90%;
+  height: 40%;
   font-family: 'Lato', sans-serif;
+
+}
+#tweetText span{
   font-size: 1em;
+  font-family: 'Lato', sans-serif;
 }
 
 #twitCardHolder {
@@ -119,6 +178,9 @@ twitCardHolder:active {
 }
 
 #iconDiv {
+  position: absolute;
+  top: 5px;
+  right: 25px;
   display: flex;
   align-content: flex-end;
   flex-direction: column-reverse;
@@ -130,33 +192,50 @@ twitCardHolder:active {
 
 #deleteButton {
   cursor: pointer;
-  width: 1rem;
-  margin: 10px;
+  width: .8rem;
 }
 
 #deleteButton:hover {
   color:red;
 }
 
+#lock {
+  cursor: pointer;
+  width: 1rem;
+}
+
+#lock:hover {
+  color:green;
+}
+
 #links {
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-size: 10%vw;
+  position: absolute;
+  bottom: 5%;
 }
 #links:hover {
-  color: green;
+  color: rgb(29,161,242);
 }
 
 #twitterLogo {
   position: absolute;
+  right: 5%;
+  bottom: 5%;
   z-index: 1;
   text-align: center;
   font-size: 4rem;
-  color: #0892D0;
-  margin: 0 auto;
-/*  margin-top: -1rem;
-  margin-left: 2rem;*/
   opacity: .3;
 }
+#twitterLogo:hover {
+  color: rgb(29,161,242);
+  opacity: 1;
+  }
 
+#twitterLogo a:hover {
+  color: rgb(29,161,242);
+  opacity: 1;
+}
 
 
 
@@ -175,9 +254,11 @@ twitCardHolder:active {
   width: 3rem;
   height: 3rem;
   text-align: center;
+  border: .5px solid gray;
   border-radius: 50%;
   background-color: white;
   margin-top: -3px;
+  margin-right: 10px;
 }
 header {
   background-color: white;
@@ -198,7 +279,7 @@ header {
 }
 
 #keywordGet {
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 1.70rem;
   text-transform: uppercase;
 }
@@ -206,6 +287,7 @@ header {
 .keywordInput {
   margin-top: 0vh;
   text-align: center;
+  color: gray;
 }
 
 #inputKeyword {
@@ -223,7 +305,7 @@ header {
   width: 8rem;
   height: 4rem;
   font-size: 3rem;
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
   text-align: center;
   margin-bottom: 2rem;
 
@@ -257,6 +339,7 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 }
 
 .github,.twitter,.facebook {
+  color: gray;
   display: inline-block;
   font-size: 4rem;
   margin-right: 4rem;
