@@ -1,55 +1,7 @@
 /*login information*/
-
 #welcome {
   color: black;
 }
-
-h2, p {
-  color: gray;
-  font-size: 1.5rem;
-  text-align: center;
-  font-weight: lighter;
-}
-#logoutButton {
-  background-color: blue;
-  margin-left: 2rem;
-  border: none;
-}
-
-#logoutButton:hover {
-  background-color: white;
-  color: #000;
-}
-
-.loginDropdown {
-  text-align: right;
-  margin-right: 2rem;
-  margin-top: -7rem;
-  font-weight: bolder;
-  color: black;
-}
-
-.loginDropdown:focus {
-  outline: none;
-}
-
-.listItems {
-  background-color: transparent;
-  float: right;
-}
-
-#dropdown-button {
-  background-color: transparent;
-  margin: 2rem;
-  border: none;
->>>>>>> master
-  font-size: 2rem;
-}
-
-#logout {
-  color: black;
-}
-
 /*end of login*/
 
 /*BACKGROUND STYLES*/
@@ -61,7 +13,6 @@ body {
   font-family: 'Julius Sans One', sans-serif;
   font-weight: lighter;
 }
-
 
 img {
   width: 5rem;
