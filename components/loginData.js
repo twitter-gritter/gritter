@@ -24,18 +24,17 @@ var LoginData = React.createClass({
     });
     //this._DisplayingUserData()
   },
-  componentDidMount: function(){
+  //componentDidMount went here
+  _ClickTest: function(){
       this._LoadUserFromServer();
   },
   _ReloadPage: function(){
-    var reload = location.reload(forceGet);
-    this.setState({
-      logout: reload
-    })
+    var reload = location.reload();
   },
   render: function(){
     return(
       <div>
+        <button onClick={this._ClickTest}>Test</button>
         <a href="/auth/twitter">{this.state.login}</a>
         <h2 id="logout"><a href="/logout">{this.state.logout}</a></h2>
         <h1 id="welcome">{this.state.title}</h1>
