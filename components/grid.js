@@ -33,7 +33,7 @@ var Grid = React.createClass({
   },
   makeStatic:function(id){
     if(this.state.layout.length > 0)this.state.layout[id].static = !this.state.layout[id].static;
-  //  this.setState({layout:this.state.layout})
+   this.setState({layout:this.state.layout})
   },
   onLayoutChange: function(layout){
     this.setState({layout: layout});
@@ -61,7 +61,9 @@ var Grid = React.createClass({
         display_url: ''
       }
   },
-
+  componentWillReceiveProps(){
+    console.log(this.props);
+  },
   displayLinks: function(links){
     //only display link icon if links exist
     if(links.url.length > 0){
@@ -86,8 +88,8 @@ var Grid = React.createClass({
         <a target="_blank" href={profileLink}><img id="profileImage" src={el.profile_img}/></a>
 
         <div id="twitterLogo"><TwitterLogo /></div>
-        <h4 id="screenName"><a target="_blank" href={profileLink}>{el.screen_name}</a>:</h4>
-      
+        <h4 id="screenName"><a target="_blank" href={profileLink}>{el.screen_name}</a></h4>
+
 
         <h5 id="tweetFont">"{body}"</h5>{this.displayLinks(links)}
         <div id="twitterLogo"><a target="_blank" href="https://twitter.com/"><TwitterLogo /></a> </div>
