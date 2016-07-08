@@ -3,9 +3,8 @@ var bcrypt = require('bcrypt-nodejs');
 
 var userSchema = new mongoose.Schema({
   twitter: {
-    name:String,
-    displayName:String
-  }
+    twitterId:String
+    }
 });
 
 userSchema.methods.generateHash = function(password){

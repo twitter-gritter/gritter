@@ -1,13 +1,6 @@
 /*login information*/
 
-.loginForm {
-  width: 15vw;
-  float: right;
-  margin-right: 2rem;
-  margin-left: 2rem;
-}
-
-input {
+#welcome {
   color: black;
 }
 
@@ -49,41 +42,12 @@ h2, p {
   background-color: transparent;
   margin: 2rem;
   border: none;
+>>>>>>> master
   font-size: 2rem;
 }
 
-#dropdown-button:focus {
-  outline: none;
-}
-
-#dropdown-button:hover {
-  color: red;
-}
-
-li {
-  color: white;
-}
-
-.login {
+#logout {
   color: black;
-}
-
-#logInfo {
-  background-color: rgb(41, 24, 26);
-}
-
-#user {
-  margin-top: 1rem;
-}
-
-.loginButton {
-  background-color: white;
-  color: black;
-}
-
-.loginButton:hover {
-  background-color: orange;
-  color: white;
 }
 
 /*end of login*/
@@ -265,12 +229,12 @@ twitCardHolder:active {
 }
 #twitterLogo:hover {
   color: rgb(29,161,242);
-  opacity: 1; 
+  opacity: 1;
   }
 
 #twitterLogo a:hover {
   color: rgb(29,161,242);
-  opacity: 1; 
+  opacity: 1;
 }
 
 
