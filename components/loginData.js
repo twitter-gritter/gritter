@@ -3,10 +3,7 @@ var React = require('react');
 var LoginData = React.createClass({
   getInitialState: function(){
     return {
-      title: null,
-      login: 'Login w/ Twitter',
-      logout: null
-    }
+      login: 'Login w/ Twitter'    }
   },
   _LoadUserFromServer: function(){
     // var logout = location.reload();
@@ -17,27 +14,21 @@ var LoginData = React.createClass({
       url:"/profile"
     }).done(function(data){
       console.log(data);
-      self.setState({ title: "Welcome to Gritter  @" + data.username });
-      self.setState({ logout: "logout" });
-      self.setState({ login: null });
-
+      self.setState({ login:"Welcome @" + data.username })
     });
-    //this._DisplayingUserData()
   },
-  //componentDidMount went here
-  _ClickTest: function(){
-      this._LoadUserFromServer();
-  },
-  _ReloadPage: function(){
-    var reload = location.reload();
-  },
+  componentDidMount: function(){
+    this._LoadUserFromServer();
+},
   render: function(){
     return(
       <div>
-        <button onClick={this._ClickTest}>Test</button>
+        <button className="btn"><a id="welcome" href="/auth/twitter">{this.state.login}</a></button>
+
+        {/*<button onClick={this._ClickTest}>Test</button>
         <a href="/auth/twitter">{this.state.login}</a>
         <h2 id="logout"><a href="/logout">{this.state.logout}</a></h2>
-        <h1 id="welcome">{this.state.title}</h1>
+        <h1 id="welcome">{this.state.title}</h1>*/}
       </div>
     )
   }
