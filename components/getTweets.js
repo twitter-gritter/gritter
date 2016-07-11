@@ -40,14 +40,13 @@ var GetTweets = React.createClass({
       url: "/tweets/" + queryString,
       method: 'GET'
     }).done(function(results){
-      console.log(results);
+      
       _.map(results, function(tweet, i){
         tweet.id = i + self.state.tweets.length;
       })
-      console.log(results);
       self.setState({tweets: self.state.tweets.concat(results)})
     })
-    },
+  },
   removeTweet: function(id){
     this.setState({tweets: _.reject(this.state.tweets, {id: id})});
     console.log(this.state.tweets);
@@ -69,7 +68,6 @@ var GetTweets = React.createClass({
     this.loadTweetsFromServer(this.state.keyword, this.state.number);
   },
   render: function () {
-  //  this.addProps();
 
       return (
         <div className = "container">
