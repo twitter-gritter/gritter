@@ -23,7 +23,7 @@ var LoginData = React.createClass({
   render: function(){
     return(
       <div>
-        <button className="btn"><a id="welcome" href="/auth/twitter">{this.state.login}</a></button>
+        <button id="loginButton" className="btn"><a id="welcome" href="/auth/twitter">{this.state.login}</a></button>
 
         {/*<button onClick={this._ClickTest}>Test</button>
         <a href="/auth/twitter">{this.state.login}</a>
