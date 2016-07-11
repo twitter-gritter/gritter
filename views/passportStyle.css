@@ -167,6 +167,7 @@ twitCardHolder:active {
   font-size: 10%vw;
   position: absolute;
   bottom: 5%;
+  background-color: #fff;
 }
 #links:hover {
   color: rgb(29,161,242);
@@ -290,10 +291,11 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   list-style: none;
   background-color: white;
 
+
 }
 
 .github,.twitter,.facebook {
-  color: gray;
+  color:white;
   display: inline-block;
   font-size: 4rem;
   margin-right: 4rem;
