@@ -23,7 +23,7 @@ var GetTweets = React.createClass({
     return{
       tweets: [],
       keyword: 'ReactJS',
-      number: 4
+      number: 9
     }
   },
   onKeywordSubmit: function(newKeyword, newNumber){
@@ -70,9 +70,9 @@ var GetTweets = React.createClass({
         <div className = "container">
           <div className="keywordInput">
             <SearchBar onKeywordSubmit={this.onKeywordSubmit}/>
+            <ClearButton clearTweets={this.clearTweets}/>
             <p id="keywordGet"><img id ="bulldog2" src="./images/LilDoggo.png"/>
             Gritter fetched {this.state.number} Tweets with keyword "{decodeURIComponent(this.state.keyword)}"</p>
-            <ClearButton clearTweets={this.clearTweets}/>
             <div className="tweetGrid">
               <Grid tweets={this.state.tweets} removeTweet={this.removeTweet}/>
             </div>

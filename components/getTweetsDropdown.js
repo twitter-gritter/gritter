@@ -7,7 +7,7 @@
 //    GetTweets   calls in -->
 //      TwitterCard   calls in -->
 //        Grid
-var React = require('react');
+/*var React = require('react');
 var ReactDOM = require('react-dom');
 var TwitterCard = require('./twitterCard');
 var SearchBar = require('./searchBar.js');
@@ -56,4 +56,4 @@ var GetTweets = React.createClass({
   }
 });
 
-module.exports = GetTweets;
+module.exports = GetTweets;*/

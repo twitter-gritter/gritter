@@ -20,7 +20,7 @@ var Grid = React.createClass({
     return {
       className: "layout",
       items: 50,
-      cols: 12,
+      cols: 48,
       rowHeight: 30,
       layout: []
     }
@@ -33,7 +33,7 @@ var Grid = React.createClass({
   },
   makeStatic:function(id){
     if(this.state.layout.length > 0)this.state.layout[id].static = !this.state.layout[id].static;
-  //  this.setState({layout:this.state.layout})
+    this.setState({layout:this.state.layout})
   },
   onLayoutChange: function(layout){
     this.setState({layout: layout});
@@ -61,7 +61,6 @@ var Grid = React.createClass({
         display_url: ''
       }
   },
-
   displayLinks: function(links){
     //only display link icon if links exist
     if(links.url.length > 0){
@@ -76,21 +75,23 @@ var Grid = React.createClass({
     var profileLink = "https://twitter.com/" + el.screen_name;
     var body = this.removeLinks(el.text);
     var links = this.findUrls(el.urls);
+
     return(
-      <div id="twitCardHolder" key={el.id} _grid={{x:el.id * 4 % 12,y:Infinity,w:4,h:5,minW:2,static:false}} >
+      <div id="twitCardHolder" key={el.id} _grid={{x:el.id * 16 % 48,y:Infinity,w:16,h:5,minW:7,static:false}} >
         <h5 id="date"> {date} </h5>
         <div id="iconDiv" >
           <div id="lock" onClick={this.makeStatic.bind(this, el.id)}><Lock /></div>
           <div id="deleteButton" onClick= {this.props.removeTweet.bind(null, el.id)}><CircleEx /></div>
         </div>
+
         <a target="_blank" href={profileLink}><img id="profileImage" src={el.profile_img}/></a>
+        <h4 id="screenName"><a target="_blank" href={profileLink}>{el.screen_name}:</a></h4>
+        
+          <h5 id="tweetFont">"{body}"</h5>
+        
 
-        <div id="twitterLogo"><TwitterLogo /></div>
-        <h4 id="screenName"><a target="_blank" href={profileLink}>{el.screen_name}</a>:</h4>
-
-        <h5 id="tweetFont">"{body}"</h5>{this.displayLinks(links)}
         <div id="twitterLogo"><a target="_blank" href="https://twitter.com/"><TwitterLogo /></a> </div>
-
+        {this.displayLinks(links)}
       </div>
     )
   },
