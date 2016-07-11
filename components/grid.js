@@ -10,6 +10,7 @@ var LinkIcon = require('react-icons/lib/fa/chain.js');
 var TwitterLogo = require('react-icons/lib/fa/twitter.js');
 var WidthProvider = require('react-grid-layout').WidthProvider;
 var Lock = require('react-icons/lib/fa/lock.js');
+var UnLock = require('react-icons/lib/fa/unlock.js');
     ReactGridLayout = WidthProvider(ReactGridLayout);
 var moment = require('moment');
 //var ReactFitText = require('react-fittext');
@@ -32,9 +33,10 @@ var Grid = React.createClass({
       cols: cols
     })
   },
-  makeStatic:function(id){
+  makeStatic:function(id, bool){
     if(this.state.layout.length > 0)this.state.layout[id].static = !this.state.layout[id].static;
-   this.setState({layout:this.state.layout})
+    this.setState({layout:this.state.layout});
+    this.props.tweets[id].lock = !this.props.tweets[id].lock;
   },
   onLayoutChange: function(layout){
     this.setState({layout: layout});
@@ -71,18 +73,17 @@ var Grid = React.createClass({
     }
   },
   createElement(el, i){
-    console.log(i);
-
     var date = moment(el.created_at).format('D MMMM YYYY h:mm a');
     var profileLink = "https://twitter.com/" + el.screen_name;
     var body = this.removeLinks(el.text);
     var links = this.findUrls(el.urls);
+    
 
     return(
-      <div id="twitCardHolder" key={el.id} _grid={{x:( i) * 16 % 48,y:Infinity,w:16,h:5,minW:7,static:false}} >
+      <div id="twitCardHolder" key={el.id} _grid={{x:i * 16 % 48,y:Infinity,w:16,h:5,minW:7,static:false}} >
         <h5 id="date"> {date} </h5>
         <div id="iconDiv" >
-          <div id="lock" onClick={this.makeStatic.bind(this, i)}><Lock /></div>
+          <div id="lock" onClick={this.makeStatic.bind(this, i, el.lock)}>{ el.lock ? <Lock/> : <UnLock/> }</div>
           <div id="deleteButton" onClick= {this.props.removeTweet.bind(null, el.id)}><CircleEx /></div>
         </div>
 
