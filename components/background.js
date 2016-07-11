@@ -18,9 +18,9 @@ var Background = React.createClass({
           <LoginForm />
             <div className = "social">
               <ul className = "social-links">
-              <li className="github"><i><FaGithubSquare /></i></li>
-              <li className="twitter"><i><FaTwitterSquare /></i></li>
-              <li className="facebook"><i><FaFacebookSquare /></i></li>
+              <li className="github"><a href="https://github.com/twitter-gritter/gritter" target="_blank"><i><FaGithubSquare /></i></a></li>
+              <li className="twitter"><a href="https://twitter.com/team_gritter" target="_blank"><i><FaTwitterSquare /></i></a></li>
+              <li className="facebook"><a href="https://www.facebook.com/mtcodeschool/" target="_blank"><i><FaFacebookSquare /></i></a></li>
               </ul>
             </div>
           </div>
