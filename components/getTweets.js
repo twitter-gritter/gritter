@@ -41,7 +41,7 @@ var GetTweets = React.createClass({
       method: 'GET'
     }).done(function(results){
       console.log(results);
-      self.setState({tweets: self.state.tweets.concat(results)})
+      self.setState({tweets: self.state.tweets.concat(results).reverse()})
     })
   },
   removeTweet: function(id){
