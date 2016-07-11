@@ -33,7 +33,7 @@ var Grid = React.createClass({
   },
   makeStatic:function(id){
     if(this.state.layout.length > 0)this.state.layout[id].static = !this.state.layout[id].static;
-  //  this.setState({layout:this.state.layout})
+    this.setState({layout:this.state.layout})
   },
   onLayoutChange: function(layout){
     this.setState({layout: layout});
