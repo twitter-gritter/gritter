@@ -61,8 +61,8 @@ var Grid = React.createClass({
         display_url: ''
       }
   },
-  componentWillReceiveProps(){
-    console.log(this.props);
+  componentWillMount(){
+    console.log(this.props.tweets);
   },
   displayLinks: function(links){
     //only display link icon if links exist
@@ -99,7 +99,7 @@ var Grid = React.createClass({
   },
   render: function() {
     return (
-      <ReactGridLayout  onLayoutChange={this.onLayoutChange} onBreakpointChange={this.onBreakpointChange} {...this.props} >
+      <ReactGridLayout layout={this.state.layout}  onLayoutChange={this.onLayoutChange} onBreakpointChange={this.onBreakpointChange} {...this.props} >
           {_.map(this.props.tweets, this.createElement)}
       </ReactGridLayout>
     )
