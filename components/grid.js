@@ -22,6 +22,7 @@ var Grid = React.createClass({
       items: 50,
       cols: 48,
       rowHeight: 30,
+      count:0,
       layout: []
     }
   },
@@ -69,7 +70,8 @@ var Grid = React.createClass({
       )
     }
   },
-  createElement(el){
+  createElement(el, i){
+    console.log(i);
 
     var date = moment(el.created_at).format('D MMMM YYYY h:mm a');
     var profileLink = "https://twitter.com/" + el.screen_name;
@@ -77,10 +79,10 @@ var Grid = React.createClass({
     var links = this.findUrls(el.urls);
 
     return(
-      <div id="twitCardHolder" key={el.id} _grid={{x:el.id * 16 % 48,y:Infinity,w:16,h:5,minW:7,static:false}} >
+      <div id="twitCardHolder" key={el.id} _grid={{x:( i) * 16 % 48,y:Infinity,w:16,h:5,minW:7,static:false}} >
         <h5 id="date"> {date} </h5>
         <div id="iconDiv" >
-          <div id="lock" onClick={this.makeStatic.bind(this, el.id)}><Lock /></div>
+          <div id="lock" onClick={this.makeStatic.bind(this, i)}><Lock /></div>
           <div id="deleteButton" onClick= {this.props.removeTweet.bind(null, el.id)}><CircleEx /></div>
         </div>
 
