@@ -35,11 +35,10 @@ var T = new Twit({
             screen_name: tweet.user.screen_name,
             created_at: tweet.created_at,
             profile_img: tweet.user.profile_image_url,
-            urls: tweet.entities.urls
-            /*obj: tweet*/
+            urls: tweet.entities.urls,
+            lock: false
             }
         });
-        // console.log(tweetArr);
 
 
         console.log(tweetArr);
