@@ -4,9 +4,16 @@
   text-decoration: none;
 }
 
-#loginButton > a{
-  color: white;
+#loginButton {
+  background-color: #fff;
 }
+
+#loginButton > a{
+  color: black;
+}
+
+
+
 
 #loginButton:hover {
   background-color: #0892D0;
