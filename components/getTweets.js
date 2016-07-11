@@ -46,6 +46,7 @@ var GetTweets = React.createClass({
   },
   removeTweet: function(id){
     this.setState({tweets: _.reject(this.state.tweets, {id: id})});
+    console.log(this.state.tweets);
   },
   clearTweets: function(){
     this.setState({tweets: []});

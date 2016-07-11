@@ -20,7 +20,7 @@ var Grid = React.createClass({
     return {
       className: "layout",
       items: 50,
-      cols: 12,
+      cols: 24,
       rowHeight: 30,
       layout: []
     }
@@ -99,7 +99,7 @@ var Grid = React.createClass({
   },
   render: function() {
     return (
-      <ReactGridLayout layout={this.state.layout}  onLayoutChange={this.onLayoutChange} onBreakpointChange={this.onBreakpointChange} {...this.props} >
+      <ReactGridLayout onLayoutChange={this.onLayoutChange} onBreakpointChange={this.onBreakpointChange} {...this.props} >
           {_.map(this.props.tweets, this.createElement)}
       </ReactGridLayout>
     )
