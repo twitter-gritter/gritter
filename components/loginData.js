@@ -3,7 +3,8 @@ var React = require('react');
 var LoginData = React.createClass({
   getInitialState: function(){
     return {
-      login: 'Login w/ Twitter'    }
+      login: "Login w/ Twitter"
+        }
   },
   _LoadUserFromServer: function(){
     var self = this;
