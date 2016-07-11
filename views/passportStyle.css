@@ -34,8 +34,6 @@ body {
   background: -webkit-linear-gradient(-45deg,  #0b0e72 10%,#1916f4 18%,#3a2a5b 33%,#4500a0 42%,#770099 50%,#5564ed 67%,#5564ed 67%,#293082 77%,#4b91ed 85%,#372168 95%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(135deg,  #0b0e72 10%,#1916f4 18%,#3a2a5b 33%,#4500a0 42%,#770099 50%,#5564ed 67%,#5564ed 67%,#293082 77%,#4b91ed 85%,#372168 95%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0b0e72', endColorstr='#372168',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  background-size: cover;
-  background-position: top;
   overflow: scroll;
   font-family: 'Julius Sans One', sans-serif;
   font-weight: lighter;
@@ -333,11 +331,10 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 }
 
 .github, .twitter, .facebook {
-
   color:white;
   display: inline-block;
   font-size: 4rem;
-  margin-right: 4rem;
+  margin-right: 6rem;
 }
 
 .github:hover,.twitter:hover,.facebook:hover {
