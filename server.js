@@ -31,8 +31,8 @@ app.use(express.static(__dirname + '/views'));
 passport.use(new TwitterStrategy({
    consumerKey: process.env.TWITTER_CONSUMER_KEY,
    consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
-   callbackURL:'http://localhost:3000/auth/twitter/callback'
-  //  callbackURL:'https://fathomless-gritter.herokuapp.com/auth/twitter/callback'
+  //  callbackURL:'http://localhost:3000/auth/twitter/callback'
+   callbackURL:'https://fathomless-gritter.herokuapp.com/auth/twitter/callback'
  },
  function(token, tokenSecret, profile, done) {
    // point of data return
@@ -48,9 +48,11 @@ app.use('/tweets', tweetRouter);
 app.use('/funny', funnyTweetRouter);
 app.use('/trending', trendingTweetRouter);*/
 
+
+//Authenicating requests from twitter
 app.get('/auth/twitter', passport.authenticate('twitter'));
 
-
+// Redirecting if successful to '/'
 app.get('/auth/twitter/callback',
   passport.authenticate('twitter', { failureRedirect: '/login' }),
   function(req, res) {
@@ -66,6 +68,7 @@ passport.deserializeUser(function(obj,done){
   done(null,obj);
 });
 
+//Creating '/'
 app.get('/', function(req,res){
   res.send(req.user);
 })
@@ -109,7 +112,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 mongoose.connect(
-  // config.mongo_uri
+//  config.mongo_uri
  "mongodb://localhost:27017/gritter"
 
 );
