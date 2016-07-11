@@ -1,6 +1,6 @@
 /*login information*/
 #welcome {
-  color: black;
+  color: white;
 }
 /*end of login*/
 
@@ -10,38 +10,40 @@ element.style {
 }
 
 body {
-  background-color: red;
+  /*background-color: rgb(222, 222, 222);*/
+ /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#220859+18,3a2a5b+33,4500a0+42,770099+50,5564ed+67,6d47e0+78 */
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0b0e72+10,1916f4+18,3a2a5b+33,4500a0+42,770099+50,5564ed+67,5564ed+67,293082+77,4b91ed+85,372168+95 */
+background: #0b0e72; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #0b0e72 10%, #1916f4 18%, #3a2a5b 33%, #4500a0 42%, #770099 50%, #5564ed 67%, #5564ed 67%, #293082 77%, #4b91ed 85%, #372168 95%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg,  #0b0e72 10%,#1916f4 18%,#3a2a5b 33%,#4500a0 42%,#770099 50%,#5564ed 67%,#5564ed 67%,#293082 77%,#4b91ed 85%,#372168 95%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg,  #0b0e72 10%,#1916f4 18%,#3a2a5b 33%,#4500a0 42%,#770099 50%,#5564ed 67%,#5564ed 67%,#293082 77%,#4b91ed 85%,#372168 95%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0b0e72', endColorstr='#372168',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
   overflow: scroll;
   font-family: 'Julius Sans One', sans-serif;
   font-weight: lighter;
 }
 
-img {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
-  margin-top: 1rem;
-}
-
 /*clear button stuff*/
 
-#clearDiv {
+/*#clearDiv {
   margin-top: 2rem;
   width: 90vw;
   display: flex;
   justify-content: flex-end;
 
 
-}
+}*/
 
 #clear {
+  float: right;
+  clear: left;
   border: none;
-  color: #000;
+  color: #fff;
   background-color: transparent;
   font-family: 'Lato', sans-serif;
   font-size: 3rem;
   margin-right: 5rem;
-
 }
 
 #clear:hover {
@@ -54,50 +56,53 @@ img {
 }
 
 #clear:active {
-  -webkit-filter: drop-shadow(5px 5px 2px black);
+  box-shadow: 5px 5px 2px black;
 }
 /*TWITTER CARD STUFF */
 
 #profileImage {
-  position: absolute;
-  top: 0;
-  left: 10px;
+  position: relative;
+  top: -22px;
+  border-radius: 50%;
+  float: left;
+  margin-left: 10px;
+  margin-bottom: -15px;
   z-index: 1;
   width: 55px;
   height: 55px;
   border: .25px solid #ccc;
-  box-shadow: 4px 4px 4px #333;
-  padding-bottom: .5rem;
+  box-shadow: 2px 2px 4px #333;
 }
 
 #profileImage:hover {
   box-shadow: 10px 10px 20px #333;
   transform: scale(1.1,1.1);
 }
+#screenName span {
+  text-align: left;
+}
 
 #screenName a {
-  position: relative;
+  text-align: left;
   clear: both;
-  margin: 0 auto;
-  left: 22%;
+  margin-right: 30px;
+  padding-left: 10px;
   font-family: 'Lato', sans-serif;
   text-decoration: none;
-  margin-top: -4rem;
-  width: max-content;
 }
 
 #screenName a:hover {
   text-decoration: underline;
   color: rgb(29,161,242);
-  font-family: 'Lato', sans-serif;
 }
+
 
 #date {
   width: max-content;
   position: relative;
   z-index: 2;
   top: 5px;
-  margin: 0 auto;
+  margin: 0 auto 10px;
   text-align: center;
   padding-bottom: 10px;
   color: black;
@@ -105,41 +110,42 @@ img {
 
 }
 
-#tweetBody {
+/*#tweetBody {
   position: absolute;
-  top: 40%;
+  top: 50px;
   width: 90%;
   height: 40%;
+}*/
+#tweetFont {
+  position: relative;
+  clear: left;
+  margin: 5%;
   font-family: 'Lato', sans-serif;
-
-}
-#tweetText span{
-  font-size: 1em;
-  font-family: 'Lato', sans-serif;
+  line-height: 140%;
+  font-size: 16px;
+  color: black;
 }
 
 #twitCardHolder {
+  overflow: hidden;
   background-color: white;
   text-align: left;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  -webkit-filter: drop-shadow(6px 6px 6px black);
+  box-shadow: 4px 4px 8px black;
 }
 
 twitCardHolder:active {
-  -webkit-filter: drop-shadow(10px 10px 10px black);
+  box-shadow:10px 10px 20px black;
 }
 
 #iconDiv {
   position: absolute;
-  top: 5px;
+  top: 20px;
   right: 25px;
   display: flex;
   align-content: flex-end;
   flex-direction: column-reverse;
   width: auto;
   font-size: 2rem;
-  float: right;
   margin-right: -1rem;
 }
 
@@ -162,18 +168,24 @@ twitCardHolder:active {
 }
 
 #links {
+  margin: 5%;
   font-family: 'Lato', sans-serif;
-  font-size: 10%vw;
-  position: absolute;
-  bottom: 5%;
+  word-wrap: break-word;
+  font-size: 1.5rem;
+  position: relative;
+  margin-top: 20%;
 }
+#links span {
+  margin-right: 5%;
+}
+
 #links:hover {
   color: rgb(29,161,242);
 }
 
 #twitterLogo {
   position: absolute;
-  right: 5%;
+  right: 15%;
   bottom: 5%;
   z-index: 1;
   text-align: center;
@@ -197,9 +209,10 @@ twitCardHolder:active {
 
 
 #bulldog {
+  margin: 20px;
   width: 9rem;
   height: 9rem;
-  text-align: center;
+  float: left;
   border-radius: 50%;
   background-color: white;
 }
@@ -214,27 +227,31 @@ twitCardHolder:active {
   margin-right: 10px;
 }
 header {
-  background-color: white;
+  background-color: transparent;
   background-position: center;
   background-size:cover;
-  text-align: center;
+  text-align: left;
   padding-bottom: 2rem;
   font-weight: lighter;
   font-size: 3rem;
   color: white;
-  border-bottom: 5px solid black;
-}
+/*  border-bottom: 5px solid black;
+*/}
 #title {
-  padding-top: 2rem;
-  margin-top: 0rem;
+  display: inline;
+  padding-top: 120px;
   letter-spacing: 1rem;
-  color: #000;
+  color: #fff;
 }
 
 #keywordGet {
-  font-family: 'Lato', sans-serif;
-  font-size: 1.70rem;
-  text-transform: uppercase;
+
+  font-family: 'Lato', sans-serif
+  font-size: 70vw;
+  color: white;
+  padding-left: 10px;
+  text-align: left;
+  width: max-content;
 }
 
 .keywordInput {
@@ -245,25 +262,31 @@ header {
 
 #inputKeyword {
   margin-bottom: 3vh;
-  height: 5vh;
-  width: 20vw;
+  height: 50px;
+  width: 200px;
   font-size: 2rem;
   text-align: center;
   background-color: transparent;
-  color: black;
-  border: 2px solid black;
+  color: white;
+  border: 2px solid white;
 }
 
 #inputNumber {
-  width: 8rem;
-  height: 4rem;
-  font-size: 3rem;
-  font-family: 'Lato', sans-serif;
+  margin-bottom: 3vh;
+  height: 50px;
+  width: 100px;
+  font-size: 2rem;
   text-align: center;
-  margin-bottom: 2rem;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
 
 }
-
+.SearchBar {
+  width: max-content;
+  text-align: center;
+  margin: 0 auto;
+}
 .searchButton {
   display: none;
 }
@@ -283,16 +306,16 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 }
 
 .social-links {
-  margin-top: 4vh;
-  color: rgb(68, 67, 73);
+
+  /*color: rgb(68, 67, 73);*/
   display: inline-block;
   list-style: none;
-  background-color: white;
+  background-color: transparent;
 
 }
 
-.github,.twitter,.facebook {
-  color: gray;
+li.github, li.twitter, li.facebook {
+  color: white;
   display: inline-block;
   font-size: 4rem;
   margin-right: 4rem;

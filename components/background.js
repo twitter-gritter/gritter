@@ -12,10 +12,10 @@ var Background = React.createClass({
     return(
       <div>
         <header>
+          <img id ="bulldog" src="./images/LilDoggo.png" />
           <h1 id="title">Gritter</h1>
           <div className = "logo">
           <LoginForm />
-            <img id ="bulldog" src="./images/LilDoggo.png" />
             <div className = "social">
               <ul className = "social-links">
               <li className="github"><i><FaGithubSquare /></i></li>

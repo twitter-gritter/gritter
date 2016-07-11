@@ -44,9 +44,9 @@ var SearchBar = React.createClass({
 	},
 	render: function(){
 		return (
-			<div>
+			<div className="SearchBar">
 			<input onChange={this.handleNumberChange}
-			value={this.state.number} type= "text" autoComplete="off" min="" max="25" id="inputNumber"
+			value={this.state.number} placeholder="9" type= "text" autoComplete="off" min="" max="25" id="inputNumber"
 			data-toggle="tooltip" data-placement="left" />
 				<form onSubmit = {this.handleFormSubmit}>
 					<input onChange={this.handleKeywordChange}
