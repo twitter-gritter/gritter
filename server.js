@@ -48,9 +48,11 @@ app.use('/tweets', tweetRouter);
 app.use('/funny', funnyTweetRouter);
 app.use('/trending', trendingTweetRouter);*/
 
+
+//Authenicating requests from twitter
 app.get('/auth/twitter', passport.authenticate('twitter'));
 
-
+// Redirecting if successful to '/'
 app.get('/auth/twitter/callback',
   passport.authenticate('twitter', { failureRedirect: '/login' }),
   function(req, res) {
@@ -66,6 +68,7 @@ passport.deserializeUser(function(obj,done){
   done(null,obj);
 });
 
+//Creating '/'
 app.get('/', function(req,res){
   res.send(req.user);
 })
