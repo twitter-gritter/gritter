@@ -319,13 +319,10 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 }
 
 .social-links {
-
-  /*color: rgb(68, 67, 73);*/
+  color: rgb(68, 67, 73);
   display: inline-block;
   list-style: none;
   background-color: transparent;
-
-
 }
 
 .github, .twitter, .facebook {
